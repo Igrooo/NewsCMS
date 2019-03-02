@@ -3,7 +3,7 @@ NewsCMS
 Newsletters Management System - to build, edit and view newsletters formatted in HTML tables.
 
 ## v0 - Basics features
-  * v0.1
+  * v0.1 02/03/19
   * v0.2
 ## v1 - Templates & previews
 ## v2 - Multiples newsletters management
