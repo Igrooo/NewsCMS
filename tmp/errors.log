@@ -1,0 +1,78 @@
+[21-Feb-2019 14:02:12 UTC] PHP Notice:  Undefined variable: name in C:\wamp64\www\newsCMS\inc\editor.php on line 11
+[21-Feb-2019 14:02:12 UTC] PHP Stack trace:
+[21-Feb-2019 14:02:12 UTC] PHP   1. {main}() C:\wamp64\www\newsCMS\index.php:0
+[21-Feb-2019 14:02:12 UTC] PHP   2. include() C:\wamp64\www\newsCMS\index.php:45
+[21-Feb-2019 14:02:12 UTC] PHP   3. include() C:\wamp64\www\newsCMS\inc\content.php:21
+[21-Feb-2019 22:56:26 UTC] PHP Notice:  Undefined variable: name in C:\wamp64\www\newsCMS\inc\editor.php on line 11
+[21-Feb-2019 22:56:26 UTC] PHP Stack trace:
+[21-Feb-2019 22:56:26 UTC] PHP   1. {main}() C:\wamp64\www\newsCMS\index.php:0
+[21-Feb-2019 22:56:26 UTC] PHP   2. include() C:\wamp64\www\newsCMS\index.php:45
+[21-Feb-2019 22:56:26 UTC] PHP   3. include() C:\wamp64\www\newsCMS\inc\content.php:21
+[21-Feb-2019 23:22:44 UTC] PHP Notice:  Undefined variable: name in C:\wamp64\www\newsCMS\inc\download.php on line 7
+[21-Feb-2019 23:22:44 UTC] PHP Stack trace:
+[21-Feb-2019 23:22:44 UTC] PHP   1. {main}() C:\wamp64\www\newsCMS\index.php:0
+[21-Feb-2019 23:22:44 UTC] PHP   2. include() C:\wamp64\www\newsCMS\index.php:42
+[21-Feb-2019 23:22:44 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\wamp64\www\newsCMS\inc\download.php:5) in C:\wamp64\www\newsCMS\inc\download.php on line 7
+[21-Feb-2019 23:22:44 UTC] PHP Stack trace:
+[21-Feb-2019 23:22:44 UTC] PHP   1. {main}() C:\wamp64\www\newsCMS\index.php:0
+[21-Feb-2019 23:22:44 UTC] PHP   2. include() C:\wamp64\www\newsCMS\index.php:42
+[21-Feb-2019 23:22:44 UTC] PHP   3. header() C:\wamp64\www\newsCMS\inc\download.php:7
+[21-Feb-2019 23:22:57 UTC] PHP Notice:  Undefined variable: name in C:\wamp64\www\newsCMS\inc\download.php on line 7
+[21-Feb-2019 23:22:57 UTC] PHP Stack trace:
+[21-Feb-2019 23:22:57 UTC] PHP   1. {main}() C:\wamp64\www\newsCMS\index.php:0
+[21-Feb-2019 23:22:57 UTC] PHP   2. include() C:\wamp64\www\newsCMS\index.php:42
+[21-Feb-2019 23:22:57 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\wamp64\www\newsCMS\inc\download.php:5) in C:\wamp64\www\newsCMS\inc\download.php on line 7
+[21-Feb-2019 23:22:57 UTC] PHP Stack trace:
+[21-Feb-2019 23:22:57 UTC] PHP   1. {main}() C:\wamp64\www\newsCMS\index.php:0
+[21-Feb-2019 23:22:57 UTC] PHP   2. include() C:\wamp64\www\newsCMS\index.php:42
+[21-Feb-2019 23:22:57 UTC] PHP   3. header() C:\wamp64\www\newsCMS\inc\download.php:7
+[21-Feb-2019 23:23:07 UTC] PHP Notice:  Undefined variable: name in C:\wamp64\www\newsCMS\inc\download.php on line 7
+[21-Feb-2019 23:23:07 UTC] PHP Stack trace:
+[21-Feb-2019 23:23:07 UTC] PHP   1. {main}() C:\wamp64\www\newsCMS\index.php:0
+[21-Feb-2019 23:23:07 UTC] PHP   2. include() C:\wamp64\www\newsCMS\index.php:42
+[21-Feb-2019 23:23:07 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\wamp64\www\newsCMS\inc\download.php:5) in C:\wamp64\www\newsCMS\inc\download.php on line 7
+[21-Feb-2019 23:23:07 UTC] PHP Stack trace:
+[21-Feb-2019 23:23:07 UTC] PHP   1. {main}() C:\wamp64\www\newsCMS\index.php:0
+[21-Feb-2019 23:23:07 UTC] PHP   2. include() C:\wamp64\www\newsCMS\index.php:42
+[21-Feb-2019 23:23:07 UTC] PHP   3. header() C:\wamp64\www\newsCMS\inc\download.php:7
+[22-Feb-2019 10:26:50 UTC] PHP Notice:  Undefined variable: thumb in C:\wamp64\www\newsCMS\conf\functions.php on line 21
+[22-Feb-2019 10:26:50 UTC] PHP Stack trace:
+[22-Feb-2019 10:26:50 UTC] PHP   1. {main}() C:\wamp64\www\newsCMS\index.php:0
+[22-Feb-2019 10:26:50 UTC] PHP   2. include() C:\wamp64\www\newsCMS\index.php:45
+[22-Feb-2019 10:26:50 UTC] PHP   3. include() C:\wamp64\www\newsCMS\inc\content.php:24
+[22-Feb-2019 10:26:50 UTC] PHP   4. list_news() C:\wamp64\www\newsCMS\inc\explorer-grid.php:4
+[22-Feb-2019 10:27:43 UTC] PHP Notice:  Undefined variable: thumb in C:\wamp64\www\newsCMS\conf\functions.php on line 21
+[22-Feb-2019 10:27:43 UTC] PHP Stack trace:
+[22-Feb-2019 10:27:43 UTC] PHP   1. {main}() C:\wamp64\www\newsCMS\index.php:0
+[22-Feb-2019 10:27:43 UTC] PHP   2. include() C:\wamp64\www\newsCMS\index.php:45
+[22-Feb-2019 10:27:43 UTC] PHP   3. include() C:\wamp64\www\newsCMS\inc\content.php:24
+[22-Feb-2019 10:27:43 UTC] PHP   4. list_news() C:\wamp64\www\newsCMS\inc\explorer-grid.php:4
+[22-Feb-2019 10:28:06 UTC] PHP Notice:  Undefined variable: thumb in C:\wamp64\www\newsCMS\conf\functions.php on line 21
+[22-Feb-2019 10:28:06 UTC] PHP Stack trace:
+[22-Feb-2019 10:28:06 UTC] PHP   1. {main}() C:\wamp64\www\newsCMS\index.php:0
+[22-Feb-2019 10:28:06 UTC] PHP   2. include() C:\wamp64\www\newsCMS\index.php:45
+[22-Feb-2019 10:28:06 UTC] PHP   3. include() C:\wamp64\www\newsCMS\inc\content.php:24
+[22-Feb-2019 10:28:06 UTC] PHP   4. list_news() C:\wamp64\www\newsCMS\inc\explorer-grid.php:4
+[22-Feb-2019 10:31:43 UTC] PHP Notice:  Undefined variable: thumb in C:\wamp64\www\newsCMS\conf\functions.php on line 21
+[22-Feb-2019 10:31:43 UTC] PHP Stack trace:
+[22-Feb-2019 10:31:43 UTC] PHP   1. {main}() C:\wamp64\www\newsCMS\index.php:0
+[22-Feb-2019 10:31:43 UTC] PHP   2. include() C:\wamp64\www\newsCMS\index.php:45
+[22-Feb-2019 10:31:43 UTC] PHP   3. include() C:\wamp64\www\newsCMS\inc\content.php:24
+[22-Feb-2019 10:31:43 UTC] PHP   4. list_news() C:\wamp64\www\newsCMS\inc\explorer-grid.php:4
+[22-Feb-2019 10:34:53 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in C:\wamp64\www\newsCMS\conf\functions.php on line 24
+[22-Feb-2019 14:52:08 UTC] PHP Notice:  Undefined variable: content in C:\wamp64\www\newsCMS\conf\functions.php on line 30
+[22-Feb-2019 14:52:08 UTC] PHP Stack trace:
+[22-Feb-2019 14:52:08 UTC] PHP   1. {main}() C:\wamp64\www\newsCMS\index.php:0
+[22-Feb-2019 14:52:08 UTC] PHP   2. include() C:\wamp64\www\newsCMS\index.php:45
+[22-Feb-2019 14:52:08 UTC] PHP   3. include() C:\wamp64\www\newsCMS\inc\content.php:24
+[22-Feb-2019 14:52:08 UTC] PHP   4. list_news() C:\wamp64\www\newsCMS\inc\explorer-grid.php:4
+[25-Feb-2019 15:43:42 UTC] PHP Notice:  Undefined variable: name in C:\wamp64\www\newsCMS\inc\download.php on line 7
+[25-Feb-2019 15:43:42 UTC] PHP Stack trace:
+[25-Feb-2019 15:43:42 UTC] PHP   1. {main}() C:\wamp64\www\newsCMS\index.php:0
+[25-Feb-2019 15:43:42 UTC] PHP   2. include() C:\wamp64\www\newsCMS\index.php:42
+[25-Feb-2019 15:43:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\wamp64\www\newsCMS\inc\download.php:5) in C:\wamp64\www\newsCMS\inc\download.php on line 7
+[25-Feb-2019 15:43:42 UTC] PHP Stack trace:
+[25-Feb-2019 15:43:42 UTC] PHP   1. {main}() C:\wamp64\www\newsCMS\index.php:0
+[25-Feb-2019 15:43:42 UTC] PHP   2. include() C:\wamp64\www\newsCMS\index.php:42
+[25-Feb-2019 15:43:42 UTC] PHP   3. header() C:\wamp64\www\newsCMS\inc\download.php:7
+[27-Feb-2019 14:57:24 UTC] PHP Parse error:  syntax error, unexpected 'sv_SE' (T_STRING), expecting ',' or ';' in C:\wamp64\www\newsCMS\inc\head.php on line 39
