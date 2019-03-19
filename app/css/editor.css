@@ -1,29 +1,145 @@
+#newsletter-editor{
+    margin-top: 78px;
+}
+#newsletter-editor .loader{
+    display: none;
+}
+#newsletter-editor.loading{
+    height: calc(100vh - 210px)
+}
+#newsletter-editor.loading .loader{
+    position: absolute;
+    display: block;
+    text-align: center;
+    top: calc(50% - 37px);
+    left: calc(50% - 37px);
+}
+#newsletter-editor.loading #fakebody{
+    opacity: 0;
+    transition: opacity 100ms;
+}
+.newsletter-editor-title ~ .float-box-container #newsletter-editor{
+    margin-top: 20px;
+}
+#newsletter-editor .editable-img,
+#newsletter-editor .editable-btn,
+#newsletter-editor .editable{
+    box-sizing: border-box;
+    border: 1px solid transparent;
+}
 #newsletter-editor .editable{
     max-width: 700px;
-    word-break: break-all;
-    padding: 5px;
+    padding: 2px 4px;
+    /* avoid to change size of element - padding + - border */
+    margin: -3px -5px;
     cursor: text;
-    border: 1px solid #bebdbd;
     border-radius: 8px;
 }
-#newsletter-editor .editable.mce-edit-focus,
-#newsletter-editor .editable:focus{
-
+#newsletter-editor .editable-img,
+#newsletter-editor .editable-btn{
+    cursor: pointer;
+}
+#newsletter-editor .editable-img{
+    /* avoid to change size of element - border */
+    margin-top: -1px;
+    margin-left: -2px;
+    background-color: #f0f0f0;
+}
+#newsletter-editor .editable-img img{
+    display: inline;
 }
 #newsletter-editor .editable:not(:focus):hover{
     background-color: #eaeaea;
 }
+#newsletter-editor .editable-img.focused,
+#newsletter-editor .editable-btn.mce-edit-focus,
+#newsletter-editor .editable-btn:focus,
+#newsletter-editor .editable.mce-edit-focus,
+#newsletter-editor .editable:focus{
+    border: 1px solid #006fb9;
+    box-shadow: 0 0 5px #9e9d9d inset;
+    border-radius: 8px;
+    overflow: hidden;
+}
 .tox-tinymce{
+    width: 742px !important;
+    /* dynamic horizontal position get in js
+    left: attr(data-left-position px) !important;
+    */
+    left: calc( (((100vw - 250px) / 2) - (742px / 2 )) + 250px) !important;
+    top:85px !important;
     border: 1px solid #bebdbd !important;
     border-radius: 8px !important;
-    margin-top: -5px !important;
 }
 .tox-toolbar{
     background-color: #eaeaea !important;
 }
-.tox .tox-tbtn{
+.tox .tox-toolbar__group{
+    padding: 0 3px !important;
+}
+.tox-toolbar__group:first-child {
+    padding: 0 7px !important;
+}
+.tox .tox-tbtn,
+.tox :not(svg){
     font-size: 12px !important;
 }
-.tox .tox-tbtn--bespoke .tox-tbtn__select-label{
+.tox .tox-tbtn:not(.tox-split-button__chevron):not(.tox-tbtn--select){
+    width: 29px !important;
+}
+.tox .tox-tbtn--select{
+    padding: 0 !important;
+}
+.tox .tox-tbtn--select .tox-tbtn__select-label{
     width: 2em !important;
+}
+.newsletter-editor-title{
+    margin-bottom: 0;
+}
+.edit-active .newsletter-editor-title{
+    display: none;
+}
+#newsletter-editor .newsletter-editor-row{
+    opacity: 1;
+    transition: opacity 250ms linear;
+}
+.edit-active #newsletter-editor .newsletter-editor-row:not(.active):not(:hover){
+    opacity:0.5;
+}
+.float-box-fixed{
+    top:85px;
+    width: 742px;
+}
+.editor-nav-aside{
+    padding: 7px;
+}
+
+#editable-img-src{
+    width: calc(100% - 600px);
+}
+#editable-img-src-label{
+    max-width: 600px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-overflow-ellipsis: center;
+}
+#editor-nav-tools .link-with-tracking{
+    height: 12px;
+    font-size: 10px;
+    margin-left: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-top: 2px;
+}
+
+br[data-mce-bogus]{
+    display: none;
+}
+
+@media screen and (max-width: 1100px) {
+    .tox-tinymce {
+        left: calc(50% - (742px / 2)) !important;
+    }
 }

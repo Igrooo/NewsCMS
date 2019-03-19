@@ -2,12 +2,14 @@
 
 //// SERVER PATHS
 define('SERVER_HOST', $_SERVER['HTTP_HOST']);
-define('CURRENT_DIR', SERVER_HOST.dirname($_SERVER['PHP_SELF']).'/');
-define('CURRENT_URL', SERVER_HOST.$_SERVER['REQUEST_URI']);
+/* CURRENT_DIR for absolute path */
+define('CURRENT_DIR', 'http://'.SERVER_HOST.dirname($_SERVER['PHP_SELF']).'/');
+define('CURRENT_URL', 'http://'.SERVER_HOST.$_SERVER['REQUEST_URI']);
 
 //// PATHS
-/* Directory of the NewsCMS app, stay empty for relative path, use CURRENT_DIR/ for absolute path */
+/* Directory of the NewsCMS app */
 define('FOLDER_APP','');
+
 /* configurations folder */
 define('FOLDER_CONF',FOLDER_APP.'conf/');
 define('FOLDER_TEMP',FOLDER_APP.'tmp/');
@@ -30,8 +32,10 @@ require(FOLDER_CONF.'functions.php');
 if(isset($_GET['new'])){
 include(FOLDER_CONF . 'insert.php');}
 /* update */
+if(isset($_GET['update-content'])){
+include(FOLDER_CONF . 'update-content.php');}
 if(isset($_GET['update'])){
-include(FOLDER_CONF.'update.php');}
+include(FOLDER_CONF . 'update.php');}
 /* delete */
 if(isset($_GET['delete'])){
 include(FOLDER_CONF.'delete.php');}

@@ -16,49 +16,107 @@ echo'<style>
         #'.$query.' .yshortcuts a {border-bottom: none !important;}
         #'.$query.' img{height:auto !important;}
 
-        #'.$query.'.reponsive-view #fakebody{width:auto!important;}
-        #'.$query.'.reponsive-view table[class="container"]{
+        .responsive-view #'.$query.' #fakebody{width:auto!important;}
+        .responsive-view #'.$query.' table[class="container"]{
             width: 100%!important;
             padding-left:10px !important;
             padding-right:10px !important;
         }
-        #'.$query.'.reponsive-view table[class="full-width"]{
+        .responsive-view #'.$query.' table[class="full-width"]{
             width:100% !important;
             float:left !important;
         }
-        #'.$query.'.reponsive-view table[class="width-95-percent"]{width:95% !important;}
-        #'.$query.'.reponsive-view table[class="width-220"]{width:220px !important;}
-        #'.$query.'.reponsive-view td[class="width-50-percent"]{width:50% !important;}
-        #'.$query.'.reponsive-view td[class="width-25"]{width:25px !important;}
-        #'.$query.'.reponsive-view td[class="width-100"]{width:100px !important;}
-        #'.$query.'.reponsive-view td[class="display-table-cell"]{
+        .responsive-view #'.$query.' table[class="width-95-percent"]{width:95% !important;}
+        .responsive-view #'.$query.' table[class="width-220"]{width:220px !important;}
+        .responsive-view #'.$query.' td[class="width-50-percent"]{width:50% !important;}
+        .responsive-view #'.$query.' td[class="width-25"]{width:25px !important;}
+        .responsive-view #'.$query.' td[class="width-100"]{width:100px !important;}
+        .responsive-view #'.$query.' td[class="display-table-cell"]{
             display: table-cell !important;
             max-width: none !important;
             visibility: visible !important;
         }
-        #'.$query.'.reponsive-view table[class="remove"]{display:none !important;}
-        #'.$query.'.reponsive-view tr[class="remove"]{display:none !important;}
-        #'.$query.'.reponsive-view td[class="remove"]{display:none !important;}
-        #'.$query.'.reponsive-view table[class="menu-float-center"]{
+        .responsive-view #'.$query.' table[class="remove"]{display:none !important;}
+        .responsive-view #'.$query.' tr[class="remove"]{display:none !important;}
+        .responsive-view #'.$query.' td[class="remove"]{display:none !important;}
+        .responsive-view #'.$query.' table[class="menu-float-center"]{
             width: 90% !important;
             margin-left: 5% !important;
             margin-right: 5% !important;
             text-align: center !important;
         }
-        #'.$query.'.reponsive-view td[class="text-center"]{text-align: center !important;}
-        #'.$query.'.reponsive-view td[class="font-size-18"]{font-size: 18px !important;}
-        #'.$query.'.reponsive-view td[class="font-size-22"]{font-size: 22px !important; line-height: 18px !important}
-        #'.$query.'.reponsive-view td[class="font-size-28"]{font-size: 28px !important; line-height: 24px !important}
-        #'.$query.'.reponsive-view img[class="image-responsive"]{
+        .responsive-view #'.$query.' td[class="text-center"]{text-align: center !important;}
+        .responsive-view #'.$query.' td[class="font-size-18"]{font-size: 18px !important;}
+        .responsive-view #'.$query.' td[class="font-size-22"]{font-size: 22px !important; line-height: 18px !important}
+        .responsive-view #'.$query.' td[class="font-size-28"]{font-size: 28px !important; line-height: 24px !important}
+        .responsive-view #'.$query.' img[class="image-responsive"]{
             width:100% !important;
             margin:0 !important;
             height: auto !important;
             max-width: 100% !important;
         }
-        #'.$query.'.reponsive-view img[class="image-width-20"]{width:20px !important;}
-        #'.$query.'.reponsive-view span.mobile-lien-blanc a{
+        .responsive-view #'.$query.' img[class="image-width-20"]{width:20px !important;}
+        .responsive-view #'.$query.' span.mobile-lien-blanc a{
             color: #ffffff !important;
             text-decoration: none;
+        }
+        
+        @media screen and (max-width: 790px) {
+             #'.$query.' #fakebody{width:auto!important;}
+             #'.$query.' table[class="container"]{
+                width: 100%!important;
+                padding-left:10px !important;
+                padding-right:10px !important;
+            }
+             #'.$query.' table[class="full-width"]{
+                width:100% !important;
+                float:left !important;
+            }
+             #'.$query.' table[class="width-95-percent"]{width:95% !important;}
+             #'.$query.' table[class="width-220"]{width:220px !important;}
+             #'.$query.' td[class="width-50-percent"]{width:50% !important;}
+             #'.$query.' td[class="width-25"]{width:25px !important;}
+             #'.$query.' td[class="width-100"]{width:100px !important;}
+             #'.$query.' td[class="display-table-cell"]{
+                display: table-cell !important;
+                max-width: none !important;
+                visibility: visible !important;
+            }
+             #'.$query.' table[class="remove"]{display:none !important;}
+             #'.$query.' tr[class="remove"]{display:none !important;}
+             #'.$query.' td[class="remove"]{display:none !important;}
+             #'.$query.' table[class="menu-float-center"]{
+                width: 90% !important;
+                margin-left: 5% !important;
+                margin-right: 5% !important;
+                text-align: center !important;
+            }
+             #'.$query.' td[class="text-center"]{text-align: center !important;}
+             #'.$query.' td[class="font-size-18"]{font-size: 18px !important;}
+             #'.$query.' td[class="font-size-22"]{font-size: 22px !important; line-height: 18px !important}
+             #'.$query.' td[class="font-size-28"]{font-size: 28px !important; line-height: 24px !important}
+             #'.$query.' img[class="image-responsive"]{
+                width:100% !important;
+                margin:0 !important;
+                height: auto !important;
+                max-width: 100% !important;
+            }
+             #'.$query.' img[class="image-width-20"]{width:20px !important;}
+             #'.$query.' span.mobile-lien-blanc a{
+                color: #ffffff !important;
+                text-decoration: none;
+            }
+        }
+        
+        #newsletter-builder img[src^="'.CURRENT_DIR.FOLDER_PLACEHOLDER.'"],
+        #newsletter-editor img[src^="'.CURRENT_DIR.FOLDER_PLACEHOLDER.'"]{
+            filter: saturate(0%);
+            transition: filter 250ms;
+        }
+        #newsletter-builder img[src^="'.CURRENT_DIR.FOLDER_PLACEHOLDER.'"]:hover,
+        #newsletter-editor .focused img[src^="'.CURRENT_DIR.FOLDER_PLACEHOLDER.'"],
+        #newsletter-editor img[src^="'.CURRENT_DIR.FOLDER_PLACEHOLDER.'"]:hover{
+            filter: saturate(80%);
         }
     </style>
 ';

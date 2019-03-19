@@ -13,18 +13,17 @@ include('head.php');
     <main role="main">
         <section id="explorer" class="section-container reset cms-ui">
             <?php include('explorer.php');?>
-            <?php include('footer.php'); ?>
         </section><!--
         --><section class="app section-container scroller">
             <?php
                 if($query != null){
-                    include($mode.'.php');
+                    include("$mode.php");
                 }
-                elseif(isset($newsthumbs)){
-                    include('explorer-grid.php');
+                elseif(isset($conf)){
+                    include ("conf-$conf.php");
                 }
                 else{
-                    include('empty.php');
+                    include('explorer-grid.php');
                 }
             ?>
         </section>

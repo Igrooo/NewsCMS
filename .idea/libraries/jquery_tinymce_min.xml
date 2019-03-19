@@ -1,0 +1,63 @@
+<component name="libraryTable">
+  <library name="jquery.tinymce.min" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/emoticons/js/emojis.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/jquery.tinymce.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/advlist/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/anchor/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/autolink/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/autoresize/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/autosave/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/bbcode/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/charmap/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/code/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/codesample/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/colorpicker/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/contextmenu/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/directionality/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/emoticons/js/emojis.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/emoticons/js/emojis.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/emoticons/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/fullpage/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/fullscreen/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/help/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/hr/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/image/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/imagetools/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/importcss/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/insertdatetime/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/legacyoutput/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/link/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/lists/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/media/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/nonbreaking/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/noneditable/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/pagebreak/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/paste/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/preview/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/print/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/quickbars/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/save/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/searchreplace/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/spellchecker/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/tabfocus/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/table/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/template/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/textcolor/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/textpattern/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/toc/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/visualblocks/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/visualchars/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/plugins/wordcount/plugin.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/themes/mobile/theme.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/themes/silver/theme.min.js" />
+      <root url="file://$PROJECT_DIR$/app/js/lib/tinymce/tinymce.min.js" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

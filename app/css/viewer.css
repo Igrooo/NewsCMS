@@ -1,0 +1,25 @@
+#newsletter-viewer,
+#viewer{
+    transition: width 250ms linear;
+}
+#viewer .float-box-right.float-box-sticky{
+    width: 80px;
+    margin-right: -90px;
+}
+.toggle-responsive-viewer .btn{
+    padding: 5px;
+    text-align: center;
+    font-size: 10px;
+}
+#viewer.responsive-view{
+    width: 442px;
+}
+.responsive-view #newsletter-viewer{
+    width: 400px;
+}
+
+@media screen and (max-width: 790px) {
+    .toggle-responsive-viewer{
+        display: none;
+    }
+}

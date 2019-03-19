@@ -56,8 +56,8 @@ function sql_insert_template($table, $content){
     return "INSERT INTO ".$table." ".$col." VALUES ('".$content."')";
 }
 
-function sql_update($table, $id, $data){
-    // $sql = 'UPDATE '. $table.' SET '.$col.' = '. $data;
+function sql_update($table, $id, $editable, $generated){
+    return $sql = "UPDATE ". $table." SET CONTENT_EDITABLE='". $editable."', CONTENT_GENERATED='". $generated."' WHERE ID=".$id;
 }
 function sql_delete($table, $id){
     //  $sql = 'DELETE FROM '.$table.' WHERE NAME='.$id;
@@ -66,6 +66,12 @@ function sql_delete($table, $id){
 // insert new newsletter
 function db_insert($table, $data){
     $sql = sql_insert($table,$data);
+    $insert  = db_set($sql);
+    return $insert;
+}
+// update newsletter
+function db_update($table, $id, $editable, $generated){
+    $sql = sql_update($table, $id, $editable, $generated);
     $insert  = db_set($sql);
     return $insert;
 }

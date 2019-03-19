@@ -1,6 +1,7 @@
 <head>
     <meta charset="<?php echo CHARSET ?>">
     <title><?php echo TITLE ?></title>
+    <link rel="icon" type="image/png" href="<?php echo APP_FAVICON ?>">
 
     <!-- CSS UI -->
     <!-- icons -->

@@ -1,6 +1,6 @@
-$(function() {
+$(() => {
 
-    var items_without_thumb = $('.without-thumb');
+    const items_without_thumb = $('.without-thumb');
 
     function newsthumb(newsletter) {
         html2canvas(newsletter).then(function (canvas) {

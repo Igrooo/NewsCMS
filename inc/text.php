@@ -1,4 +1,5 @@
 <?php
+/* Randoms texts for placeholder */
 $text = [
 "La vie ce n'est pas seulement respirer, c'est avoir le souffle coupé. <b>Alfred Hitchcock</b>",
 "Le voyageur voit ce qu’il voit, le touriste voit ce qu’il est venu voir. <b>Gilbert Keith Chesterton</b>",

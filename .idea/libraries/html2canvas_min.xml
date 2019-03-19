@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="html2canvas.min" type="javaScript">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/js/lib/html2canvas.min.js" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

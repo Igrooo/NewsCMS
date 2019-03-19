@@ -1,5 +1,7 @@
-<div class="float-box float-box-fixed float-box-left reset">
-    <h4 class="box-title nav-title add-title"><i class="icon icon-box colored fas fa-3x fa-plus-circle"></i>Ajouter</h4>
+<div class="float-box float-box-sticky float-box-left reset cms-ui">
+    <h4 class="box-title nav-title add-title">
+        Ajouter
+    </h4>
     <!-- Components in Database -->
     <?php
     $table = DB_TABLE_COMPONENTS;

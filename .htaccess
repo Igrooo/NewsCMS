@@ -1,0 +1,13 @@
+# Enabling the URL Rewrite Module
+RewriteEngine on
+
+#--------------------------------------------------
+# URL rewrite rules
+#--------------------------------------------------
+
+#Year
+RewriteRule ^/([0-9]{4})$ /?y=$1 [L]
+#RewriteRule ^/([a-z]*)/([0-9]{4}+)/([0-9]+)$ /?m=$1&y=$2&q=$3 [L]
+
+#--------------------------------------------------
+AddDefaultCharset UTF-8

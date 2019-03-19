@@ -4,14 +4,20 @@
 $(() => {
     "use strict";
 
+    const container     = $('.app.scroller')[0];
     // Builder elements
     const builder_btn   = $('.components-list .builder-nav-aside-btn');
     const builder_body  = $('#newsletter-builder #fakebody');
     const builder_table = builder_body.find('table .ui-sortable');
     const builder_row   = '.newsletter-builder-row';
     const builder_cpts  = $('#newsletter-builder-components');
-    const builder_ipt   = $('#newsletter-content-editable');
-    const builder_gen   = $('#newsletter-content-generated');
+    // Random placeholders for empty imgs
+    const empty_img     = 'img[src="[src]"]';
+    const placeholder   = $('#placeholder-location');
+    const placeholder_location = placeholder.text();
+    const max = placeholder.attr('data-num');
+
+    const builder_placeholder = '<tr class="ui-highlight"><td><i class="icon icon-box colored fas fa-3x fa-plus-circle"></i></td></tr>';
 
     // Header elements
     const header_title = $('#apptitle .page-title');
@@ -22,6 +28,9 @@ $(() => {
     const btn_submit = $('#builder-submit');
 
     // Form inputs elements
+    const builder_ipt   = $('#newsletter-content-editable');
+    const builder_gen   = $('#newsletter-content-generated');
+
     const all_ipt_user = $('.ipt[required]:not([disabled]):not([readonly])');
     const all_ipt_hide = $('.ipt-hidden:not([disabled]):not([readonly])');
     const all_ipt      = all_ipt_user.add(all_ipt_hide);
@@ -30,6 +39,11 @@ $(() => {
     const ipt_name     = $('#input-name');
     const ipt_name_formated = $('#newsletter-name');
 
+    const set_img_placeholder = (cpt) => {
+        cpt.find(empty_img).each(function(){
+            rand_img_placeholder($(this), placeholder_location, max);
+        });
+    };
 
     ///// Header & Form Builder functions /////
     const update_title = () => {
@@ -149,14 +163,25 @@ $(() => {
 
     ///// Builder Events /////
 
+    builder_btn.hover( () => {
+           builder_table.append(builder_placeholder);
+           //scroll_bottom($(container));
+        }, () => {
+        $(builder_table.find('.ui-highlight:last')).remove();
+        });
+
     // Add newsletter components
     builder_btn.click(function () {
+        $(builder_table.find('.ui-highlight')).remove();
         let id 	= $(this).attr('data-id');
         let cpt = builder_cpts.find(builder_row+'[data-id='+id+']').clone();
         builder_table.append(cpt);
+        set_img_placeholder(cpt);
         disable_links(cpt);
         update_ipt();
         update_btns_builder();
+        builder_table.append(builder_placeholder);
+        //scroll_bottom($(container));
     });
 
     // Remove row

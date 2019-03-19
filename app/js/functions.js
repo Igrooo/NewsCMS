@@ -11,27 +11,32 @@
 //////////////////////////
 
 //// Format functions ////
-// Format date & title
+// Format url, date & title
+    const format_url = str =>
+        // trim spaces, replace spaces by -, replace specials chars (é -> e), remove others specials chars,
+         str.trim()
+            .replace(/ +/g, '-')
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+            .replace(/[^a-zA-Z0-9-_]/g, '');
+
     const format_date = date => date.replace(/-/g, '');
 
     const format_title = title =>
-        // trim spaces, replace spaces by -, replace specials chars (é -> e), remove others specials chars, Upper Case Each Word
-        title.trim()
-            .replace(/ +/g, '-')
-            .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-            .replace(/[^a-zA-Z0-9-_]/g, '')
-            .replace(/\b[a-z]/g, (title_up) => title_up.toUpperCase());
+        // same format of url + Upper Case Each Word
+        format_url(title).replace(/\b[a-z]/g, (title_up) => title_up.toUpperCase());
 
 // Format Newsletter Content
-    /* Convert editable html of newsletter to final published html */
+    /* Convert editable html to final published html */
     const newsletter_generate = content => {
         content.find('tr')
-            .removeClass('newsletter-builder-row draggable removable')
-            .removeAttr('title data-id data-type data-name');
+            .removeClass('newsletter-editor-row newsletter-builder-row draggable removable')
+            .removeAttr('title data-id data-type data-name style');
         content.find('.editable').contents().unwrap();
+        content.find('.editable-img').contents().unwrap();
+        content.find('.editable-btn').contents().unwrap();
         content.find('a.disabled').removeClass('disabled');
         content.find('tr[class=""], a[class=""]').removeAttr('class');
-        content.find('.newsletter-builder-ui .newsletter-editor-ui').remove();
+        content.find('.newsletter-builder-ui, .newsletter-editor-ui').remove();
         return content.html();
     };
 //////////////////////////
@@ -45,8 +50,27 @@
     };
 //////////////////////////
 
-const move_element = (from, to) => {
-  let elem = from.clone();
-  to.append(elem);
-  from.remove();
+//////////////////////////
+// Random image placeholder in builder and editor
+const rand_img_placeholder = (img, ph_folder, max) => {
+    let rand_number = Math.floor(Math.random() * max) + 1 ;
+    let width = img.attr('width');
+    img.attr('src', ph_folder+width+'/'+rand_number+'.png');
+    //add ? to force browser to load
+    //img.attr('src',ph_folder+width+'/'+rand_number+'.png?'+rand_number);
 };
+//////////////////////////
+
+//Scroll to bottom
+const scroll_bottom = (container) => {
+    container.animate({ scrollTop: container.height() }, 1000);
+};
+
+// Move element in DOM
+/*
+    const move_element = (from, to) => {
+      let elem = from.clone();
+      elem.appendTo(to);
+      from.remove();
+    };
+    */

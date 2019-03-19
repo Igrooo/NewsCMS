@@ -23,9 +23,10 @@ define('FOLDER_CSS', FOLDER_WEB.'css/');
 define('FOLDER_JS',  FOLDER_WEB.'js/');
 
 /* Icon & Name of the application */
-define('ICON_APP', '<i class="icon far fa-newspaper app-icon"></i>');
-define('FAVICON_APP', FOLDER_IMG.'favicon.png');
-define('NAME_APP', 'NewsCMS');
+define('APP_ICON', '<i class="icon far fa-newspaper app-icon"></i>');
+define('APP_ICON_BIG', '<i class="icon far fa-newspaper fa-5x app-icon big"></i>');
+define('APP_FAVICON', FOLDER_IMG.'favicon.png');
+define('APP_NAME', 'NewsCMS');
 /* /////////////////////////////// */
 
 
@@ -49,28 +50,33 @@ define('DB_TABLE_TEMPLATES','templates');
 
 /* Default folder of Newsletters files */
 define('FOLDER_NEWS', FOLDER_APP.'news/');
-
 /* Folder of Newsletters common pictures */
 define('FOLDER_PICTURES', FOLDER_NEWS.'images/');
-
 /* Folder of Newsletters common HTML & CSS */
 define('FOLDER_COMMON', FOLDER_NEWS.'common/');
-
 /* Folder of generated HTML files */
 define('FOLDER_HTML', FOLDER_NEWS.'html/');
-
 /* Folder of generated thumbnails */
-define('FOLDER_THUMBS', FOLDER_NEWS.'thumbs/');
-/* /////////////////////////////// */
+define('FOLDER_THUMBS', FOLDER_PICTURES.'thumbs/');
 
+/* Folder of placeholder images */
+define('FOLDER_PLACEHOLDER', FOLDER_PICTURES.'placeholder/');
+/* Number of png files in placehoder folder*/
+define('PLACEHOLDER_NUM', '29');
+/* /////////////////////////////// */
 
 /* /////////////////////////////// */
 /* ///// DEFAULT USER CONFIG ///// */
 /* /////////////////////////////// */
 
+define('TRACKING_HOST', 'http://carrefourvoyages.commander1.com/c3/?tcs=1481&chn=email&src=newsletter_cvoyages&cmp=');
+define('TRACKING_SUB',  'utm_source=newsletter_cvoyages&utm_medium=email&utm_campaign=');
+
+define('IMG_HOST',      'http://static.contactlab.it/carrefourvoyages/newsletters/');
+
 /* Logo & Name of the company */
-define('LOGO_COMPANY', FOLDER_IMG.'logo.png');
-define('NAME_COMPANY', 'Carrefour Voyages');
+define('COMPANY_LOGO', FOLDER_IMG.'logo.png');
+define('COMPANY_NAME', 'Carrefour Voyages');
 
 /* Prefix on Newsletters filename */
 define('PREFIXDATE', true);

@@ -5,6 +5,7 @@ $table = DB_TABLE;
 $date        = $_POST['date'];
 $format_date = str_replace('-','',$date);
 $name        = PREFIX.$_POST['name'];
+$year      = date('Y', strtotime($date));
 
 $new_date_name = $format_date.'_'.$name;
 
@@ -71,5 +72,4 @@ else{
 }
 //Redirection
 header("Location: $location");
-echo $location;
 exit;

@@ -1,8 +1,15 @@
+#builder{
+    width: 812px;
+}
+#builder .float-box-left.float-box-sticky{
+    width: 160px;
+    margin-left: -170px;
+}
 #newsletter-builder{
     position: relative;
     overflow: hidden;
     width: 100%;
-    min-height: calc(100vh - 250px);
+    min-height: calc(100vh - 240px);
     max-width: 700px;
     padding-left: 60px;
     padding-right: 50px;
