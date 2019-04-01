@@ -5,6 +5,7 @@ Newsletters Management System - to build, edit and view newsletters formatted in
 ### Versions history
   * v0.1 02/03/19
   * v0.2 19/03/19
+  * v0.3 01/04/19
 
 | VERSIONS                         |                                                                        |
 |----------------------------------|------------------------------------------------------------------------|
