@@ -7,7 +7,7 @@
     </div>
     <div class="list-body">
         <?php
-        list_years($year, $name, $format_date);
+        list_years($year, $name, $date);
         ?>
     </div>
 </div>
@@ -20,7 +20,7 @@
     </div>
     <div class="list-body">
         <?php
-        // list_years($year, $name, $format_date);
+        // list_years($year, $name, $date);
         ?>
     </div>
 </div>

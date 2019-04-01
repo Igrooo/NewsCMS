@@ -36,14 +36,15 @@ function db_set($sql){
 }
 
 /* SQL strings */
-function sql_select($column,$from,$filter,$filtervalue,$group,$order,$sortdir){
+function sql_select($column,$from,$filter,$filtervalue,$andfilter,$andfiltervalue,$group,$order,$sortdir){
     $select = 'SELECT '.$column.' FROM '.$from;
     if(isset($filter)){$where=" WHERE ".$filter."='".$filtervalue."'";}else{$where='';}
+    if(isset($andfilter)){$and=" AND ".$andfilter."='".$andfiltervalue."'";}else{$and='';}
     if(isset($group)){$groupby=' GROUP BY '.$group;}else{$groupby='';}
     if(isset($order)){
         if(isset($sortdir)){$orderby=' ORDER BY '.$order.' '.$sortdir;}else{$orderby=' ORDER BY '.$order;}
     }else{$orderby='';}
-    return $select.$where.$groupby.$orderby;
+    return $select.$where.$and.$groupby.$orderby;
 }
 
 function sql_insert($table, $data){
@@ -78,39 +79,51 @@ function db_update($table, $id, $editable, $generated){
 
 // all years
 function db_all_years($table){
-    $sql   = sql_select('YEAR',$table,null,null,'YEAR','YEAR','DESC');
+    $sql   = sql_select('YEAR',$table,null,null,null,null,'YEAR','YEAR','DESC');
     $years = db_get($sql);
     return $years;
 }
 
-// newsletters filter by year
+// newsletters filter by year order by desc date
 function db_all($table, $year){
-    $sql = sql_select('*',$table,'YEAR',$year,null,'DATE','DESC');
+    $sql = sql_select('*',$table,'YEAR',$year,null,null,null,'DATE','DESC');
     $all = db_get($sql);
     return $all;
 }
 // one newsletter filter by name
 function db_one($table, $name){
-    $sql = sql_select('*',$table,'NAME',$name,null,null,null);
+    $sql = sql_select('*',$table,'NAME',$name,null,null,null,null,null);
     $one = db_get($sql);
     return $one;
 }
+// get the most recent newsletter
+function db_last($table){
+    $sql = "SELECT * FROM ".$table." WHERE DATE_EDIT=(SELECT max(DATE_EDIT) FROM ".$table.")";
+    $last = db_get($sql);
+    return $last;
+}
 
-// all components group by type
-function db_all_cpt_types($table){
-    $sql   = sql_select('TYPE',$table,null,null,'TYPE',null,null);
+// all components sections
+function db_all_cpt_sections($table){
+    $sql   = sql_select('SECTION',$table,null,null,null,null,'SECTION',null,null);
     $years = db_get($sql);
     return $years;
 }
-// components filter by type
-function db_all_cpt_bytype($table, $type){
-    $sql = sql_select('*',$table,'TYPE',$type,null,null,null);
+// all components types filter by section
+function db_all_cpt_types($table,$section){
+    $sql   = sql_select('TYPE',$table,'SECTION',$section,null,null,'TYPE',null,null);
+    $years = db_get($sql);
+    return $years;
+}
+// components filter by sections & type
+function db_all_cpt_bytype($table, $section, $type){
+    $sql = sql_select('*',$table,'SECTION',$section,'TYPE',$type,null,null,null);
     $all =  db_get($sql);
     return $all;
 }
 // all components
 function db_all_cpt($table){
-    $sql = sql_select('*',$table,null,null,null,null,null);
+    $sql = sql_select('*',$table,null,null,null,null,null,null,null);
     $all =  db_get($sql);
     return $all;
 }

@@ -1,30 +1,27 @@
 $(() => {
 
-    const items_without_thumb = $('.without-thumb');
+    const send_img = data => {
+        return $.ajax({
+            type: 'POST',
+            url: 'thumb.php',
+            success: () => {  console.log('success send thumb') },
+            error: (xhr) => { console.log('error send thumb '+xhr) }
+        });
+    };
 
     function newsthumb(newsletter) {
-        html2canvas(newsletter).then(function (canvas) {
-            return canvas;
+        html2canvas(document.body, width=150).then( (canvas) => {
+            console.log(canvas);
+            document.body.appendChild(canvas);
         });
+        //let canvas = html2canvas(newsletter);
+        //let data = canvas.toDataURL();
+        // let image = document.createElement('img');
+        // image.src = data;
+        // image.style.width = '150px';
+        // image.style.height = '180px';
+        // document.body.appendChild(image);
     }
-    /* to get iframe content USE : .contents()
-    * https://api.jquery.com/contents/#contents
-    * */
 
-    items_without_thumb.each(function(){
-        var path_thumb = $(this).attr('data-path-thumb');
-        $(this).removeAttr('data-path-thumb');
-        var iframe = $(this).find('.temp-html');
-        var content = iframe.contents().find('body > table').clone();
-        console.log(content[0]);
-        var icon = $(this).find('.thumb-icon');
-        var canvas = newsthumb(content[0]);
-
-        //iframe.remove();
-        var image = new Image();
-        image.id = "pic";
-        image.src = canvas.toDataURL();
-        $(this).appendChild(image);
-        icon.remove();
-    });
+    setTimeout(newsthumb('#fakebody'),1000);
 });

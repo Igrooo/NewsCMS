@@ -11,17 +11,17 @@
             $placeholder = $text[$rand_text[0]].'<br>'.$text[$rand_text[1]].'<br>'.$text[$rand_text[2]].'<br>'.$text[$rand_text[3]].'<br>'.$text[$rand_text[4]];
             $component['CONTENT'] = str_replace('[random-text]',$placeholder,$component['CONTENT']);
         }*/
-        echo'<tr class="newsletter-builder-row newsletter-editor-row draggable" data-id="'.$component['ID'].'" data-type="'.$component['TYPE'].'" data-name="'.$component['NAME'].'" style="" title="Maintenez et glissez pour déplacer">
+        echo'<tr class="newsletter-builder-row newsletter-editor-row draggable" data-id="'.$component['ID'].'" data-section="'.$component['SECTION'].'" data-type="'.$component['TYPE'].'" data-name="'.$component['NAME'].'" style="" title="Maintenez et glissez pour déplacer">
         <!-- **************************************** -->
         <!-- '.$component['NAME'].' -->
         <!-- '.$component['NAME_UI'].' -->
             <td valing="top" align="center">
                 <div class="newsletter-builder-ui grip">
-                    <span class="icon"><i class="fas fa-2x fa-grip-lines-vertical"></i></span>
+                    <span class="icon"><i class="fas fa-grip-lines-vertical"></i></span>
                 </div>
                 '.$component['CONTENT'].'
                 <div class="newsletter-builder-ui remove">
-                    <a class="icon btn-ui btn-remove" href="#" title="Retirer cet élément"><i class="fas fa-2x fa-times"></i></a>
+                    <a class="icon btn-ui btn-remove" href="#" title="Retirer cet élément"><i class="fas fa-times"></i></a>
                 </div>
             </td>
         <!-- end '.$component['NAME'].' -->

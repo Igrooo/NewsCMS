@@ -103,9 +103,11 @@
     opacity: 1;
     transition: opacity 250ms linear;
 }
+/*
 .edit-active #newsletter-editor .newsletter-editor-row:not(.active):not(:hover){
     opacity:0.5;
 }
+*/
 .float-box-fixed{
     top:85px;
     width: 742px;

@@ -4,6 +4,8 @@
 "use strict";
 
 $(() => {
+    const body = $('body');
+
     const editor_info  = $('.newsletter-editor-title');
     // Editor elements
     const editor_box   = $('#newsletter-editor');
@@ -16,11 +18,12 @@ $(() => {
     const edit_text      = '.editable';
     const edit_img       = '.editable-img';
     const edit_btn       = '.editable-btn'; // for orphan button
-    const linked_btn     = '.linked-btn';   // for button linked to an image
+    const linked_btn     = '.linked-btn.btn-';  // for button linked to an image (with id)
     const editor_cel     = $(edit_text);
     const editor_cel_img = $(edit_img);
     const editor_cel_btn = $(edit_btn);
-    //const linked_cel_btn = $(linked_btn);
+
+    const img_without_link = '.without-link';
 
     // Form elements in nav button
     const btn_reset  = $('#editor-reset');
@@ -45,18 +48,22 @@ $(() => {
     const image_ph_max   = placeholder.attr('data-num');
 
     const img_without_ph  = 'img:not([src^="'+image_url_ph+'"])';
-    const img_with_title  = 'img:not([alt="[title]"]):not([alt="[pdt-title]"])';
-    const link_with_href  = 'a:not([href^="[url]"])';
-    const link_with_title = 'a:not([title="[title]"]):not([title="[pdt-title]"])';
+    //const img_with_title  = 'img:not([alt="[title]"]):not([alt="[pdt-title]"])';
+    const link_with_href  = 'a:not([href^="#[url]"])';
+    const link_with_title = 'a:not([title="[title]"]):not([title="[pdt-title]"]):not([title="[btn-title]"])';
 
     // Toolbar editor for img & button
-    // const edit_toolbar_img = '.tox-tinymce';
     const edit_toolbar = $('#editor-nav-tools');
     const edit_toolbar_img = edit_toolbar.children('#editable-img-toolbar');
     const edit_toolbar_ipt_img_src  = $('#editable-img-src');
     const edit_toolbar_ipt_img_link = $('#editable-img-link');
-    const edit_toolbar_img_link     = $('#link-with-tracking');
+    const edit_toolbar_img_link     = $('#link-img-with-tracking');
     const edit_toolbar_ipt_img_alt  = $('#editable-img-alt');
+
+    const edit_toolbar_btn = edit_toolbar.children('#editable-btn-toolbar');
+    const edit_toolbar_ipt_btn_link  = $('#editable-btn-link');
+    const edit_toolbar_ipt_btn_title = $('#editable-btn-title');
+    const edit_toolbar_btn_link      = $('#link-btn-with-tracking');
     /////////////////////////////
 
     ///// Editor functions /////
@@ -115,19 +122,23 @@ $(() => {
 
     // Update Submit & Reset buttons
     const update_btns = () => {
+        /*
         let newsletter_prev_content = editor_backup.val().toString().trim();
         let newsletter_content = editor_ipt.val().toString().trim();
         // When the backup and current content are the same, disabled btn reset and submit
         if (newsletter_prev_content === newsletter_content){
-            console.log('backup and current content are the same, disabled btns reset and submit');
+            //console.log('backup and current content are the same, disabled btns reset and submit');
             disabled_btn(btn_reset);
             disabled_btn(btn_submit);
         }
         else{
-            console.log('backup and current content are not the same, enabled btns reset and submit');
+            //console.log('backup and current content are not the same, enabled btns reset and submit');
             enabled_btn(btn_reset);
             enabled_btn(btn_submit);
         }
+        */
+        enabled_btn(btn_reset);
+        enabled_btn(btn_submit);
         init_editor();
     };
     // Update form hidden input
@@ -144,17 +155,17 @@ $(() => {
 
     // Editor toggle
     const edit_on = focused => {
-        $('body').addClass('edit-active');
+        body.addClass('edit-active');
         $(focused).parents(editor_row).addClass('active');
         editor_info.remove();
     };
     const edit_off = unfocused => {
-        $('body').removeClass('edit-active');
+        body.removeClass('edit-active');
         $(unfocused).parents(editor_row).removeClass('active');
         update_ipt();
     };
 
-    // Image & button toolbar editor toggle
+    // Image  toolbar editor toggle
     const show_bar_img = id => {
         edit_toolbar_img.attr('data-img-id', id)
                         .removeClass('hidden');
@@ -166,11 +177,24 @@ $(() => {
                         .addClass('hidden');
         edit_toolbar.addClass('hidden');
     };
+    // Button toolbar editor toggle
+    const show_bar_btn = id => {
+        edit_toolbar_btn.attr('data-btn-id', id)
+            .removeClass('hidden');
+        edit_toolbar.removeClass('hidden');
+        edit_toolbar_ipt_btn_link.focus();
+    };
+    const hide_bar_btn = () => {
+        //console.log('hide bar btn');
+        edit_toolbar_btn.removeAttr('data-btn-id')
+            .addClass('hidden');
+        edit_toolbar.addClass('hidden');
+    };
     // Image editor toggle
     const edit_img_on = cpt => {
         let cpt_id = $(cpt).attr('id');
         let id = $(cpt).attr('data-img-id');
-        $('body').addClass('edit-img-active');
+        body.addClass('edit-img-active');
         $(cpt).addClass('focused');
         edit_on('#'+cpt_id);
         show_bar_img(id);
@@ -179,7 +203,7 @@ $(() => {
         update_edit_toolbar_ipt_img_title(cpt);
     };
     const edit_img_off = () => {
-        $('body').removeClass('edit-img-active');
+        body.removeClass('edit-img-active');
         editor_cel_img.removeClass('focused');
         edit_off(edit_img);
         hide_bar_img();
@@ -187,7 +211,29 @@ $(() => {
         edit_toolbar_ipt_img_link.val('');
         edit_toolbar_ipt_img_alt.val('');
     };
-
+    // Button editor toggle
+    const edit_btn_on = cpt => {
+        let cpt_id = $(cpt).attr('id');
+        let id = $(cpt).attr('data-btn-id');
+        body.addClass('edit-btn-active');
+        edit_on('#'+cpt_id);
+        show_bar_btn(id);
+        update_edit_toolbar_ipt_btn_link(cpt);
+        update_edit_toolbar_ipt_btn_title(cpt);
+    };
+    const edit_btn_off = () => {
+        body.removeClass('edit-btn-active');
+        edit_off(edit_btn);
+        hide_bar_btn();
+        edit_toolbar_ipt_btn_link.val('');
+        edit_toolbar_ipt_btn_title.val('');
+    };
+    const update_edit_toolbar_ipt_btn_link = cpt => {
+        let url = get_url(cpt);
+        edit_toolbar_btn_link.attr('href',url).text(url);
+        let val = url_without_tracking(url);
+        edit_toolbar_ipt_img_link.val(val);
+    };
     // Image functions
     const load_img = (id,src) => {
         let img = $('#cpt-editable-img-'+id).find('img');
@@ -241,14 +287,19 @@ $(() => {
         let index = url.indexOf('#');
         if (index !== -1){
             anchor = url.substring(index);
-            url = url.substring(0, index-1);
+            url = url.substring(0, index);
         }
         return tracking_start+url+separator+tracking_end+sub_tracking+anchor;
     };
     const url_without_tracking = url_full =>{
         let url = url_full.replace(tracking_start,'');
         let end = url.indexOf(tracking_end);
-        return url.substring(0,end-1);
+        let anchor = '';
+        let index = url.indexOf('#');
+        if (index !== -1) {
+            anchor = url.substring(index);
+        }
+        return url.substring(0,end-1)+anchor;
     };
     const get_url = cpt => {
         let link = $(cpt).find(link_with_href)[0];
@@ -262,7 +313,7 @@ $(() => {
         let val = url_without_tracking(url);
         edit_toolbar_ipt_img_link.val(val);
     };
-    const update_url = (id,url) =>{
+    const update_url = (id,url) => {
         let link = $('#cpt-editable-img-'+id).find('a');
         let title = link.attr('title');
         let current_url  = link.attr('href');
@@ -271,13 +322,43 @@ $(() => {
         if (index !== -1){
             sub_tracking = current_url.substring(index);
         }
-        else if(title !== ''){
+        else if((title !== '')||(title !== '[pdt-title]')){
             sub_tracking = '_'+format_url(title);
         }
         let url_full = url_with_tracking(url, sub_tracking);
         link.attr('href',url_full);
         edit_toolbar_img_link.attr('href',url_full).text(url_full);
         update_linked_btn_url(id,url_full);
+    };
+    const update_url_btn = (id,url) => {
+        let link = $('#cpt-editable-btn-'+id).find('a');
+        let title = link.attr('title');
+        // console.log(title);
+        let current_url  = link.attr('href');
+        let sub_tracking = '_btn'+id;
+        let index = current_url.indexOf('_');
+        if (index !== -1){
+            sub_tracking = current_url.substring(index);
+        }
+        else if((title !== '')||(title !== '[btn-title]')){
+            sub_tracking = '_'+format_url(title);
+        }
+        let url_full = url_with_tracking(url, sub_tracking);
+        link.attr('href',url_full);
+        edit_toolbar_btn_link.attr('href',url_full).text(url_full);
+        update_linked_btn_url(id,url_full);
+    };
+    const remove_url = (id) => {
+        let link = $('#cpt-editable-img-'+id).find('a');
+        edit_toolbar_img_link.attr('href','').text('');
+        link.attr('href','');
+        update_linked_btn_url(id,'');
+    };
+    const remove_url_btn = (id) => {
+        let link = $('#cpt-editable-btn-'+id).find('a');
+        edit_toolbar_btn_link.attr('href','').text('');
+        link.attr('href','');
+        update_linked_btn_url(id,'');
     };
     // Title functions
     const get_title = cpt => {
@@ -290,14 +371,24 @@ $(() => {
         let title = get_title(cpt);
         edit_toolbar_ipt_img_alt.val(title);
     };
-    // button linked to image
+    const update_edit_toolbar_ipt_btn_title = cpt => {
+        let title = get_title(cpt);
+        edit_toolbar_ipt_btn_title.val(title);
+    };
+    // get the button linked to image
+    const get_linked_btn = (id) => {
+        let img = $('#cpt-editable-img-'+id);
+        let btn_id = img.attr('data-btn-id');
+        return img.parents(editor_row).find(linked_btn+btn_id+' a');
+    };
+    // title of button linked to image or to an other btn
     const update_linked_btn_title = (id, title) => {
-        let btn = $('#cpt-editable-img-'+id).parents(editor_row).find(linked_btn+' a');
+        let btn = get_linked_btn(id);
         btn.attr('title',title);
     };
-    // button linked to image
+    // url of button linked to image
     const update_linked_btn_url = (id, url) => {
-        let btn = $('#cpt-editable-img-'+id).parents(editor_row).find(linked_btn+' a');
+        let btn = get_linked_btn(id);
         btn.attr('href',url);
     };
     const update_title = (id, title) => {
@@ -305,6 +396,13 @@ $(() => {
         let img   = cpt_img.find('img');
         let link  = cpt_img.find('a');
         img.attr('alt',title);
+        link.attr('title',title);
+        update_linked_btn_title(id,title);
+    };
+    const update_title_btn = (id, title) => {
+        let btn = $('#cpt-editable-btn-'+id);
+        let link  = btn.find('a');
+        btn.find('.btn-title').text(title);
         link.attr('title',title);
         update_linked_btn_title(id,title);
     };
@@ -346,19 +444,26 @@ $(() => {
     // Update form buttons when editor change
     editor_ipt.change(() => update_btns());
     //Click on editable image
-    editor_cel_img.on('click', function(){ edit_img_on(this); });
+    editor_cel_img.on('click', function() { edit_img_on(this); });
+    //Click on editable button
+    editor_cel_btn.on('click', function() { edit_btn_on(this); });
 
     //Img src input
-    edit_toolbar_ipt_img_src.on('input',function(){
+    edit_toolbar_ipt_img_src.on('input',function() {
         let id = edit_toolbar_img.attr('data-img-id');
         let img = $(this).val();
         update_img_with_ipt(id,img);
     });
     //Img link input
-    edit_toolbar_ipt_img_link.on('input',function(){
+    edit_toolbar_ipt_img_link.on('input',function() {
         let id = edit_toolbar_img.attr('data-img-id');
         let url = $(this).val();
-        update_url(id,url);
+        if(url !== ''){
+            update_url(id,url);
+        }
+        else{
+            remove_url(id);
+        }
     });
     // img title input
     edit_toolbar_ipt_img_alt.on('input', function () {
@@ -366,11 +471,29 @@ $(() => {
         let title = $(this).val();
         update_title(id, title);
     });
+
+    edit_toolbar_ipt_btn_link.on('input',function() {
+        let id = edit_toolbar_img.attr('data-img-id');
+        let url = $(this).val();
+        if(url !== ''){
+            update_url_btn(id,url);
+        }
+        else{
+            remove_url_btn(id);
+        }
+    });
+    // img title input
+    edit_toolbar_ipt_btn_title.on('input', function () {
+        let id = edit_toolbar_img.attr('data-img-id');
+        let title = $(this).val();
+        update_title_btn(id, title);
+    });
+
     //Click outside btn & image edit_toolbar
     $(document.body).on('mouseup',(e) => {
-        if($('body').hasClass('edit-img-active') === true ){
+        if((body.hasClass('edit-img-active') === true )|| (body.hasClass('edit-btn-active') === true )){
             // if the target of the click isn't the container or a descendant of the container
-            if (!edit_toolbar.is(e.target) && edit_toolbar.has(e.target).length === 0){ edit_img_off() }
+            if (!edit_toolbar.is(e.target) && edit_toolbar.has(e.target).length === 0){ edit_img_off(); edit_btn_off(); }
         }
     });
     // Disable buttons and empty header & builder on click on reset button

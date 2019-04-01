@@ -5,15 +5,15 @@
     }
     elseif(isset($_GET['added'])){
         // Generate static HTML
-        generate_file($name, $dirpath, $filepath, $format_date);
+        generate_file($name, $dirpath, $filepath, $date);
         show_info('h4','success', 'newsletter-editor-title ', 'La nouvelle newsletter '.$name.' a bien été enregistrée.', null);
     }
     elseif(isset($_GET['ok'])){
         // Update static HTML
-        generate_file($name, $dirpath, $filepath, $format_date);
+        generate_file($name, $dirpath, $filepath, $date);
         show_info('h4','success', 'newsletter-editor-title ', 'Enregistrement effectué.', null);
     }
-    $content = get_content('editable',$name,$format_date);
+    $content = get_content('editable',$name,$date);
     include('form-editor.php');
     ?>
     <div class="float-box-container">
@@ -24,7 +24,7 @@
         <div id="newsletter-editor" class="loading">
             <div class="loader"><?php echo APP_ICON_BIG ?></div>
             <div id="<?php echo $query?>">
-                <div id="fakebody" style="font-size:12px; margin: 0; padding: 0;" border="0" cellspacing="0" cellpadding="0">
+                <div id="fakebody" style="font-size:12px; margin: 0; padding: 0;">
                     <table border="0" style="width: 100%;" cellspacing="5" cellpadding="0" width="100%" bgcolor="" align="center">
                         <tbody>
                         <?php

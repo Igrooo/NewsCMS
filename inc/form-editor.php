@@ -1,6 +1,6 @@
 <?php
-    $ID = get_id($name,$format_date);
-    $generated = get_content('generated',$name,$format_date);
+    $ID = get_id($name,$date);
+    $generated = get_content('generated',$name,$date);
 ?>
 <form id="form-editor" method="post">
     <input class="ipt-hidden" id="newsletter-id"   type="text" name="id"   value="<?php echo $ID?>" title="id" hidden readonly>

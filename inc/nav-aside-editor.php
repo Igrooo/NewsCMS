@@ -10,13 +10,16 @@
          --><div class="ipt-group ipt-group-tiny ipt-group-alt">
                 <label for="editable-img-alt" class="ipt-label-inline"><i class="icon fas fa-font"></i><span class="hidden">Texte alternatif et au survol</span></label><input id="editable-img-alt"  placeholder="Texte alternatif et au survol" title="Texte alternatif et au survol" class="ipt ipt-inline ipt-tiny">
             </div>
+            <div class="link-with-tracking"><a id="link-img-with-tracking" target="_blank" href=""></a></div>
         </form>
         <form id="editable-btn-toolbar" class="editor-nav-tools-ipt hidden">
-            <label for="editable-btn-alt" class="ipt-label-inline">Texte au survol</label>
-            <input id="editable-btn-alt" class="ipt ipt-inline ipt-tiny">
-            <label for="editable-btn-alt" class="ipt-label-inline">Lien du bouton</label>
-            <input id="editable-btn-alt" class="ipt ipt-inline ipt-tiny">
+            <div class="ipt-group ipt-group-tiny ipt-group-src">
+                <label for="editable-btn-link" class="ipt-label-inline"><i class="icon fas fa-link"></i><span class="hidden">Lien du bouton</span></label><input id="editable-btn-link"placeholder="Lien du bouton" class="ipt ipt-inline ipt-tiny">
+            </div><!--
+         --><div class="ipt-group ipt-group-tiny ipt-group-link">
+                <label for="editable-btn-title" class="ipt-label-inline"><i class="icon fas fa-font"></i><span class="hidden">Texte du bouton</span></label><input id="editable-btn-title" placeholder="Texte du bouton" class="ipt ipt-inline ipt-tiny">
+                <div class="link-with-tracking"><a id="link-btn-with-tracking" target="_blank" href=""></a></div>
+            </div>
         </form>
-        <div class="link-with-tracking"><a id="link-with-tracking" target="_blank" href=""></a></div>
     </div>
 </div>

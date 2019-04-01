@@ -30,11 +30,15 @@
     const newsletter_generate = content => {
         content.find('tr')
             .removeClass('newsletter-editor-row newsletter-builder-row draggable removable')
-            .removeAttr('title data-id data-type data-name style');
+            .removeAttr('title data-id data-section data-type data-name style');
         content.find('.editable').contents().unwrap();
         content.find('.editable-img').contents().unwrap();
         content.find('.editable-btn').contents().unwrap();
+        content.find('.linked-btn').contents().unwrap();
+        content.find('.btn-title').contents().unwrap();
         content.find('a.disabled').removeClass('disabled');
+        content.find('a').removeAttr('data-mce-href');
+        content.find('span').removeAttr('data-mce-style');
         content.find('tr[class=""], a[class=""]').removeAttr('class');
         content.find('.newsletter-builder-ui, .newsletter-editor-ui').remove();
         return content.html();

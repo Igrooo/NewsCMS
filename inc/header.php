@@ -8,7 +8,7 @@
     </a><!--
     --><h3 id="apptitle">
         <?php if(isset($query)){echo'
-        <div id="subapptitle" class="header-info"><a href="?y=2019&d=2019-02-24&q=NL_DEMO2" title="Dernière modification"><i class="fas fa-history"></i> XXXXXXXX_NL_xxxxxxx</a> <span class="last">à <span class="last-time">XX:XX</span> par <span class="last-user">User</span></span></div>
+        <div id="subapptitle" class="header-info">'.$last_edited.'</div>
         ';}
         echo CONTEXT_TITLE ?>
     </h3>

@@ -6,7 +6,7 @@
     }
     elseif (isset($_GET['ok'])){
         // Generate static HTML
-        generate_file($name, $dirpath, $filepath, $format_date);
+        generate_file($name, $dirpath, $filepath, $date);
         show_info('h4','success', 'newsletter-viewer-title ', 'Enregistrement effectué.', null);
     }
     ?>
@@ -20,7 +20,7 @@
                 <div id="fakebody" style="font-size:12px; margin: 0; padding: 0;" border="0" cellspacing="0" cellpadding="0">
                     <table border="0" style="width: 100%;" cellspacing="5" cellpadding="0" width="100%" bgcolor="" align="center">
                         <?php
-                        $content = get_content('generated',$name,$format_date);
+                        $content = get_content('generated',$name,$date);
                         if($content == 'empty'){
                             echo'<tr>';
                             show_info('td','warning', 'newsletter-viewer-title', 'La newsletter '.$name.' est introuvable.',null);

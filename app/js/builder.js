@@ -4,7 +4,7 @@
 $(() => {
     "use strict";
 
-    const container     = $('.app.scroller')[0];
+    //const container     = $('.app.scroller')[0];
     // Builder elements
     const builder_btn   = $('.components-list .builder-nav-aside-btn');
     const builder_body  = $('#newsletter-builder #fakebody');
@@ -47,26 +47,29 @@ $(() => {
 
     ///// Header & Form Builder functions /////
     const update_title = () => {
+        let prefix = ipt_prefix.val();
         let title = ipt_name.val();
         if(title === ''){
-           ipt_name_formated.val('');
+            title = ipt_name_formated.attr('data-default-value');
         }
         else{
-           ipt_name_formated.val(format_title(title));
+            title = prefix+title;
         }
+        ipt_name_formated.val(format_title(title));
+        console.log(ipt_name_formated.val());
         return ipt_name_formated.val();
     };
     const update_header = () => {
         let title  = update_title();
         let date   = ipt_date.val();
-        let prefix = ipt_prefix.val();
+
         if ((date === '') || (title === '')){
             header_title.removeClass('with-file-name');
             header_file.text('');
         }
         else{
             header_title.addClass('with-file-name');
-            header_file.text(format_date(date)+'_'+prefix+title+'.html');
+            header_file.text(format_date(date)+'_'+title+'.html');
         }
     };
     const update_btns = () => {

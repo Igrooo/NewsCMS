@@ -2,22 +2,17 @@
 /* Insert new newsletter in database */
 $table = DB_TABLE;
 
-$date        = $_POST['date'];
-$format_date = str_replace('-','',$date);
-$name        = PREFIX.$_POST['name'];
-$year      = date('Y', strtotime($date));
+$date  = $_POST['date'];
+$name  = $_POST['name'];
+$year  = date('Y', strtotime($date));
 
-$new_date_name = $format_date.'_'.$name;
+$new_date_name = get_long_name($date,$name,false);
 
 // check if newsletter with same name and date exist already
 $one = db_one($table, $name);
-
 if(!empty($one)){
     foreach ($one as $newsletter){
-        $exist_name = ($newsletter['NAME']);
-        $exist_date = ($newsletter['DATE']);
-        $format_exist_date = str_replace('-','',$exist_date);
-        $exist_date_name = $format_exist_date.'_'.$exist_name;
+        $exist_date_name = get_long_name($newsletter['DATE'],$newsletter['NAME'],false);
         if($new_date_name == $exist_date_name){
             $exist = true;
             break;
@@ -28,7 +23,7 @@ if(!empty($one)){
     }
 }
 
-// empty if table is empty
+// false if table is empty
 else{
     $exist = false;
 }
@@ -41,12 +36,21 @@ if($exist == true){
 }
 // else
 else{
-    $year      = date('Y', strtotime($date));
-                // prevent bad character ' for sql query
-    $editable  = addslashes($_POST['content-editable']);
-    $generated = addslashes($_POST['content-generated']);
-    $template  = $_POST['template'];
     $date_edit = CURRENT_TIME;
+
+    $template  = $_POST['template'];
+    //$title     = $_POST['user-name'];
+
+    /* Add tracking in not editable links */
+    $generated = add_tracking($_POST['content-generated'],$date,$name);
+
+    /* Convert &amp; in urls */
+    $editable  = convert_amp($_POST['content-editable']);
+    $generated = convert_amp($generated);
+
+    // prevent bad character ' for sql query
+    $editable  = addslashes($editable);
+    $generated = addslashes($generated);
 
     $data  = [
         'year'      => $year,

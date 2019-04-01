@@ -5,6 +5,12 @@
     width: 160px;
     margin-left: -170px;
 }
+#input-name{
+    width: calc(100% - 64px);
+}
+#input-prefix{
+    width: 20px;
+}
 #newsletter-builder{
     position: relative;
     overflow: hidden;
@@ -63,13 +69,13 @@
     border: 1px solid #c8c7c7;
 }
 #newsletter-builder .newsletter-builder-ui.grip{
-    left: -40px;
+    left: -41px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     border-right: 0;
 }
 #newsletter-builder .newsletter-builder-ui.remove{
-    right: -40px;
+    right: -41px;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     border-left: 0;
@@ -78,10 +84,12 @@
     display: block;
     height: 30px;
     width: 30px;
-    color: #c8c7c7;
-    border-radius: 8px;
     padding-top: 3px;
     padding-left: 1px;
+    line-height: 26px;
+    font-size: 1.5em;
+    color: #c8c7c7;
+    border-radius: 8px;
     box-sizing: border-box;
 }
 #newsletter-builder .newsletter-builder-row .btn-remove{
@@ -94,4 +102,12 @@
 #newsletter-builder .newsletter-builder-ui .btn-remove:hover{
     background-color: #ff6664;
     color: white;
+}
+.cpt-type{
+    vertical-align: middle;
+}
+.cpt-icon{
+    width: 18px;
+    margin-right: 5px;
+    font-size: 1.5em;
 }

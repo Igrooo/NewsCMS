@@ -28,15 +28,12 @@ if (isset($_GET['conf'])){
     $conf = $_GET['conf'];
 }
 /* * * * */
-$format_date = str_replace('-','',$date);
-$revert_date = date('dmY', strtotime($date));
-
 $name = $query;
 
-$long_name        = $format_date.'_'.$name;
-$revert_long_name = $revert_date.'_'.$name;
+$long_name        = get_long_name($date,$name,false);
+$reverse_long_name = get_long_name($date,$name,true);
 
-$tracking_name = $revert_long_name;
+$tracking_name = $reverse_long_name;
 
 $tracking_start   = TRACKING_HOST.$tracking_name.'&url=';
 $tracking_end     = TRACKING_SUB.$tracking_name;
@@ -50,11 +47,18 @@ $filepath_tmp = FOLDER_TEMP.$file;
 $img_folder = $long_name.'_images/';
 $img_url    = IMG_HOST.$yearfolder.$img_folder;
 
+$history = get_last();
+if(!empty($history)){
+    $last_edited = '<a href="?y='.$history['year'].'&d='.$history['date'].'&q='.$history['name'].'" title="Dernière modification"><i class="fas fa-history"></i> '.$history['long_name'].'</a> <span class="last">le <span class="last-date">'.$history['edit_date'].'</span> à <span class="last-time">'.$history['edit_time'].'</span> par <span class="last-user">'.$history['user'].'</span></span>';
+}
+else{$last_edited ='';}
+
 /* init head & header */
 $viewer     = 'Aperçu de ';
 $editor     = 'Édition de ';
+$builder    = 'Modification de ';
 $new        = 'Création <span class="new-noname">d\'une nouvelle newsletter</span><span class="new-of">de </span>';
-$empty      = '<div class="header-info"><a href="?y=2019&d=2019-02-24&q=NL_DEMO2" title="Dernière modification"><i class="fas fa-history"></i> XXXXXXXX_NL_xxxxxxx</a> <span class="last">à <span class="last-time">XX:XX</span> par <span class="last-user">User</span></span></div>';
+$empty      = '<div class="header-info">'.$last_edited.'</div>';
 
 if($query == 'new'){
     define('CONTEXT', $new);
