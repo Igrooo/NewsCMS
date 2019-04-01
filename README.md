@@ -14,16 +14,18 @@ Newsletters Management System - to build, edit and view newsletters formatted in
 | Newsletter Viewer                | Simple reader of a newsletter                                          |
 | Newsletter Builder               | Add/Remove components of newsletter, change order                      |
 | Newsletter Content Editor        | WYSIWYG to edit components content of a newsletter                     |
-| Newsletter Global Management 1/2 | Create new                                                             |
+| Newsletter Global Management 1/3 | Create new                                                             |
 | **v1**                           | **Templates & previews**                                               |
 | Templates List                   | List of newsletters with preloaded components                          |
-| Newsletters Previews             | Previews picture for List newsletters stored in database               |
+| Newsletter Global Management 2/3 | Rename, delete, change date & options                                  |
+| Connexion                        | Simple login/logout .htaccess                                          |
 | **v2**                           | **Multiples newsletters management**                                   |
-| Newsletter Global Management 2/2 | Rename, delete, clone, change date & options, open for modification    |
+| Newsletter Global Management 2/3 | Clone newsletters                                                      |
 | Settings                         | Form to change globals settings                                        |
 | **v3**                           | **Users management**                                                   |
-| Users account                    | Multi-users login & logout                                             |
+| Users account                    | Multi-users login & logout, detect when user open for modification     |                                  
 | Settings                         | Form to change user settings                                           |
 | **v4**                           | **Advanced features**                                                  |
 | Images                           | Load images into WYSIWYG form, keep local copy and send FTP with PHP ? |
 | E-mail HTML                      | Send e-mail of generated HTML for test                                 |
+| Newsletters Previews             | Previews picture for List newsletters stored in database               |
