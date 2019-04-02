@@ -6,12 +6,15 @@
     elseif(isset($_GET['added'])){
         // Generate static HTML
         generate_file($name, $dirpath, $filepath, $date);
-        show_info('h4','success', 'newsletter-editor-title ', 'La nouvelle newsletter '.$name.' a bien été enregistrée.', null);
+        show_info('h4','success', 'newsletter-editor-title ', "La nouvelle newsletter $name a bien été enregistrée.", null);
     }
     elseif(isset($_GET['ok'])){
         // Update static HTML
         generate_file($name, $dirpath, $filepath, $date);
         show_info('h4','success', 'newsletter-editor-title ', 'Enregistrement effectué.', null);
+    }
+    else{
+        show_info('h4','info', 'newsletter-editor-title ', "Sélecttionez un élément pour commencer l'édition", null);
     }
     $content = get_content('editable',$name,$date);
     include('form-editor.php');

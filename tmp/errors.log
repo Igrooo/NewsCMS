@@ -45,3 +45,13 @@
 [29-Mar-2019 10:04:12 UTC] PHP Stack trace:
 [29-Mar-2019 10:04:12 UTC] PHP   1. {main}() C:\wamp64\www\newsCMS\index.php:0
 [29-Mar-2019 10:04:12 UTC] PHP   2. require() C:\wamp64\www\newsCMS\index.php:43
+[02-Apr-2019 13:11:06 UTC] PHP Notice:  Undefined index: error_info in C:\wamp64\www\NewsCMS\inc\viewer.php on line 5
+[02-Apr-2019 13:11:07 UTC] PHP Stack trace:
+[02-Apr-2019 13:11:07 UTC] PHP   1. {main}() C:\wamp64\www\NewsCMS\index.php:0
+[02-Apr-2019 13:11:07 UTC] PHP   2. include() C:\wamp64\www\NewsCMS\index.php:49
+[02-Apr-2019 13:11:07 UTC] PHP   3. include() C:\wamp64\www\NewsCMS\inc\content.php:21
+[02-Apr-2019 13:12:05 UTC] PHP Notice:  Undefined index: error_info in C:\wamp64\www\NewsCMS\inc\viewer.php on line 5
+[02-Apr-2019 13:12:05 UTC] PHP Stack trace:
+[02-Apr-2019 13:12:05 UTC] PHP   1. {main}() C:\wamp64\www\NewsCMS\index.php:0
+[02-Apr-2019 13:12:05 UTC] PHP   2. include() C:\wamp64\www\NewsCMS\index.php:49
+[02-Apr-2019 13:12:05 UTC] PHP   3. include() C:\wamp64\www\NewsCMS\inc\content.php:21

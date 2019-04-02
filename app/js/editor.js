@@ -173,9 +173,17 @@ $(() => {
         edit_toolbar.removeClass('hidden');
         edit_toolbar_ipt_img_link.focus();
     };
+    const show_bar_img_wl = id => {
+        edit_toolbar_img.attr('data-img-id', id)
+            .removeClass('hidden')
+            .addClass('without-link');
+        edit_toolbar.removeClass('hidden');
+        edit_toolbar_ipt_img_alt.focus();
+    };
     const hide_bar_img = () => {
         edit_toolbar_img.removeAttr('data-img-id')
-                        .addClass('hidden');
+                        .addClass('hidden')
+                        .removeClass('without-link');
         edit_toolbar.addClass('hidden');
     };
     // Button toolbar editor toggle
@@ -198,10 +206,15 @@ $(() => {
         body.addClass('edit-img-active');
         $(cpt).addClass('focused');
         edit_on('#'+cpt_id);
-        show_bar_img(id);
         update_edit_toolbar_ipt_img_src(cpt);
-        update_edit_toolbar_ipt_img_link(cpt);
         update_edit_toolbar_ipt_img_title(cpt);
+        if($(cpt).hasClass('without-link')){
+            show_bar_img_wl(id);
+        }
+        else{
+            show_bar_img(id);
+            update_edit_toolbar_ipt_img_link(cpt);
+        }
     };
     const edit_img_off = () => {
         body.removeClass('edit-img-active');

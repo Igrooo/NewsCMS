@@ -15,6 +15,7 @@ include('head.php');
             <?php include('explorer.php');?>
         </section><!--
         --><section class="app section-container scroller">
+            <div class="app-container-with-scroller">
             <?php
                 if($query != null){
                     include("$mode.php");
@@ -26,6 +27,7 @@ include('head.php');
                     include('explorer-grid.php');
                 }
             ?>
+            </div>
         </section>
     </main>
 </body>

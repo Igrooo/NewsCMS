@@ -117,10 +117,10 @@
 }
 
 #editable-img-src{
-    width: calc(100% - 600px);
+    width: calc(100% - 602px);
 }
 #editable-img-src-label{
-    max-width: 600px;
+    width: 600px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -135,7 +135,15 @@
     text-overflow: ellipsis;
     padding-top: 2px;
 }
-
+#editable-img-toolbar.without-link .ipt-group-link{
+ display: none;
+}
+#editable-img-toolbar.without-link .ipt-group-alt{
+    width: 100%;
+}
+#editable-img-toolbar.without-link .link-with-tracking{
+    display: none;
+}
 br[data-mce-bogus]{
     display: none;
 }

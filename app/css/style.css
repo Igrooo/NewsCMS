@@ -39,7 +39,7 @@ iframe{
     text-align: center;
 }
 .info{
-    color: #006fb9;;
+    color: #0c85d5;
 }
 .success{
     color: #36af4e;
@@ -48,7 +48,7 @@ iframe{
     color: #ffae53;
 }
 .error{
-    color: #ba3c32;
+    color: #d43c30;
 }
 .info-box,
 .success-box,
@@ -61,16 +61,16 @@ iframe{
     text-align: center;
 }
 .info-box{
-    background-color: rgba(0, 116, 206, 0.18);
+    background-color: rgba(0, 116, 206, 0.2);
 }
 .success-box{
-    background-color: rgba(185, 236, 179, 0.55);
+    background-color: rgba(185, 236, 179, 0.3);
 }
 .warning-box{
-    background-color: rgba(255, 195, 83, 0.21);
+    background-color: rgba(255, 195, 83, 0.2);
 }
 .error-box{
-    background-color: rgba(236, 208, 187, 0.55);
+    background-color: rgba(236, 208, 187, 0.5);
 }
 
 /*********************/
@@ -82,9 +82,12 @@ iframe{
     box-sizing: border-box;
     position: relative;
 }
+.app-container-with-scroller,
+.app{
+    width: calc(100vw - 250px);
+}
 .app{
     float: right;
-    width: calc(100vw - 250px);
     transition: width 500ms ease-in-out;
     padding: 0;
 }
@@ -824,8 +827,7 @@ iframe{
     padding-left: 8px;
 }
 .ipt-label.disabled{
-    text-decoration: line-through;
-    opacity: 0.5;
+    opacity: 0.4;
 }
 .ipt-group-date{
     width: 145px;
@@ -985,8 +987,9 @@ iframe{
 }
 @media screen and (max-width: 1270px) {
     /* builder/editor mode */
+    .mode-builder .app-container-with-scroller,
     .mode-builder .app{
-        width: 100%;
+        width: 100vw;
     }
     .mode-builder #explorer{
         position: absolute;
@@ -1024,8 +1027,9 @@ iframe{
     #logo .name-app{
         display: none;
     }
+    .app-container-with-scroller,
     .app{
-        width: 100%;
+        width: 100vw;
     }
     #explorer{
         position: absolute;
