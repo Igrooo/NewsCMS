@@ -84,13 +84,14 @@
     display: block;
     height: 30px;
     width: 30px;
-    padding-top: 3px;
-    padding-left: 1px;
-    line-height: 26px;
-    font-size: 1.5em;
+    line-height: 29px;
     color: #c8c7c7;
     border-radius: 8px;
     box-sizing: border-box;
+}
+#newsletter-builder .newsletter-builder-ui.remove .icon{
+    font-size: 1.5em;
+    padding-top: 1px;
 }
 #newsletter-builder .newsletter-builder-row .btn-remove{
     opacity: 0;

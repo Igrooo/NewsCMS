@@ -18,8 +18,8 @@
             </div><!--
          --><div class="ipt-group ipt-group-tiny ipt-group-link">
                 <label for="editable-btn-title" class="ipt-label-inline"><i class="icon fas fa-font"></i><span class="hidden">Texte du bouton</span></label><input id="editable-btn-title" placeholder="Texte du bouton" class="ipt ipt-inline ipt-tiny">
-                <div class="link-with-tracking"><a id="link-btn-with-tracking" target="_blank" href=""></a></div>
             </div>
+            <div class="link-with-tracking"><a id="link-btn-with-tracking" target="_blank" href=""></a></div>
         </form>
     </div>
 </div>

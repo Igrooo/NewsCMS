@@ -42,7 +42,7 @@ iframe{
     color: #006fb9;;
 }
 .success{
-    color: #35a64d;
+    color: #36af4e;
 }
 .warning{
     color: #ffae53;
@@ -84,7 +84,7 @@ iframe{
 }
 .app{
     float: right;
-    width: calc(100% - 250px);
+    width: calc(100vw - 250px);
     transition: width 500ms ease-in-out;
     padding: 0;
 }

@@ -6,6 +6,7 @@ $id = $_POST['id'];
 $name = $_POST['name'];
 
 $date = $_POST['date'];
+$date_edit = CURRENT_TIME;
 
 $generated = add_tracking($_POST['content-generated'],$date,$name);
 
@@ -17,7 +18,7 @@ $editable  = addslashes($editable);
 $generated = addslashes($generated);
 
 // Insert new newsletter in database //
-$update = db_update($table, $id, $editable, $generated );
+$update = db_update($table, $id, $editable, $generated, $date_edit);
 
 if($update == false){
     $error_info = urlencode ("$name n'a pas été enregistrée");

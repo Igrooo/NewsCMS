@@ -88,6 +88,7 @@ $(() => {
         editor_cel_btn.each(function(id){
             let name = $(this).parents(editor_row).attr('data-name');
             $(this).attr('id', 'cpt-editable-btn-'+id)
+                   .attr('data-btn-id', id)
                    .attr('title',"Cliquez pour modifier le texte et le lien du bouton")
                    .addClass('editable-btn-'+name);
         });
@@ -232,7 +233,7 @@ $(() => {
         let url = get_url(cpt);
         edit_toolbar_btn_link.attr('href',url).text(url);
         let val = url_without_tracking(url);
-        edit_toolbar_ipt_img_link.val(val);
+        edit_toolbar_ipt_btn_link.val(val);
     };
     // Image functions
     const load_img = (id,src) => {
@@ -328,12 +329,11 @@ $(() => {
         let url_full = url_with_tracking(url, sub_tracking);
         link.attr('href',url_full);
         edit_toolbar_img_link.attr('href',url_full).text(url_full);
-        update_linked_btn_url(id,url_full);
+        update_linked_btn_url(id,url_full,'img-');
     };
     const update_url_btn = (id,url) => {
         let link = $('#cpt-editable-btn-'+id).find('a');
         let title = link.attr('title');
-        // console.log(title);
         let current_url  = link.attr('href');
         let sub_tracking = '_btn'+id;
         let index = current_url.indexOf('_');
@@ -346,19 +346,19 @@ $(() => {
         let url_full = url_with_tracking(url, sub_tracking);
         link.attr('href',url_full);
         edit_toolbar_btn_link.attr('href',url_full).text(url_full);
-        update_linked_btn_url(id,url_full);
+        update_linked_btn_url(id,url_full,'btn-');
     };
     const remove_url = (id) => {
         let link = $('#cpt-editable-img-'+id).find('a');
         edit_toolbar_img_link.attr('href','').text('');
         link.attr('href','');
-        update_linked_btn_url(id,'');
+        update_linked_btn_url(id,'','img-');
     };
     const remove_url_btn = (id) => {
         let link = $('#cpt-editable-btn-'+id).find('a');
         edit_toolbar_btn_link.attr('href','').text('');
         link.attr('href','');
-        update_linked_btn_url(id,'');
+        update_linked_btn_url(id,'','btn-');
     };
     // Title functions
     const get_title = cpt => {
@@ -375,36 +375,39 @@ $(() => {
         let title = get_title(cpt);
         edit_toolbar_ipt_btn_title.val(title);
     };
-    // get the button linked to image
-    const get_linked_btn = (id) => {
-        let img = $('#cpt-editable-img-'+id);
-        let btn_id = img.attr('data-btn-id');
-        return img.parents(editor_row).find(linked_btn+btn_id+' a');
+    // get the button linked to image or an other button
+    const get_linked_btn = (id, type) => {
+        let cpt = $('#cpt-editable-'+type+id);
+        let btn_id = cpt.attr('data-linked-btn-id');
+        return cpt.parents(editor_row).find(linked_btn+btn_id+' a');
     };
-    // title of button linked to image or to an other btn
-    const update_linked_btn_title = (id, title) => {
-        let btn = get_linked_btn(id);
+    // title of button linked to an image or an other button
+    const update_linked_btn_title = (id, title, type) => {
+        let btn = get_linked_btn(id,type);
         btn.attr('title',title);
     };
-    // url of button linked to image
-    const update_linked_btn_url = (id, url) => {
-        let btn = get_linked_btn(id);
+    // url of button linked to an image or an other button
+    const update_linked_btn_url = (id, url, type) => {
+        let btn = get_linked_btn(id,type);
         btn.attr('href',url);
     };
+    //update title image
     const update_title = (id, title) => {
         let cpt_img = $('#cpt-editable-img-'+id);
         let img   = cpt_img.find('img');
         let link  = cpt_img.find('a');
         img.attr('alt',title);
         link.attr('title',title);
-        update_linked_btn_title(id,title);
+        update_linked_btn_title(id,title,'img-');
     };
+    //update title btn
     const update_title_btn = (id, title) => {
-        let btn = $('#cpt-editable-btn-'+id);
-        let link  = btn.find('a');
-        btn.find('.btn-title').text(title);
+        let cpt_btn = $('#cpt-editable-btn-'+id);
+        console.log(id);
+        let link  = cpt_btn.find('a');
+        cpt_btn.find('.btn-title').text(title);
         link.attr('title',title);
-        update_linked_btn_title(id,title);
+        update_linked_btn_title(id,title,'btn-');
     };
 
     /// Init TinyMCE for text content///
@@ -448,13 +451,13 @@ $(() => {
     //Click on editable button
     editor_cel_btn.on('click', function() { edit_btn_on(this); });
 
-    //Img src input
+    //img src input
     edit_toolbar_ipt_img_src.on('input',function() {
         let id = edit_toolbar_img.attr('data-img-id');
         let img = $(this).val();
         update_img_with_ipt(id,img);
     });
-    //Img link input
+    //img link input
     edit_toolbar_ipt_img_link.on('input',function() {
         let id = edit_toolbar_img.attr('data-img-id');
         let url = $(this).val();
@@ -471,9 +474,9 @@ $(() => {
         let title = $(this).val();
         update_title(id, title);
     });
-
+    // btn link input
     edit_toolbar_ipt_btn_link.on('input',function() {
-        let id = edit_toolbar_img.attr('data-img-id');
+        let id = edit_toolbar_btn.attr('data-btn-id');
         let url = $(this).val();
         if(url !== ''){
             update_url_btn(id,url);
@@ -482,9 +485,9 @@ $(() => {
             remove_url_btn(id);
         }
     });
-    // img title input
+    // btn title input
     edit_toolbar_ipt_btn_title.on('input', function () {
-        let id = edit_toolbar_img.attr('data-img-id');
+        let id = edit_toolbar_btn.attr('data-btn-id');
         let title = $(this).val();
         update_title_btn(id, title);
     });

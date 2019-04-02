@@ -1,5 +1,5 @@
 $(() => {
-
+/*
     const send_img = data => {
         return $.ajax({
             type: 'POST',
@@ -24,4 +24,5 @@ $(() => {
     }
 
     setTimeout(newsthumb('#fakebody'),1000);
+    */
 });
