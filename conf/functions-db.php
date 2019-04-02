@@ -58,10 +58,13 @@ function sql_insert_template($table, $content){
 }
 
 function sql_update($table, $id, $editable, $generated, $time){
-    return $sql = "UPDATE ".$table." SET CONTENT_EDITABLE='".$editable."', CONTENT_GENERATED='".$generated."', DATE_EDIT='". $time."' WHERE ID=".$id;
+    return "UPDATE ".$table." SET CONTENT_EDITABLE='".$editable."', CONTENT_GENERATED='".$generated."', DATE_EDIT='". $time."' WHERE ID=".$id;
+}
+function sql_full_update($table, $id, $data){
+    return "UPDATE ".$table." SET YEAR='".$data['year']."', DATE='".$data['date']."', NAME='".$data['name']."', CONTENT_EDITABLE='".$data['editable']."', CONTENT_GENERATED='".$data['generated']."', TEMPLATE='".$data['template']."', DATE_EDIT='". $data['date_edit']."' WHERE ID=".$id;
 }
 function sql_delete($table, $id){
-    //  $sql = 'DELETE FROM '.$table.' WHERE NAME='.$id;
+    //  return  'DELETE FROM '.$table.' WHERE ID='.$id;
 }
 
 // insert new newsletter
@@ -70,11 +73,17 @@ function db_insert($table, $data){
     $insert  = db_set($sql);
     return $insert;
 }
-// update newsletter
+// update newsletter content
+function db_full_update($table, $id, $data){
+    $sql = sql_full_update($table, $id, $data);
+    $update  = db_set($sql);
+    return $update;
+}
+// update newsletter content
 function db_update($table, $id, $editable, $generated, $time){
     $sql = sql_update($table, $id, $editable, $generated, $time);
-    $insert  = db_set($sql);
-    return $insert;
+    $update  = db_set($sql);
+    return $update;
 }
 
 // all years

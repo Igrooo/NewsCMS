@@ -2,9 +2,9 @@
 /* Insert new newsletter in database */
 $table = DB_TABLE;
 
+$name  = PREFIX.$_POST['name'];
+
 $date  = $_POST['date'];
-$name  = $_POST['name'];
-$year  = date('Y', strtotime($date));
 
 $new_date_name = get_long_name($date,$name,false);
 
@@ -36,6 +36,7 @@ if($exist == true){
 }
 // else
 else{
+    $year  = date('Y', strtotime($date));
     $date_edit = CURRENT_TIME;
 
     $template  = $_POST['template'];

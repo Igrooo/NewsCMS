@@ -47,29 +47,26 @@ $(() => {
 
     ///// Header & Form Builder functions /////
     const update_title = () => {
-        let prefix = ipt_prefix.val();
         let title = ipt_name.val();
         if(title === ''){
-            title = ipt_name_formated.attr('data-default-value');
+           ipt_name_formated.val('');
         }
         else{
-            title = prefix+title;
+           ipt_name_formated.val(format_title(title));
         }
-        ipt_name_formated.val(format_title(title));
-        console.log(ipt_name_formated.val());
         return ipt_name_formated.val();
     };
     const update_header = () => {
         let title  = update_title();
         let date   = ipt_date.val();
-
+        let prefix = ipt_prefix.val();
         if ((date === '') || (title === '')){
             header_title.removeClass('with-file-name');
             header_file.text('');
         }
         else{
             header_title.addClass('with-file-name');
-            header_file.text(format_date(date)+'_'+title+'.html');
+            header_file.text(format_date(date)+'_'+prefix+title+'.html');
         }
     };
     const update_btns = () => {
