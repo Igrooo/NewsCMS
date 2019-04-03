@@ -17,6 +17,28 @@
 .responsive-view #newsletter-viewer{
     width: 400px;
 }
+#delete:target #delete-btn,
+#header #delete-confirm-btn{
+    display: none;
+}
+#delete:target #delete-confirm-title,
+#delete:target #delete-confirm-btn{
+    display: block;
+}
+#delete-confirm-title{
+    display: none;
+    position: absolute;
+    left: 250px;
+    top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #eaeaea;
+}
+#delete-confirm-title .file-name{
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 @media screen and (max-width: 790px) {
     .toggle-responsive-viewer{

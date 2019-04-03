@@ -7,9 +7,10 @@
         </h2>
     </a><!--
     --><h3 id="apptitle">
-        <?php if(isset($query)){echo'
+        <?php
+        /* if(isset($query)){echo'
         <div id="subapptitle" class="header-info">'.$last_edited.'</div>
-        ';}
-        echo CONTEXT_TITLE ?>
+        ';} */
+        echo HEADER_TITLE ?>
     </h3>
 </div>

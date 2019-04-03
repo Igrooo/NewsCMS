@@ -11,7 +11,6 @@
         ?>
     </div>
 </div>
-
 <div id="list-all-templates">
     <div class="list-header">
         <h4 class="list-title">
@@ -24,3 +23,6 @@
         ?>
     </div>
 </div>
+<footer id="history" class="footer">
+    <?php echo $last_edited; ?>
+</footer>

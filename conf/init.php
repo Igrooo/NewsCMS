@@ -54,25 +54,24 @@ if(!empty($history)){
 else{$last_edited ='';}
 
 /* init head & header */
-$viewer     = 'Aperçu de ';
-$editor     = 'Édition de ';
-$builder    = 'Modification de ';
-$new        = 'Création <span class="new-noname">d\'une nouvelle newsletter</span><span class="new-of">de </span>';
-$empty      = '<div class="header-info">'.$last_edited.'</div>';
+$viewer   = 'Aperçu de ';
+$editor   = 'Édition de ';
+$builder  = 'Modification de ';
+$new      = "Création d'une nouvelle newsletter";
+$new_html = 'Création <span class="new-noname">d\'une nouvelle newsletter</span><span class="new-of">de </span>';
 
 if($query == 'new'){
     define('CONTEXT', $new);
-    define('CONTEXT_TITLE', '<div class="page-title">'.CONTEXT.' <span class="file-name"></span></div>');
+    define('HEADER_TITLE', '<div class="page-title header-info">'.$new_html.' <span class="file-name"></span></div>');
     define('TITLE', CONTEXT.' - '.APP_NAME.' - '.COMPANY_NAME);
 }
 elseif(isset($query)){
     define('CONTEXT', $$mode.$file);
-    define('CONTEXT_TITLE', '<div class="page-title">'.$$mode.' <span class="file-name">'.$file.'</span></div>');
+    define('HEADER_TITLE', '<div class="page-title header-info">'.$$mode.' <span class="file-name">'.$file.'</span></div>');
     define('TITLE', CONTEXT.' - '.APP_NAME.' - '.COMPANY_NAME);
 }
 else{
-    define('CONTEXT', $empty);
-    define('CONTEXT_TITLE', '<div class="page-title">'.CONTEXT.'</div>');
+    define('HEADER_TITLE', '<div class="page-title header-info">'.$last_edited.'</div>');
     define('TITLE', APP_NAME.' - '.COMPANY_NAME);
 }
 /* * * * */

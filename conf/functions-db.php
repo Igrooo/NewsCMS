@@ -50,90 +50,80 @@ function sql_select($column,$from,$filter,$filtervalue,$andfilter,$andfiltervalu
 function sql_insert($table, $data){
     $cols = "(`YEAR`,`DATE`,`NAME`,`CONTENT_EDITABLE`,`CONTENT_GENERATED`,`TEMPLATE`,`DATE_EDIT`)";
     $values = "('".$data['year']."','".$data['date']."','".$data['name']."','".$data['editable']."','".$data['generated']."','".$data['template']."','".$data['date_edit']."')";
-    return "INSERT INTO ".$table." ".$cols." VALUES ".$values;
+    return "INSERT INTO $table $cols VALUES $values";
 }
 function sql_insert_template($table, $content){
     $col = "(`CONTENT`)";
-    return "INSERT INTO ".$table." ".$col." VALUES ('".$content."')";
+    return "INSERT INTO $table $col VALUES ('$content')";
 }
 
 function sql_update($table, $id, $editable, $generated, $time){
-    return "UPDATE ".$table." SET CONTENT_EDITABLE='".$editable."', CONTENT_GENERATED='".$generated."', DATE_EDIT='". $time."' WHERE ID=".$id;
+    return "UPDATE $table SET CONTENT_EDITABLE='$editable', CONTENT_GENERATED='$generated', DATE_EDIT='$time' WHERE ID=$id";
 }
 function sql_full_update($table, $id, $data){
-    return "UPDATE ".$table." SET YEAR='".$data['year']."', DATE='".$data['date']."', NAME='".$data['name']."', CONTENT_EDITABLE='".$data['editable']."', CONTENT_GENERATED='".$data['generated']."', TEMPLATE='".$data['template']."', DATE_EDIT='". $data['date_edit']."' WHERE ID=".$id;
-}
-function sql_delete($table, $id){
-    //  return  'DELETE FROM '.$table.' WHERE ID='.$id;
+    return "UPDATE ".$table." SET YEAR='".$data['year']."', DATE='".$data['date']."', NAME='".$data['name']."', CONTENT_EDITABLE='".$data['editable']."', CONTENT_GENERATED='".$data['generated']."', TEMPLATE='".$data['template']."', DATE_EDIT='".$data['date_edit']."' WHERE ID=".$id;
 }
 
 // insert new newsletter
 function db_insert($table, $data){
     $sql = sql_insert($table,$data);
-    $insert  = db_set($sql);
-    return $insert;
+    return db_set($sql);
 }
-// update newsletter content
+// update newsletter all data
 function db_full_update($table, $id, $data){
     $sql = sql_full_update($table, $id, $data);
-    $update  = db_set($sql);
-    return $update;
+    return db_set($sql);
 }
 // update newsletter content
 function db_update($table, $id, $editable, $generated, $time){
     $sql = sql_update($table, $id, $editable, $generated, $time);
-    $update  = db_set($sql);
-    return $update;
+    return db_set($sql);
+}
+//delete
+function db_delete($table,$id){
+    $sql = "DELETE FROM $table WHERE ID=$id";
+    return db_set($sql);
 }
 
 // all years
 function db_all_years($table){
     $sql   = sql_select('YEAR',$table,null,null,null,null,'YEAR','YEAR','DESC');
-    $years = db_get($sql);
-    return $years;
+    return db_get($sql);
 }
 
 // newsletters filter by year order by desc date
 function db_all($table, $year){
     $sql = sql_select('*',$table,'YEAR',$year,null,null,null,'DATE','DESC');
-    $all = db_get($sql);
-    return $all;
+    return db_get($sql);
 }
 // one newsletter filter by name
 function db_one($table, $name){
     $sql = sql_select('*',$table,'NAME',$name,null,null,null,null,null);
-    $one = db_get($sql);
-    return $one;
+    return db_get($sql);
 }
 // get the most recent newsletter
 function db_last($table){
-    $sql = "SELECT * FROM ".$table." WHERE DATE_EDIT=(SELECT max(DATE_EDIT) FROM ".$table.")";
-    $last = db_get($sql);
-    return $last;
+    $sql = "SELECT * FROM $table WHERE DATE_EDIT=(SELECT max(DATE_EDIT) FROM $table)";
+    return db_get($sql);
 }
 
 // all components sections
 function db_all_cpt_sections($table){
     $sql   = sql_select('SECTION',$table,null,null,null,null,'SECTION',null,null);
-    $years = db_get($sql);
-    return $years;
+    return db_get($sql);
 }
 // all components types filter by section
 function db_all_cpt_types($table,$section){
     $sql   = sql_select('TYPE',$table,'SECTION',$section,null,null,'TYPE',null,null);
-    $years = db_get($sql);
-    return $years;
+    return db_get($sql);
 }
 // components filter by sections & type
 function db_all_cpt_bytype($table, $section, $type){
     $sql = sql_select('*',$table,'SECTION',$section,'TYPE',$type,null,null,null);
-    $all =  db_get($sql);
-    return $all;
+    return db_get($sql);
 }
 // all components
 function db_all_cpt($table){
     $sql = sql_select('*',$table,null,null,null,null,null,null,null);
-    $all =  db_get($sql);
-    return $all;
+    return db_get($sql);
 }
-?>

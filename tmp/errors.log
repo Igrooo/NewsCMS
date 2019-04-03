@@ -55,3 +55,22 @@
 [02-Apr-2019 13:12:05 UTC] PHP   1. {main}() C:\wamp64\www\NewsCMS\index.php:0
 [02-Apr-2019 13:12:05 UTC] PHP   2. include() C:\wamp64\www\NewsCMS\index.php:49
 [02-Apr-2019 13:12:05 UTC] PHP   3. include() C:\wamp64\www\NewsCMS\inc\content.php:21
+[03-Apr-2019 11:29:28 UTC] PHP Notice:  Undefined index: id in C:\wamp64\www\NewsCMS\conf\delete.php on line 5
+[03-Apr-2019 11:29:28 UTC] PHP Stack trace:
+[03-Apr-2019 11:29:28 UTC] PHP   1. {main}() C:\wamp64\www\NewsCMS\index.php:0
+[03-Apr-2019 11:29:28 UTC] PHP   2. include() C:\wamp64\www\NewsCMS\index.php:41
+[03-Apr-2019 11:29:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function db_delete() in C:\wamp64\www\NewsCMS\conf\delete.php:7
+Stack trace:
+#0 C:\wamp64\www\NewsCMS\index.php(41): include()
+#1 {main}
+  thrown in C:\wamp64\www\NewsCMS\conf\delete.php on line 7
+[03-Apr-2019 11:29:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function db_delete() in C:\wamp64\www\NewsCMS\conf\delete.php:7
+Stack trace:
+#0 C:\wamp64\www\NewsCMS\index.php(41): include()
+#1 {main}
+  thrown in C:\wamp64\www\NewsCMS\conf\delete.php on line 7
+[03-Apr-2019 11:34:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function db_delete() in C:\wamp64\www\NewsCMS\conf\delete.php:7
+Stack trace:
+#0 C:\wamp64\www\NewsCMS\index.php(41): include()
+#1 {main}
+  thrown in C:\wamp64\www\NewsCMS\conf\delete.php on line 7

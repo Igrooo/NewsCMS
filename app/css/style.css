@@ -78,7 +78,8 @@ iframe{
 /*********************/
 .section-container{
     overflow: hidden;
-    padding: 10px 0 10px 20px;
+    padding: 10px;
+    padding-right: 0;
     box-sizing: border-box;
     position: relative;
 }
@@ -317,7 +318,7 @@ iframe{
 */
 #header .nav ~ .nav{
     border-left: 1px #bcbcbc solid;
-    padding-left: 15px;
+    padding-left: 16px;
 }
 .page-title.with-file-name .new-of{
     display: inline;
@@ -336,7 +337,7 @@ iframe{
 }
 /*HEADER LOGO */
 #logo{
-    width: 190px;
+    width: 200px;
     margin-right: 40px;
 }
 #logo:hover{
@@ -445,6 +446,7 @@ iframe{
     border: none;
     transition: all 100ms linear;
 }
+.nav .btn.del,
 .nav .btn[type="reset"]{
     background-color: #ff6664;
 }
@@ -621,7 +623,6 @@ iframe{
 }
 #list-all-newsletters{
     height: 100%;
-    margin-top: 10px;
     overflow: hidden;
 }
 .list-body{
@@ -637,11 +638,15 @@ iframe{
 #explorer:target #list-all-templates,
 #list-all-newsletters{
     height: calc(100% - 200px );
-    min-height: 200px;
+    min-height: 160px;
 }
 #explorer:target #list-all-newsletters,
 #list-all-templates{
-    height: 200px;
+    height: 160px;
+}
+#history{
+    text-align: left;
+    white-space: nowrap;
 }
 .list:nth-child(2){
     margin-left: 15px;
@@ -674,7 +679,7 @@ iframe{
     margin-bottom: 10px;
 }
 .nav:not(.vertical) .item:not(:last-child){
-    margin-right: 15px;
+    margin-right: 10px;
 }
 .nav.vertical.compact{
     font-size: 10px;
@@ -807,7 +812,7 @@ iframe{
     margin-top: 20px;
 }
 #form-conf{
-    min-height: calc(100vh - 130px);
+    min-height: calc(100vh - 135px);
 }
 
 .ipt-group{
