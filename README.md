@@ -6,6 +6,8 @@ Newsletters Management System - to build, edit and view newsletters formatted in
   * v0.1 02/03/19 - Initial commit - Content Editor nonfunctional
   * v0.2 19/03/19 - Content Editor
   * v0.3 01/04/19 - Fix
+  * v1.0 02/04/19 - Builder - Change date, name and components
+  * v1.1 03/04/19 - Viewer - Button & function for delete
 
 | VERSIONS                         |                                                                        |
 |----------------------------------|------------------------------------------------------------------------|
@@ -18,11 +20,11 @@ Newsletters Management System - to build, edit and view newsletters formatted in
 | **v1**                           | **Templates & Multiples newsletters management**                       |
 | Templates List                   | List of newsletters with preloaded components                          |
 | Newsletter Global Management 2/3 | Rename, delete, change date & options                                  |
-| Connexion                        | Simple login/logout .htaccess                                          |
+| Users management 1/2             | Simple login/logout with PHP SESSION                                   |
 | **v2**                           | **Multiples newsletters management**                                   |
 | Newsletter Global Management 2/3 | Clone newsletters                                                      |
 | Settings                         | Form to change globals settings                                        |
-| **v3**                           | **Users management**                                                   |
+| **v3**                           | **Users management 2/2**                                               |
 | Users account                    | Multi-users login & logout, detect when user open for modification     |                                  
 | Settings                         | Form to change user settings                                           |
 | **v4**                           | **Advanced features**                                                  |
