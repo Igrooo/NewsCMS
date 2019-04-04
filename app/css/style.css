@@ -838,6 +838,7 @@ iframe{
     width: 145px;
 }
 .ipt-group-name:not(:first-child),
+.ipt-group-date:not(:first-child),
 .ipt-group-title{
     /*width: calc(50% - 103px);*/
     margin-left: 30px;

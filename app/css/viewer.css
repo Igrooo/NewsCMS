@@ -6,6 +6,10 @@
     width: 80px;
     margin-right: -90px;
 }
+
+#newsletter-viewer{
+    overflow: hidden;
+}
 .toggle-responsive-viewer .btn{
     padding: 5px;
     text-align: center;

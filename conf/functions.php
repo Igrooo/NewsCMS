@@ -107,7 +107,7 @@ function get_id($name,$date){
 }
 
 function next_id(){
-    return '0';
+    return 0;
 }
 
 function get_last(){

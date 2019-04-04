@@ -9,8 +9,8 @@ $date = $_POST['date'];
 $year = date('Y', strtotime($date));
 $date_edit = CURRENT_TIME;
 
-$template  = $_POST['template'];
-//$title     = $_POST['user-name'];
+$template = $_POST['template'];
+//$title  = $_POST['user-name'];
 
 /* Add tracking in not editable links */
 $generated = add_tracking($_POST['content-generated'],$date,$name);

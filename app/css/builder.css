@@ -12,10 +12,10 @@
     width: 20px;
 }
 #input-id{
-    width: 30px;
+    width: 60px;
 }
 #input-name.template{
-    width: calc(100% - 74px);
+    width: calc(100% - 105px);
 }
 #newsletter-builder{
     position: relative;
@@ -117,4 +117,8 @@
     width: 14px;
     margin-right: 5px;
     /*font-size: 1.5em;*/
+}
+
+.mode-builder.template .ipt-group-name{
+    width: 60%;
 }

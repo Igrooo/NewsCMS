@@ -74,12 +74,4 @@
         echo '</nav>';
     }
     ?>
-    <!--
-    <nav id="builder-nav-change-template" role="navigation" class="nav-aside nav-templates">
-        <h5 class="nav-title template-title">Modèle</h5>
-        <ul class="nav vertical tools">
-            <li class="item"><a class="btn btn-secondary disabled">Modèle 01</a></li>
-        </ul>
-    </nav>
-    -->
 </div>

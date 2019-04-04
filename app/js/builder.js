@@ -31,27 +31,28 @@ $(() => {
     const btn_submit = $('#builder-submit');
 
     // Form inputs elements
-    const builder_ipt   = $('#newsletter-content-editable');
-    const builder_gen   = $('#newsletter-content-generated');
-
     const all_ipt_user = $('.ipt[required]:not([disabled]):not([readonly])');
     const all_ipt_hide = $('.ipt-hidden:not([disabled]):not([readonly])');
     const all_ipt      = all_ipt_user.add(all_ipt_hide);
 
     const ipt_name     = $('#input-name');
 
-    let ipt_name_formated, ipt_id, ipt_date, ipt_prefix, ipts;
+    let ipt_name_formated, ipt_id, ipt_date, ipt_prefix, ipts, builder_ipt, builder_gen;
 
     if (builder_type === 'template') {
         ipt_id = $('#template-id');
         ipts = ipt_name;
         ipt_name_formated = $('#template-name');
+        builder_ipt = $('#template-components');
     }
     else{
         ipt_date   = $('#input-date');
         ipt_prefix = $('#input-prefix');
         ipts = ipt_date.add(ipt_name);
         ipt_name_formated = $('#newsletter-name');
+        builder_ipt   = $('#newsletter-content-editable');
+        builder_gen   = $('#newsletter-content-generated');
+
     }
 
     const set_img_placeholder = (cpt) => {
@@ -74,7 +75,7 @@ $(() => {
     const update_header = () => {
         let title  = update_title();
         if (builder_type === 'template'){
-            let id = ipt_id.val();
+            let id = ipt_id.attr('data-id');
             if (title === ''){
                 header_title.removeClass('with-file-name');
                 header_file.text('');
@@ -123,18 +124,39 @@ $(() => {
 
     ///// Builder functions /////
 
+    const get_list = () => {
+        let builder_rows = builder_table.find(builder_row);
+        let list = '0';
+        let i = 0;
+        if(builder_rows.length !== 0){
+            builder_rows.each(function() {
+                let id = $(this).attr('data-id');
+                if(i>0){list = list + ',' + id;}
+                else{list = id;}
+                i++;
+            });
+
+        }
+        return list;
+    };
+
     // Update form hidden input
     const update_ipt = () => {
-        if(builder_table.is(':empty')){
-            builder_ipt.val('');
-            builder_gen.val('');
+        if (builder_type === 'template') {
+            let list_cpts = get_list();
+            builder_ipt.val(list_cpts);
         }
         else{
-            let content = builder_table.html();
-            let newsletter = builder_table.clone();
-            let generated = newsletter_generate(newsletter);
-            builder_ipt.val(content);
-            builder_gen.val(generated);
+            if (builder_table.is(':empty')) {
+                builder_ipt.val('');
+                builder_gen.val('');
+            } else {
+                let content = builder_table.html();
+                let newsletter = builder_table.clone();
+                let generated = newsletter_generate(newsletter);
+                builder_ipt.val(content);
+                builder_gen.val(generated);
+            }
         }
         // Trigger change event
         builder_ipt.change();
@@ -198,15 +220,19 @@ $(() => {
         $(builder_table.find('.ui-highlight:last')).remove();
         });
 
-    // Add newsletter components
-    builder_btn.click(function () {
-        $(builder_table.find('.ui-highlight')).remove();
-        let id 	= $(this).attr('data-id');
+    const add_cpt = id =>{
         let cpt = builder_cpts.find(builder_row+'[data-id='+id+']').clone();
         builder_table.append(cpt);
         set_img_placeholder(cpt);
         disable_links(cpt);
         update_ipt();
+    };
+
+    // Add newsletter components
+    builder_btn.click(function () {
+        $(builder_table.find('.ui-highlight')).remove();
+        let id 	= $(this).attr('data-id');
+        add_cpt(id);
         update_btns_builder();
         builder_table.append(builder_placeholder);
         //scroll_bottom($(container));
@@ -237,10 +263,19 @@ $(() => {
     update_header();
     update_btns();
 
-    // Init Builder
-    // Get previous newsletter components from form input value and set in builder
-    let newsletter_prev_content = builder_ipt.val().toString();
-    builder_table.html(newsletter_prev_content);
+    if (builder_type === 'template') {
+        let list_cpts = builder_ipt.val();
+        let components = list_cpts.split(',');
+        components.forEach((item) => {
+            add_cpt(item);
+        });
+    }
+    else{
+        // Init Builder
+        // Get previous newsletter components from form input value and set in builder
+        let newsletter_prev_content = builder_ipt.val().toString();
+        builder_table.html(newsletter_prev_content);
+    }
     update_btns_builder();
     disable_links(builder_table);
 });

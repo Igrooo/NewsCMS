@@ -1,5 +1,5 @@
 <div id="editor" class="box">
-    <h4 id="not-editable-alert" class="cms-ui newsletter-editor-title  warning warning-box hidden">
+    <h4 id="not-editable-alert" class="cms-ui newsletter-editor-title warning warning-box hidden">
         <i class="fas fa-exclamation-circle"></i> Cette newsletter n'a aucun élément éditable !<br><br>
         <a class="btn btn-primary" href="<?php echo'?m=builder&y='.$year.'&d='.$date.'&q='.$query;?>" title="Ajouter des composants"><i class="icon fas fa-plus"></i> Ajouter des composants</a><br><br>
     </h4>
@@ -18,7 +18,7 @@
         show_info('h4','success', 'newsletter-editor-title ', 'Enregistrement effectué.', null);
     }
     else{
-        show_info('h4','info', 'newsletter-editor-title ', "Sélecttionez un élément pour commencer l'édition", null);
+        show_info('h4','info', 'newsletter-editor-title ', "Sélectionnez un élément pour commencer l'édition", null);
     }
     $content = get_content('editable',$name,$date);
     include('form-editor.php');

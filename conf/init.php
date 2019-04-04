@@ -65,7 +65,7 @@ $editor   = 'Édition de ';
 $builder  = 'Modification de ';
 if($template){
     $new = "Création d'un nouveau modèle";
-    $new_html = 'Création <span class="new-noname">d\'un nouveau modèle</span><span class="new-of">du modèle n°</span>';
+    $new_html = 'Création <span class="new-noname">d\'un nouveau modèle</span><span class="new-of">du modèle </span>';
 }
 else{
     $new      = "Création d'une nouvelle newsletter";

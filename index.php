@@ -29,6 +29,8 @@ require(FOLDER_CONF.'conf.php');
 /* functions */
 require(FOLDER_CONF.'functions.php');
 /* insert */
+if(isset($_GET['new-template'])){
+include(FOLDER_CONF . 'insert-template.php');}
 if(isset($_GET['new'])){
 include(FOLDER_CONF . 'insert.php');}
 /* update */

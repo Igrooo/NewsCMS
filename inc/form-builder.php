@@ -1,4 +1,3 @@
-
 <form id="form-builder" method="post">
     <?php
     if ($query != 'new') {
@@ -7,6 +6,14 @@
         $name_without_prefix = str_replace(PREFIX,'',$name);
     }
     ?>
+    <!--
+    <div class="ipt-group ipt-group-template">
+        <label class="ipt-label" for="newsletter-template">Date d'envoi</label>
+        <input     class="ipt-hidden"  type="number"  readonly hidden value="0">
+        <select id="newsletter-template" name="template" title="template">
+            <?php //list_templates('form'); ?>
+        </select>
+    </div>-->
     <div class="ipt-group ipt-group-date">
         <label class="ipt-label" for="input-date">Date d'envoi</label>
         <input class="ipt" id="input-date" type="date" <?php if ($query == 'new'){ echo'min="'.CURRENT_DATE.'"'; } else{echo'value="'.$date.'"';} ?>  name="date" required>
@@ -19,9 +26,8 @@
         <label class="disabled ipt-label" for="input-title">Titre principal</label>
         <input class="ipt" id="input-title" placeholder="Optionnel et modifiable plus tard..." title="Texte par défault pour les principaux titres et textes alternatifs des images" type="text" name="user-title" minlength="1" maxlength="100" disabled>
     </div>
-    <input     class="ipt-hidden" <?php if ($query != 'new'){echo 'value="'.$name.'"';} ?> id="newsletter-name" type="text"   name="name" title="name" hidden>
-    <input     class="ipt-hidden" id="newsletter-template" type="number" name="template" title="template" readonly hidden value="0">
-    <label     class="ipt-label"  for="newsletter-content-editable">Composition de la newsletter</label>
+    <input class="ipt-hidden" <?php if ($query != 'new'){echo 'value="'.$name.'"';} ?> id="newsletter-name" type="text"   name="name" title="name" hidden>
+    <label class="ipt-label"  for="newsletter-content-editable">Composition de la newsletter</label>
     <textarea wrap="off" class="ipt-hidden" id="newsletter-content-editable" name="content-editable" title="content-editable" hidden>
         <?php
         if ($query != 'new') {

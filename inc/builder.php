@@ -5,7 +5,7 @@
     }
     if ($template){
         include('form-builder-template.php');
-        echo '<h4 class="newsletter-builder-title hidden">Composition du modèle</h4>';
+        echo '<h4 class="newsletter-builder-title">Composition du modèle</h4>';
     }
     else{
         include('form-builder.php');

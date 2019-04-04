@@ -39,7 +39,8 @@ else{
     $year  = date('Y', strtotime($date));
     $date_edit = CURRENT_TIME;
 
-    $template  = $_POST['template'];
+    $template  = '0';
+    //$template  = $_POST['template'];
     //$title     = $_POST['user-name'];
 
     /* Add tracking in not editable links */

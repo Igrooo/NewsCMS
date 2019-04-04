@@ -5,7 +5,6 @@ function db_connect(){
                           array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
                             $newPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                             $newPDO->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-
     }
     catch (Exception $e){
         die('Erreur de connexion à la base de donnée: '.$e->getMessage());
@@ -52,9 +51,12 @@ function sql_insert($table, $data){
     $values = "('".$data['year']."','".$data['date']."','".$data['name']."','".$data['editable']."','".$data['generated']."','".$data['template']."','".$data['date_edit']."')";
     return "INSERT INTO $table $cols VALUES $values";
 }
-function sql_insert_template($table, $content){
-    $col = "(`CONTENT`)";
-    return "INSERT INTO $table $col VALUES ('$content')";
+function sql_insert_template($table, $name, $components){
+    $cols = "(`NAME`,`COMPONENTS`)";
+    return "INSERT INTO $table $cols VALUES ('$name','$components')";
+}
+function sql_update_template($table, $id, $name, $components){
+    return "UPDATE $table SET NAME='$name', COMPONENTS='$components' WHERE ID=$id";
 }
 
 function sql_update($table, $id, $editable, $generated, $time){
@@ -64,6 +66,16 @@ function sql_full_update($table, $id, $data){
     return "UPDATE ".$table." SET YEAR='".$data['year']."', DATE='".$data['date']."', NAME='".$data['name']."', CONTENT_EDITABLE='".$data['editable']."', CONTENT_GENERATED='".$data['generated']."', TEMPLATE='".$data['template']."', DATE_EDIT='".$data['date_edit']."' WHERE ID=".$id;
 }
 
+// insert new template
+function db_insert_template($table, $name, $components){
+    $sql = sql_insert_template($table, $name, $components);
+    return db_set($sql);
+}
+// update template
+function db_update_template($table, $id, $name, $components){
+    $sql = sql_update_template($table, $name, $components);
+    return db_set($sql);
+}
 // insert new newsletter
 function db_insert($table, $data){
     $sql = sql_insert($table,$data);
@@ -87,7 +99,7 @@ function db_delete($table,$id){
 
 // all years
 function db_all_years($table){
-    $sql   = sql_select('YEAR',$table,null,null,null,null,'YEAR','YEAR','DESC');
+    $sql = sql_select('YEAR',$table,null,null,null,null,'YEAR','YEAR','DESC');
     return db_get($sql);
 }
 
@@ -109,12 +121,12 @@ function db_last($table){
 
 // all components sections
 function db_all_cpt_sections($table){
-    $sql   = sql_select('SECTION',$table,null,null,null,null,'SECTION',null,null);
+    $sql = sql_select('SECTION',$table,null,null,null,null,'SECTION',null,null);
     return db_get($sql);
 }
 // all components types filter by section
 function db_all_cpt_types($table,$section){
-    $sql   = sql_select('TYPE',$table,'SECTION',$section,null,null,'TYPE',null,null);
+    $sql = sql_select('TYPE',$table,'SECTION',$section,null,null,'TYPE',null,null);
     return db_get($sql);
 }
 // components filter by sections & type

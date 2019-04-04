@@ -81,3 +81,21 @@ Stack trace:
 #2 C:\wamp64\www\NewsCMS\index.php(49): include('C:\\wamp64\\www\\N...')
 #3 {main}
   thrown in C:\wamp64\www\NewsCMS\inc\form-builder-template.php on line 8
+[04-Apr-2019 12:28:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function list_templates() in C:\wamp64\www\NewsCMS\inc\form-builder.php:13
+Stack trace:
+#0 C:\wamp64\www\NewsCMS\inc\builder.php(11): include()
+#1 C:\wamp64\www\NewsCMS\inc\content.php(21): include('C:\\wamp64\\www\\N...')
+#2 C:\wamp64\www\NewsCMS\index.php(49): include('C:\\wamp64\\www\\N...')
+#3 {main}
+  thrown in C:\wamp64\www\NewsCMS\inc\form-builder.php on line 13
+[04-Apr-2019 12:28:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function list_templates() in C:\wamp64\www\NewsCMS\inc\form-builder.php:13
+Stack trace:
+#0 C:\wamp64\www\NewsCMS\inc\builder.php(11): include()
+#1 C:\wamp64\www\NewsCMS\inc\content.php(21): include('C:\\wamp64\\www\\N...')
+#2 C:\wamp64\www\NewsCMS\index.php(49): include('C:\\wamp64\\www\\N...')
+#3 {main}
+  thrown in C:\wamp64\www\NewsCMS\inc\form-builder.php on line 13
+[04-Apr-2019 13:29:59 UTC] PHP Notice:  Undefined index: template in C:\wamp64\www\NewsCMS\conf\insert.php on line 42
+[04-Apr-2019 13:29:59 UTC] PHP Stack trace:
+[04-Apr-2019 13:29:59 UTC] PHP   1. {main}() C:\wamp64\www\NewsCMS\index.php:0
+[04-Apr-2019 13:29:59 UTC] PHP   2. include() C:\wamp64\www\NewsCMS\index.php:33
