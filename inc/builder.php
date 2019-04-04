@@ -1,11 +1,18 @@
-<div id="builder" class="box <?php echo $query?>">
+<div id="builder" class="box <?php echo $query?>" <?php echo $template ? 'data-builder-type="template"':'data-builder-type=""'; ?>>
     <?php
     if (isset($_GET['error'])){
         show_info('h4','error', 'newsletter-builder-title', 'Une erreur est survenue', $_GET['error_info']);
     }
-    include('form-builder.php');
+    if ($template){
+        include('form-builder-template.php');
+        echo '<h4 class="newsletter-builder-title hidden">Composition du modèle</h4>';
+    }
+    else{
+        include('form-builder.php');
+        echo '<h4 class="newsletter-builder-title hidden">Composition de la newsletter</h4>';
+    }
     ?>
-    <h4 class="newsletter-builder-title hidden">Composition de la newsletter</h4>
+
     <div class="float-box-container with-box-sticky">
         <?php
         include ('nav-aside-builder.php');

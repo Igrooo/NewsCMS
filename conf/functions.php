@@ -9,7 +9,7 @@ function show_info($tag, $level, $context, $title, $content){
     /* icons --> in $$level */
     $info    = '<i class="fas fa-info-circle"></i>';
     $success = '<i class="fas fa-check-circle"></i>';
-    $warning = '<i class="fas fa-question-circle"></i>';
+    $warning = '<i class="fas fa-exclamation-circle"></i>';
     $error   = '<i class="fas fa-exclamation-triangle"></i>';
     echo "<$tag class='$context $level $level-box'>".$$level." $title<br>$content</$tag>";
 }
@@ -104,6 +104,10 @@ function get_id($name,$date){
         }
     }
     return $id;
+}
+
+function next_id(){
+    return '0';
 }
 
 function get_last(){

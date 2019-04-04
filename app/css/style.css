@@ -837,9 +837,9 @@ iframe{
 .ipt-group-date{
     width: 145px;
 }
-.ipt-group-name,
+.ipt-group-name:not(:first-child),
 .ipt-group-title{
-    width: calc(50% - 103px);
+    /*width: calc(50% - 103px);*/
     margin-left: 30px;
 }
 

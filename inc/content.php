@@ -3,7 +3,7 @@
 <?php
 include('head.php');
 ?>
-<body class="mode-<?php echo $mode ?>">
+<body class="mode-<?php echo $mode; echo $template ? ' template':'';?>">
     <header id="header" class="section-container reset cms-ui">
         <?php
             include('header.php');

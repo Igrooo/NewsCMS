@@ -6,6 +6,12 @@ if (isset($_GET['m'])){
 else{
     $mode = 'viewer';
 }
+if (isset($_GET['t'])){
+    $template = true;
+}
+else{
+    $template = false;
+}
 if (isset($_GET['y'])){
     $year = $_GET['y'];
 }
@@ -57,8 +63,14 @@ else{$last_edited ='';}
 $viewer   = 'Aperçu de ';
 $editor   = 'Édition de ';
 $builder  = 'Modification de ';
-$new      = "Création d'une nouvelle newsletter";
-$new_html = 'Création <span class="new-noname">d\'une nouvelle newsletter</span><span class="new-of">de </span>';
+if($template){
+    $new = "Création d'un nouveau modèle";
+    $new_html = 'Création <span class="new-noname">d\'un nouveau modèle</span><span class="new-of">du modèle n°</span>';
+}
+else{
+    $new      = "Création d'une nouvelle newsletter";
+    $new_html = 'Création <span class="new-noname">d\'une nouvelle newsletter</span><span class="new-of">de </span>';
+}
 
 if($query == 'new'){
     define('CONTEXT', $new);

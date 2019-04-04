@@ -74,3 +74,10 @@ Stack trace:
 #0 C:\wamp64\www\NewsCMS\index.php(41): include()
 #1 {main}
   thrown in C:\wamp64\www\NewsCMS\conf\delete.php on line 7
+[03-Apr-2019 15:15:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function next_id() in C:\wamp64\www\NewsCMS\inc\form-builder-template.php:8
+Stack trace:
+#0 C:\wamp64\www\NewsCMS\inc\builder.php(7): include()
+#1 C:\wamp64\www\NewsCMS\inc\content.php(21): include('C:\\wamp64\\www\\N...')
+#2 C:\wamp64\www\NewsCMS\index.php(49): include('C:\\wamp64\\www\\N...')
+#3 {main}
+  thrown in C:\wamp64\www\NewsCMS\inc\form-builder-template.php on line 8

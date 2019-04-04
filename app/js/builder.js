@@ -5,6 +5,9 @@ $(() => {
     "use strict";
 
     //const container     = $('.app.scroller')[0];
+
+    const builder_type  = $('#builder').attr('data-builder-type');
+
     // Builder elements
     const builder_btn   = $('.components-list .builder-nav-aside-btn');
     const builder_body  = $('#newsletter-builder #fakebody');
@@ -34,10 +37,22 @@ $(() => {
     const all_ipt_user = $('.ipt[required]:not([disabled]):not([readonly])');
     const all_ipt_hide = $('.ipt-hidden:not([disabled]):not([readonly])');
     const all_ipt      = all_ipt_user.add(all_ipt_hide);
-    const ipt_date     = $('#input-date');
-    const ipt_prefix   = $('#input-prefix');
+
     const ipt_name     = $('#input-name');
-    const ipt_name_formated = $('#newsletter-name');
+
+    let ipt_name_formated, ipt_id, ipt_date, ipt_prefix, ipts;
+
+    if (builder_type === 'template') {
+        ipt_id = $('#template-id');
+        ipts = ipt_name;
+        ipt_name_formated = $('#template-name');
+    }
+    else{
+        ipt_date   = $('#input-date');
+        ipt_prefix = $('#input-prefix');
+        ipts = ipt_date.add(ipt_name);
+        ipt_name_formated = $('#newsletter-name');
+    }
 
     const set_img_placeholder = (cpt) => {
         cpt.find(empty_img).each(function(){
@@ -58,15 +73,28 @@ $(() => {
     };
     const update_header = () => {
         let title  = update_title();
-        let date   = ipt_date.val();
-        let prefix = ipt_prefix.val();
-        if ((date === '') || (title === '')){
-            header_title.removeClass('with-file-name');
-            header_file.text('');
+        if (builder_type === 'template'){
+            let id = ipt_id.val();
+            if (title === ''){
+                header_title.removeClass('with-file-name');
+                header_file.text('');
+            }
+            else {
+                header_title.addClass('with-file-name');
+                header_file.text(id +' - '+ title);
+            }
         }
         else{
-            header_title.addClass('with-file-name');
-            header_file.text(format_date(date)+'_'+prefix+title+'.html');
+            let date   = ipt_date.val();
+            let prefix = ipt_prefix.val();
+            if ((date === '') || (title === '')){
+                header_title.removeClass('with-file-name');
+                header_file.text('');
+            }
+            else{
+                header_title.addClass('with-file-name');
+                header_file.text(format_date(date)+'_'+prefix+title+'.html');
+            }
         }
     };
     const update_btns = () => {
@@ -140,7 +168,7 @@ $(() => {
     ///// Form Builder Events /////
 
     // Update header and form buttons when date & title input
-    ipt_date.add(ipt_name).on('input',() => {
+    ipts.on('input',() => {
         update_header();
         update_btns();
     });

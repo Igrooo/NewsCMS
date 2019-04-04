@@ -11,6 +11,12 @@
 #input-prefix{
     width: 20px;
 }
+#input-id{
+    width: 30px;
+}
+#input-name.template{
+    width: calc(100% - 74px);
+}
 #newsletter-builder{
     position: relative;
     overflow: hidden;
@@ -108,7 +114,7 @@
     vertical-align: middle;
 }
 .cpt-icon{
-    width: 18px;
+    width: 14px;
     margin-right: 5px;
     /*font-size: 1.5em;*/
 }
