@@ -6,7 +6,7 @@ $id    = $_POST['id'];
 $name  = $_POST['name'];
 $cpts  = $_POST['components'];
 
-// Insert new newsletter in database //
+// Insert new template in database //
 $update = db_update_template($table, $id, $name, $cpts);
 
 if($update == false){
@@ -14,8 +14,8 @@ if($update == false){
     $location = "?m=builder&t&q=new&error&error_info=$error_info";
 }
 else{
-    // Continue to editor
-    $location = "?m=viewer&t&id=$id&ok";
+    // Continue to builder
+    $location = "?m=builder&t&id=$id&ok";
 }
 
 //Redirection

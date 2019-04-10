@@ -1,10 +1,10 @@
 <form id="form-builder" method="post">
     <?php
     if ($query != 'new') {
-        $ID = get_id_template($name);
+        $ID = $query_id;
     }
     else{
-        $ID = next_id();
+        $ID = next_id(DB_TABLE_TEMPLATES);
     }
     ?>
     <div class="ipt-group ipt-group-name">

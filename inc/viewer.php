@@ -17,7 +17,7 @@
         <!-- NEWSLETTER VIEWER -->
         <div id="newsletter-viewer">
             <div id="<?php echo $query?>">
-                <div id="fakebody" style="font-size:12px; margin: 0; padding: 0;" border="0" cellspacing="0" cellpadding="0">
+                <div id="fakebody" style="font-size:12px; margin: 0; padding: 0;">
                     <table border="0" style="width: 100%;" cellspacing="5" cellpadding="0" width="100%" bgcolor="" align="center">
                         <?php
                         $content = get_content('generated',$name,$date);

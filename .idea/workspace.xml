@@ -2,24 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2763b0c-49de-42ed-a83b-273c6f1f61c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/conf/insert-template.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/conf/update-template.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/css/builder.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/builder.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/css/viewer.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/css/viewer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/js/builder.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/builder.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conf/functions-db.php" beforeDir="false" afterPath="$PROJECT_DIR$/conf/functions-db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conf/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/conf/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conf/init.php" beforeDir="false" afterPath="$PROJECT_DIR$/conf/init.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/insert-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/conf/insert-template.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conf/insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/conf/insert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/update-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/conf/update-template.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conf/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/conf/update.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/builder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/editor.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/editor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/content.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/content.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/explorer.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/explorer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/form-builder-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/form-builder-template.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/form-builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/form-builder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/nav-aside-builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/nav-aside-builder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/nav-builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/nav-builder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/viewer.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/viewer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/errors.log" afterDir="false" />
     </list>
@@ -45,22 +46,17 @@
     <expand />
     <select />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf/insert-template.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/functions-db.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="128">
+              <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -68,26 +64,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf/update-template.php">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="32">
+              <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="841" column="1" lean-forward="true" selection-start-line="841" selection-start-column="1" selection-end-line="841" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/init.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="75" column="26" lean-forward="true" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/css/builder.css">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="160">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/viewer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/builder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+              <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -95,8 +100,34 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/js/builder.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="270" column="11" selection-start-line="270" selection-start-column="11" selection-end-line="270" selection-end-column="11" />
+            <state relative-caret-position="131">
+              <caret line="209" column="27" lean-forward="true" selection-start-line="209" selection-start-column="27" selection-end-line="209" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/form-builder-template.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="32">
+              <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/functions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1733">
+              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <folding>
+                <element signature="e#52#58#1" expanded="true" />
+                <element signature="e#68#74#1" expanded="true" />
+                <element signature="e#52#58#1" expanded="true" />
+                <element signature="e#134#140#1" expanded="true" />
+                <element signature="e#65#71#1" expanded="true" />
+                <element signature="e#147#153#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,35 +135,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf/update.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-141">
-              <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+            <state relative-caret-position="176">
+              <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/nav-viewer.php">
+        <entry file="file://$PROJECT_DIR$/inc/builder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/nav-builder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/nav-editor.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="2" column="196" lean-forward="true" selection-start-line="2" selection-start-column="188" selection-end-line="2" selection-end-column="196" />
+            <state relative-caret-position="160">
+              <caret line="10" column="54" lean-forward="true" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -150,23 +163,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>#explor</find>
-      <find>list-all-newsletters</find>
-      <find>.section-container</find>
-      <find>#logo</find>
-      <find>all-</find>
-      <find>#his</find>
-      <find>#form-conf</find>
-      <find>.nav:not(.vertical) .item:not(:last-child)</find>
-      <find>file-name</find>
-      <find>$file</find>
-      <find>'.</find>
-      <find>#header .nav ~ .nav</find>
-      <find>? :</find>
-      <find>.cpt-icon</find>
-      <find>cel</find>
-      <find>cons</find>
-      <find>add</find>
       <find>add(</find>
       <find>.without-link</find>
       <find>without-link</find>
@@ -174,16 +170,31 @@
       <find>loadin</find>
       <find>n°</find>
       <find>mode-b</find>
-      <find>.ipt-group-name:not(:first-child)</find>
       <find>Sélecttionez</find>
       <find>user-id</find>
       <find>get_id</find>
       <find>remove</find>
       <find>list_</find>
+      <find>$template</find>
+      <find>list_templates</find>
+      <find>template</find>
+      <find>ipt-group-d</find>
+      <find>newsletter-template</find>
+      <find>url(</find>
+      <find>$query_id</find>
+      <find>builder_type === 'template'</find>
+      <find>href=&quot;.&quot;</find>
+      <find>$components</find>
+      <find>template-components</find>
+      <find>#input-name</find>
+      <find>.ipt-select</find>
+      <find>.ipt-group-template</find>
+      <find>.ipt-group-name:not(:first-child)</find>
+      <find>input-template</find>
+      <find>templa</find>
+      <find>ipt_te</find>
     </findStrings>
     <replaceStrings>
-      <replace>fn.enabled_btn</replace>
-      <replace>fn.disabled_btn</replace>
       <replace>builder_btns</replace>
       <replace>.each(function()</replace>
       <replace>editable</replace>
@@ -212,6 +223,8 @@
       <replace>../font/fontawesome/</replace>
       <replace>HEADER_TITLE</replace>
       <replace>cpt</replace>
+      <replace>$template-mode</replace>
+      <replace>$template_mode</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\wamp64\www\newsCMS\app\js</dir>
@@ -250,30 +263,30 @@
         <option value="$PROJECT_DIR$/app/js/script.js" />
         <option value="$PROJECT_DIR$/app/css/editor.css" />
         <option value="$PROJECT_DIR$/conf/update-content.php" />
-        <option value="$PROJECT_DIR$/inc/header.php" />
-        <option value="$PROJECT_DIR$/inc/viewer.php" />
         <option value="$PROJECT_DIR$/conf/delete.php" />
-        <option value="$PROJECT_DIR$/inc/explorer.php" />
-        <option value="$PROJECT_DIR$/inc/content.php" />
         <option value="$PROJECT_DIR$/app/js/editor.js" />
         <option value="$PROJECT_DIR$/inc/nav-viewer.php" />
-        <option value="$PROJECT_DIR$/conf/init.php" />
-        <option value="$PROJECT_DIR$/app/css/builder.css" />
-        <option value="$PROJECT_DIR$/inc/builder.php" />
-        <option value="$PROJECT_DIR$/app/css/style.css" />
         <option value="$PROJECT_DIR$/inc/nav-aside-builder.php" />
-        <option value="$PROJECT_DIR$/conf/update.php" />
         <option value="$PROJECT_DIR$/inc/nav-builder.php" />
-        <option value="$PROJECT_DIR$/conf/insert.php" />
         <option value="$PROJECT_DIR$/inc/editor.php" />
         <option value="$PROJECT_DIR$/app/css/viewer.css" />
+        <option value="$PROJECT_DIR$/inc/content.php" />
+        <option value="$PROJECT_DIR$/conf/insert.php" />
+        <option value="$PROJECT_DIR$/conf/update.php" />
+        <option value="$PROJECT_DIR$/inc/explorer.php" />
         <option value="$PROJECT_DIR$/inc/form-builder.php" />
-        <option value="$PROJECT_DIR$/conf/functions.php" />
+        <option value="$PROJECT_DIR$/inc/viewer.php" />
+        <option value="$PROJECT_DIR$/conf/functions-db.php" />
+        <option value="$PROJECT_DIR$/inc/header.php" />
+        <option value="$PROJECT_DIR$/inc/builder.php" />
         <option value="$PROJECT_DIR$/inc/form-builder-template.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/conf/update-template.php" />
         <option value="$PROJECT_DIR$/conf/insert-template.php" />
-        <option value="$PROJECT_DIR$/conf/functions-db.php" />
+        <option value="$PROJECT_DIR$/conf/update-template.php" />
+        <option value="$PROJECT_DIR$/app/css/builder.css" />
+        <option value="$PROJECT_DIR$/app/css/style.css" />
+        <option value="$PROJECT_DIR$/conf/init.php" />
+        <option value="$PROJECT_DIR$/conf/functions.php" />
         <option value="$PROJECT_DIR$/app/js/builder.js" />
       </list>
     </option>
@@ -299,10 +312,10 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1" />
-    <option name="y" value="171" />
-    <option name="width" value="1292" />
-    <option name="height" value="653" />
+    <option name="x" value="88" />
+    <option name="y" value="212" />
+    <option name="width" value="1026" />
+    <option name="height" value="546" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -310,8 +323,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -350,11 +361,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551169805489" />
@@ -460,7 +474,9 @@
       <workItem from="1552594456059" duration="7121000" />
       <workItem from="1552899852496" duration="44000" />
       <workItem from="1552902785359" duration="13093000" />
-      <workItem from="1554124758308" duration="72179000" />
+      <workItem from="1554124758308" duration="72419000" />
+      <workItem from="1554408735080" duration="140000" />
+      <workItem from="1554803104082" duration="27555000" />
     </task>
     <task id="LOCAL-00001" summary="v0.3 - Fix">
       <created>1554125667280</created>
@@ -504,17 +520,24 @@
       <option name="project" value="LOCAL" />
       <updated>1554376449454</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="v1.3 - Template Builder - WIP - nonfunctional">
+      <created>1554395864297</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1554395864297</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="971308000" />
+    <option name="totallyTimeSpent" value="999243000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4997227" visible="true" weight="0.18910742" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4997227" visible="true" weight="0.113464445" />
       <window_info id="Structure" order="1" sideWeight="0.50027734" side_tool="true" weight="0.23455599" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -549,7 +572,7 @@
       <window_info anchor="right" id="Maven" order="9" weight="0.32980332" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4997227" visible="true" weight="0.14750378" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4997227" visible="true" weight="0.21197411" />
       <window_info id="Structure" order="1" sideWeight="0.50027734" side_tool="true" weight="0.23455599" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -568,7 +591,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.5810364" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.58101475" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.3295082" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" weight="0.3294509" />
@@ -581,7 +604,7 @@
       <window_info anchor="right" id="Database" order="6" weight="0.32980332" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.32980332" />
       <window_info anchor="right" id="Ant Build" order="8" weight="0.24962178" />
-      <window_info anchor="right" id="Maven" order="9" />
+      <window_info anchor="right" id="Maven" order="9" weight="0.32980332" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,20 +620,14 @@
     <MESSAGE value="v1.0 - Builder - change date, name and components" />
     <MESSAGE value="v1.1 - Viewer - Button &amp; function for delete" />
     <MESSAGE value="v1.2 - Editor - Fix - Add exception in case of newsletter does not have editable element" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.2 - Editor - Fix - Add exception in case of newsletter does not have editable element" />
+    <MESSAGE value="v1.3 - Template Builder - WIP - nonfunctional" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.3 - Template Builder - WIP - nonfunctional" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/inc/download.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/news/common/foot.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -690,20 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/update-content.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conf/delete.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -725,24 +728,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/conf.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/explorer-grid.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/explorer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -770,24 +759,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/css/builder.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/list-cpts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -805,31 +780,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="839" column="34" lean-forward="true" selection-start-line="839" selection-start-column="34" selection-end-line="839" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/nav-aside-builder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
           <caret line="52" column="52" lean-forward="true" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/content.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/editor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="30" column="52" lean-forward="true" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -840,63 +794,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/form-builder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="108" column="13" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
-          <folding>
-            <element signature="e#52#58#1" expanded="true" />
-            <element signature="e#119#125#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/form-builder-template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/insert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/init.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="63" column="19" lean-forward="true" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/nav-builder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/nav-editor.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
-          <caret line="2" column="196" lean-forward="true" selection-start-line="2" selection-start-column="188" selection-end-line="2" selection-end-column="196" />
+          <caret line="2" column="196" selection-start-line="2" selection-start-column="188" selection-end-line="2" selection-end-column="196" />
         </state>
       </provider>
     </entry>
@@ -907,52 +808,179 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/update.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/web-forms.rnc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-141">
-          <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+        <state relative-caret-position="294">
+          <caret line="410" column="16" selection-start-line="410" selection-start-column="16" selection-end-line="410" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/insert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="41" column="24" lean-forward="true" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/explorer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/content.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="33" column="7" lean-forward="true" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/viewer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        <state relative-caret-position="288">
+          <caret line="18" column="42" lean-forward="true" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/update-template.php">
+    <entry file="file://$PROJECT_DIR$/inc/editor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="352">
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/conf/functions-db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="197">
+          <caret line="113" column="1" lean-forward="true" selection-start-line="113" selection-start-column="1" selection-end-line="113" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/list-cpts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="40" lean-forward="true" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/conf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/form-builder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="69" lean-forward="true" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/nav-builder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/update-content.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="37" column="37" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/conf/insert-template.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        <state relative-caret-position="128">
+          <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/update-template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/css/builder.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="841" column="1" lean-forward="true" selection-start-line="841" selection-start-column="1" selection-end-line="841" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="75" column="26" lean-forward="true" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/builder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+        <state relative-caret-position="160">
+          <caret line="10" column="54" lean-forward="true" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/form-builder-template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1733">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <element signature="e#52#58#1" expanded="true" />
+            <element signature="e#68#74#1" expanded="true" />
+            <element signature="e#52#58#1" expanded="true" />
+            <element signature="e#134#140#1" expanded="true" />
+            <element signature="e#65#71#1" expanded="true" />
+            <element signature="e#147#153#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/builder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="270" column="11" selection-start-line="270" selection-start-column="11" selection-end-line="270" selection-end-column="11" />
+        <state relative-caret-position="131">
+          <caret line="209" column="27" lean-forward="true" selection-start-line="209" selection-start-column="27" selection-end-line="209" selection-end-column="27" />
         </state>
       </provider>
     </entry>

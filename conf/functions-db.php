@@ -73,7 +73,7 @@ function db_insert_template($table, $name, $components){
 }
 // update template
 function db_update_template($table, $id, $name, $components){
-    $sql = sql_update_template($table, $name, $components);
+    $sql = sql_update_template($table, $id, $name, $components);
     return db_set($sql);
 }
 // insert new newsletter
@@ -103,6 +103,16 @@ function db_all_years($table){
     return db_get($sql);
 }
 
+// all templates
+function db_all_templates($table){
+    $sql = sql_select('*',$table,null,null,null,null,null,null,null);
+    return db_get($sql);
+}
+function db_one_template($table,$id){
+    $sql = sql_select('*',$table,'ID',$id,null,null,null,null,null);;
+    return db_get($sql);
+}
+
 // newsletters filter by year order by desc date
 function db_all($table, $year){
     $sql = sql_select('*',$table,'YEAR',$year,null,null,null,'DATE','DESC');
@@ -119,6 +129,11 @@ function db_last($table){
     return db_get($sql);
 }
 
+//get auto increment id
+function db_next_ID($table){
+    $sql = "SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA='news' AND TABLE_NAME='$table'";
+    return db_get($sql);
+}
 // all components sections
 function db_all_cpt_sections($table){
     $sql = sql_select('SECTION',$table,null,null,null,null,'SECTION',null,null);

@@ -20,7 +20,7 @@
     </div>
     <div class="list-body">
         <?php
-        // list_template($year, $name, $date);
+            list_templates('list',$query_id);
         ?>
     </div>
 </div>

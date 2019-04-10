@@ -3,7 +3,7 @@
 <?php
 include('head.php');
 ?>
-<body class="mode-<?php echo $mode; echo $template ? ' template':'';?>">
+<body class="mode-<?php echo $mode; echo $template_mode ? ' template':'';?>">
     <header id="header" class="section-container reset cms-ui">
         <?php
             include('header.php');
@@ -17,7 +17,7 @@ include('head.php');
         --><section class="app section-container scroller">
             <div class="app-container-with-scroller">
             <?php
-                if($query != null){
+                if(($query != null)||($template_mode)){
                     include("$mode.php");
                 }
                 elseif(isset($conf)){

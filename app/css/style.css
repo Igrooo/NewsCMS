@@ -78,8 +78,7 @@ iframe{
 /*********************/
 .section-container{
     overflow: hidden;
-    padding: 10px;
-    padding-right: 0;
+    padding: 10px 0 10px 10px;
     box-sizing: border-box;
     position: relative;
 }
@@ -423,15 +422,15 @@ iframe{
     background-color: #dedede;
 }
 
+.year .open,
 .item .open,
 .item .active{
+    color: #006fb9;
     opacity: 1;
     background-color: #dedede;
-    cursor: default;
 }
-.year .open,
 .item .open{
-    color: #006fb9;
+    cursor: default;
 }
 .grid .item a,
 .nav .btn,
@@ -834,14 +833,17 @@ iframe{
 .ipt-label.disabled{
     opacity: 0.4;
 }
+.ipt-group-template{
+    width: 180px;
+    padding-right: 36px;
+}
 .ipt-group-date{
     width: 145px;
 }
 .ipt-group-name:not(:first-child),
 .ipt-group-date:not(:first-child),
 .ipt-group-title{
-    /*width: calc(50% - 103px);*/
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .ipt{
@@ -850,6 +852,15 @@ iframe{
     height: 20px;
     border: 1px solid #bebdbd;
     box-shadow: none;
+}
+.ipt-select{
+    width: 100%;
+    padding-right: 25px;
+    box-sizing: content-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: white url('img/white-arrow.png') right no-repeat;
 }
 .ipt-inline.ipt-tiny{
     width: calc(100% - 28px);

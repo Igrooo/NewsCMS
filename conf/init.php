@@ -7,10 +7,10 @@ else{
     $mode = 'viewer';
 }
 if (isset($_GET['t'])){
-    $template = true;
+    $template_mode = true;
 }
 else{
-    $template = false;
+    $template_mode = false;
 }
 if (isset($_GET['y'])){
     $year = $_GET['y'];
@@ -28,10 +28,22 @@ if (isset($_GET['q'])){
     $query = $_GET['q'];
 }
 else{
-    $query = null;
+    if($template_mode){
+        $query = 'template';
+    }
+    else{
+        $query = null;
+    }
 }
 if (isset($_GET['conf'])){
     $conf = $_GET['conf'];
+}
+
+if(isset($_GET['id'])){
+    $query_id = $_GET['id'];
+}
+else{
+    $query_id = null;
 }
 /* * * * */
 $name = $query;
@@ -57,17 +69,18 @@ $history = get_last();
 if(!empty($history)){
     $last_edited = '<a href="?y='.$history['year'].'&d='.$history['date'].'&q='.$history['name'].'" title="Dernière modification"><i class="fas fa-history"></i> '.$history['long_name'].'</a> <span class="last">le <span class="last-date">'.$history['edit_date'].'</span> à <span class="last-time">'.$history['edit_time'].'</span> par <span class="last-user">'.$history['user'].'</span></span>';
 }
-else{$last_edited ='';}
+else{$last_edited = '';}
 
 /* init head & header */
 $viewer   = 'Aperçu de ';
 $editor   = 'Édition de ';
-$builder  = 'Modification de ';
-if($template){
+if($template_mode){
+    $builder = 'Modification du modèle ';
     $new = "Création d'un nouveau modèle";
     $new_html = 'Création <span class="new-noname">d\'un nouveau modèle</span><span class="new-of">du modèle </span>';
 }
 else{
+    $builder  = 'Modification de ';
     $new      = "Création d'une nouvelle newsletter";
     $new_html = 'Création <span class="new-noname">d\'une nouvelle newsletter</span><span class="new-of">de </span>';
 }

@@ -6,14 +6,13 @@
         $name_without_prefix = str_replace(PREFIX,'',$name);
     }
     ?>
-    <!--
     <div class="ipt-group ipt-group-template">
-        <label class="ipt-label" for="newsletter-template">Date d'envoi</label>
-        <input     class="ipt-hidden"  type="number"  readonly hidden value="0">
-        <select id="newsletter-template" name="template" title="template">
-            <?php //list_templates('form'); ?>
+        <label class="ipt-label" for="input-template">Modèle</label>
+        <select class="ipt ipt-select" id="input-template" name="template" title="Modèle">
+            <option value="0">Pas de modèle</option>
+            <?php list_templates('form', $query_id); ?>
         </select>
-    </div>-->
+    </div>
     <div class="ipt-group ipt-group-date">
         <label class="ipt-label" for="input-date">Date d'envoi</label>
         <input class="ipt" id="input-date" type="date" <?php if ($query == 'new'){ echo'min="'.CURRENT_DATE.'"'; } else{echo'value="'.$date.'"';} ?>  name="date" required>

@@ -60,9 +60,42 @@ function list_news($display, $year, $name, $date){
     }
     else{
         $button = '<br><a class="btn btn-primary" href="?m=builder&q=new" title="Créer une nouvelle newsletter"><i class="icon fas fa-plus"></i> C\'est partie, on commence !</a><br><br>';
-        show_info('h4','info', '', 'Aucune newsletter n\'a été créée pour cette année.', $button);
+        show_info('h4','info', '', "Aucune newsletter n'a été créée pour cette année.", $button);
     }
 
+}
+
+/* List templates */
+function list_templates($context, $query_id){
+    $templates = db_all_templates(DB_TABLE_TEMPLATES);
+    if(!empty($templates)) {
+        if($context == 'list') {
+            echo '<ul class="list list-templates">';
+            foreach ($templates as $template) {
+                if ($query_id == $template['ID']) {
+                    echo '<li class="item"><span class="open"><i class="bull">&bull;</i><span class="newsletter-title template-id">' . sprintf('%02d', $template['ID']) . '</span> <i class="bull">&bull;</i><span class="newsletter-title">' . $template['NAME'] . '</span></span></li>';
+                } else {
+                    echo '<li class="item"><a href="?m=builder&t&id=' . $template['ID'] . '"><i class="bull">&bull;</i><span class="newsletter-title template-id">' . sprintf('%02d', $template['ID']) . '</span> <i class="bull">&bull;</i><span class="newsletter-title">' . $template['NAME'] . '</span></a></li>';
+                }
+            }
+            echo '</ul>';
+        }
+        else{
+            foreach ($templates as $template) {
+                echo '<option value="' .$template['COMPONENTS'].'">'. sprintf('%02d', $template['ID']) . ' &bull; ' . $template['NAME'] . '</option>';
+            }
+        }
+    }
+}
+function get_template($id){
+    $content = array('NAME' => '', 'COMPONENTS' => '');
+    $one = db_one_template(DB_TABLE_TEMPLATES,$id);
+    if(!empty($one)){
+        foreach ($one as $template) {
+            $content = $template;
+        }
+    }
+    return $content;
 }
 
 /* List all years */
@@ -106,8 +139,13 @@ function get_id($name,$date){
     return $id;
 }
 
-function next_id(){
-    return 0;
+function next_id($table){
+    $nextID = db_next_ID($table);
+    $id = 1;
+    foreach ($nextID as $ID) {
+       $id = $ID['AUTO_INCREMENT'];
+    }
+    return $id;
 }
 
 function get_last(){
@@ -184,10 +222,10 @@ function generate_file($name, $dirpath, $filepath, $date){
     $foot = file_get_contents(FOLDER_COMMON.'foot.html');
     $content = get_content('generated',$name,$date);
     if($content == 'empty'){
-        $content = '<tr><td>La newsletter '.$name.' est introuvable.</td></tr>';
+        $content = "<tr><td>La newsletter $name est introuvable.</td></tr>";
     }
     elseif($content == 'bad-query'){
-        $content = '<tr><td>La newsletter '.$name.' n\'existe pas avec cette date ('.$date.').</td></tr>';
+        $content = "<tr><td>La newsletter $name n'existe pas avec cette date ($date).</td></tr>";
     }
     $html = $head.$content.$foot;
     // Create file

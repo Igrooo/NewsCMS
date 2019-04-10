@@ -1,5 +1,5 @@
 <div class="header" role="banner" xmlns="http://www.w3.org/1999/html">
-    <a id="logo" href=".">
+    <a id="logo" href="<?php echo CURRENT_DIR;?>">
         <h1 id="title"><?php echo APP_ICON.'<span class="name-app">'.APP_NAME ?></span></h1>
         <h2 id="subtitle">
             <img  class="company-logo" src="<?php echo COMPANY_LOGO ?>" alt="<?php COMPANY_NAME ?>">
@@ -7,10 +7,6 @@
         </h2>
     </a><!--
     --><h3 id="apptitle">
-        <?php
-        /* if(isset($query)){echo'
-        <div id="subapptitle" class="header-info">'.$last_edited.'</div>
-        ';} */
-        echo HEADER_TITLE ?>
+        <?php echo HEADER_TITLE ?>
     </h3>
 </div>

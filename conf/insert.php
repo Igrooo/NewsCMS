@@ -39,8 +39,8 @@ else{
     $year  = date('Y', strtotime($date));
     $date_edit = CURRENT_TIME;
 
-    $template  = '0';
-    //$template  = $_POST['template'];
+    $template_id  = '0';
+    //$template_id  = $_POST['template'];
     //$title     = $_POST['user-name'];
 
     /* Add tracking in not editable links */
@@ -60,7 +60,7 @@ else{
         'name'      => $name,
         'editable'  => $editable,
         'generated' => $generated,
-        'template'  => $template,
+        'template'  => $template_id,
         'date_edit' => $date_edit
     ];
 

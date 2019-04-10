@@ -34,6 +34,8 @@ include(FOLDER_CONF . 'insert-template.php');}
 if(isset($_GET['new'])){
 include(FOLDER_CONF . 'insert.php');}
 /* update */
+if(isset($_GET['update-template'])){
+    include(FOLDER_CONF . 'update-template.php');}
 if(isset($_GET['update-content'])){
 include(FOLDER_CONF . 'update-content.php');}
 if(isset($_GET['update'])){

@@ -37,7 +37,8 @@ $(() => {
 
     const ipt_name     = $('#input-name');
 
-    let ipt_name_formated, ipt_id, ipt_date, ipt_prefix, ipts, builder_ipt, builder_gen;
+
+    let ipt_name_formated, ipt_id, ipt_date, ipt_prefix, ipts, builder_ipt, builder_gen, ipt_template;
 
     if (builder_type === 'template') {
         ipt_id = $('#template-id');
@@ -46,13 +47,13 @@ $(() => {
         builder_ipt = $('#template-components');
     }
     else{
+        ipt_template = $('#input-template');
         ipt_date   = $('#input-date');
         ipt_prefix = $('#input-prefix');
         ipts = ipt_date.add(ipt_name);
         ipt_name_formated = $('#newsletter-name');
         builder_ipt   = $('#newsletter-content-editable');
         builder_gen   = $('#newsletter-content-generated');
-
     }
 
     const set_img_placeholder = (cpt) => {
@@ -185,6 +186,22 @@ $(() => {
             }
         });
     };
+
+    ///// Components Functions /////
+    const add_cpt = id =>{
+        let cpt = builder_cpts.find(builder_row+'[data-id='+id+']').clone();
+        builder_table.append(cpt);
+        set_img_placeholder(cpt);
+        disable_links(cpt);
+        update_ipt();
+    };
+    const get_cpts = (list_cpts) => {
+        let components = list_cpts.split(',');
+        components.forEach((item) => {
+            add_cpt(item);
+        });
+    };
+
     /////////////////////////////
 
     ///// Form Builder Events /////
@@ -197,6 +214,16 @@ $(() => {
 
     // Update form buttons when builder change
     builder_ipt.change(() => update_btns());
+
+    if (builder_type !== 'template') {
+        ipt_template.change(() => {
+            let list_cpts = ipt_template.find('option:selected').val();
+            console.log(list_cpts);
+            // Empty builder
+            builder_table.html('');
+            get_cpts(list_cpts);
+        });
+    }
 
     // Disable buttons and empty header & builder on click on reset button
     btn_reset.click(() => {
@@ -214,19 +241,11 @@ $(() => {
     ///// Builder Events /////
 
     builder_btn.hover( () => {
-           builder_table.append(builder_placeholder);
+        builder_table.append(builder_placeholder);
            //scroll_bottom($(container));
         }, () => {
         $(builder_table.find('.ui-highlight:last')).remove();
         });
-
-    const add_cpt = id =>{
-        let cpt = builder_cpts.find(builder_row+'[data-id='+id+']').clone();
-        builder_table.append(cpt);
-        set_img_placeholder(cpt);
-        disable_links(cpt);
-        update_ipt();
-    };
 
     // Add newsletter components
     builder_btn.click(function () {
@@ -265,10 +284,7 @@ $(() => {
 
     if (builder_type === 'template') {
         let list_cpts = builder_ipt.val();
-        let components = list_cpts.split(',');
-        components.forEach((item) => {
-            add_cpt(item);
-        });
+        get_cpts(list_cpts);
     }
     else{
         // Init Builder
