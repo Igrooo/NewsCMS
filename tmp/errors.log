@@ -500,3 +500,18 @@ Stack trace:
 [10-Apr-2019 12:38:03 UTC] PHP   2. include() C:\wamp64\www\NewsCMS\index.php:51
 [10-Apr-2019 12:38:03 UTC] PHP   3. include() C:\wamp64\www\NewsCMS\inc\content.php:21
 [10-Apr-2019 12:38:03 UTC] PHP   4. include() C:\wamp64\www\NewsCMS\inc\builder.php:16
+[11-Apr-2019 09:04:34 UTC] PHP Notice:  Undefined index: logged in C:\wamp64\www\NewsCMS\index.php on line 36
+[11-Apr-2019 09:04:34 UTC] PHP Stack trace:
+[11-Apr-2019 09:04:34 UTC] PHP   1. {main}() C:\wamp64\www\NewsCMS\index.php:0
+[11-Apr-2019 09:05:55 UTC] PHP Notice:  Undefined index: logged in C:\wamp64\www\NewsCMS\index.php on line 36
+[11-Apr-2019 09:05:55 UTC] PHP Stack trace:
+[11-Apr-2019 09:05:55 UTC] PHP   1. {main}() C:\wamp64\www\NewsCMS\index.php:0
+[11-Apr-2019 09:08:30 UTC] PHP Notice:  Undefined index: logged in C:\wamp64\www\NewsCMS\index.php on line 36
+[11-Apr-2019 09:08:30 UTC] PHP Stack trace:
+[11-Apr-2019 09:08:30 UTC] PHP   1. {main}() C:\wamp64\www\NewsCMS\index.php:0
+[11-Apr-2019 09:09:58 UTC] PHP Notice:  Undefined index: logged in C:\wamp64\www\NewsCMS\index.php on line 36
+[11-Apr-2019 09:09:58 UTC] PHP Stack trace:
+[11-Apr-2019 09:09:58 UTC] PHP   1. {main}() C:\wamp64\www\NewsCMS\index.php:0
+[11-Apr-2019 09:09:59 UTC] PHP Notice:  Undefined index: logged in C:\wamp64\www\NewsCMS\index.php on line 36
+[11-Apr-2019 09:09:59 UTC] PHP Stack trace:
+[11-Apr-2019 09:09:59 UTC] PHP   1. {main}() C:\wamp64\www\NewsCMS\index.php:0

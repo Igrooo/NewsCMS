@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 //// SERVER PATHS
 define('SERVER_HOST', $_SERVER['HTTP_HOST']);
@@ -28,28 +29,45 @@ ini_set('html_errors', false); // HTML errors
 require(FOLDER_CONF.'conf.php');
 /* functions */
 require(FOLDER_CONF.'functions.php');
-/* insert */
-if(isset($_GET['new-template'])){
-include(FOLDER_CONF . 'insert-template.php');}
-if(isset($_GET['new'])){
-include(FOLDER_CONF . 'insert.php');}
-/* update */
-if(isset($_GET['update-template'])){
-    include(FOLDER_CONF . 'update-template.php');}
-if(isset($_GET['update-content'])){
-include(FOLDER_CONF . 'update-content.php');}
-if(isset($_GET['update'])){
-include(FOLDER_CONF . 'update.php');}
-/* delete */
-if(isset($_GET['delete'])){
-include(FOLDER_CONF.'delete.php');}
-/* get url and set context vars */
-require(FOLDER_CONF.'init.php');
-/* download static html file */
-if(isset($_GET['download'])) {
-include(FOLDER_INC . 'download.php');
-}
-/* load content */
-include(FOLDER_INC.'content.php');
 
-?>
+if(isset($_GET['login'])){
+    include (FOLDER_CONF.'login.php');
+}
+if(isset($_GET['logout'])){
+    include (FOLDER_CONF.'logout.php');
+}
+if(isset($_SESSION['logged']) || isset($_COOKIE['logged'])){
+    /* insert */
+    if (isset($_GET['new-template'])) {
+        include(FOLDER_CONF . 'insert-template.php');
+    }
+    if (isset($_GET['new'])) {
+        include(FOLDER_CONF . 'insert.php');
+    }
+    /* update */
+    if (isset($_GET['update-template'])) {
+        include(FOLDER_CONF . 'update-template.php');
+    }
+    if (isset($_GET['update-content'])) {
+        include(FOLDER_CONF . 'update-content.php');
+    }
+    if (isset($_GET['update'])) {
+        include(FOLDER_CONF . 'update.php');
+    }
+    /* delete */
+    if (isset($_GET['delete'])) {
+        include(FOLDER_CONF . 'delete.php');
+    }
+    /* get url and set context vars */
+    require(FOLDER_CONF . 'init.php');
+    /* download static html file */
+    if (isset($_GET['download'])) {
+        include(FOLDER_INC . 'download.php');
+    }
+    /* load content */
+    include(FOLDER_INC.'content.php');
+}
+else{
+    include (FOLDER_INC.'form-login.php');
+}
+

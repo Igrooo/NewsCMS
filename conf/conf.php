@@ -82,6 +82,9 @@ define('COMPANY_NAME', 'Carrefour Voyages');
 define('PREFIXDATE', true);
 define('PREFIX', 'NL_');
 
+define('USER_LOGIN','User');
+define('USER_PASSWORD','Awz3!eF2Im4qk%Hb2a');
+
 /* User profil preferences */
 define('USER_COLOR','');
 /* /////////////////////////////// */
