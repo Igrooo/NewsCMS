@@ -9,6 +9,7 @@ Newsletters Management System - to build, edit and view newsletters formatted in
   * v1.0 02/04/19 - Builder - Change date, name and components
   * v1.1 03/04/19 - Viewer - Button & function for delete
   * v1.4 10/04/19 - Templating
+  * v1.5 11/04/19 - Simple login/logout
 
 | VERSIONS                         |                                                                        |
 |----------------------------------|------------------------------------------------------------------------|
