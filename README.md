@@ -24,7 +24,7 @@ Newsletters Management System - to build, edit and view newsletters formatted in
 | Newsletter Global Management 2/3 | Rename, delete, change date & options                                  |
 | Users management 1/2             | Simple login/logout with PHP SESSION                                   |
 | **v2**                           | **Multiples newsletters management**                                   |
-| Newsletter Global Management 2/3 | Clone newsletters                                                      |
+| Newsletter Global Management 3/3 | Clone newsletters                                                      |
 | Settings                         | Form to change globals settings                                        |
 | **v3**                           | **Users management 2/2**                                               |
 | Users account                    | Multi-users login & logout, detect when user open for modification     |                                  
