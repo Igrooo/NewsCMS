@@ -24,12 +24,12 @@ Newsletters Management System - to build, edit and view newsletters formatted in
 | Newsletter Global Management 2/3 | Rename, delete, change date & options                                  |
 | Users management 1/2             | Simple login/logout with PHP SESSION                                   |
 | **v2**                           | **Multiples newsletters management**                                   |
-| Newsletter Global Management 3/3 | Clone newsletters                                                      |
+| Newsletter Global Management 3/3 | Clone (duplicate a newsletter to create a new with different date/name)|
 | Settings                         | Form to change globals settings                                        |
+| Newsletters Previews             | Previews iframes thumbs for grid list of newsletters                   |
 | **v3**                           | **Users management 2/2**                                               |
 | Users account                    | Multi-users login & logout, detect when user open for modification     |                                  
 | Settings                         | Form to change user settings                                           |
 | **v4**                           | **Advanced features**                                                  |
 | Images                           | Load images into WYSIWYG form, keep local copy and send FTP with PHP ? |
 | E-mail HTML                      | Send e-mail of generated HTML for test                                 |
-| Newsletters Previews             | Previews picture thumbs for List newsletters stored in database        |
