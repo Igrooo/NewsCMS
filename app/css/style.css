@@ -797,15 +797,27 @@ iframe{
     text-overflow: ellipsis;
 }
 .thumb{
+    overflow: hidden;
     width: 150px;
     height: 180px;
-    line-height: 180px;
+    position: relative;
 }
-.temp-html{
+.thumb:after {
+    content: '';
+    display: block;
     position: absolute;
-    background-color: white;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
+}
+.thumb-icon{
+    line-height: 180px;
+}
+.thumb-page{
+    background-color: white;
+    transform: scale(0.392);
+    transform-origin: top left;
 }
 
 /* content for empty page */

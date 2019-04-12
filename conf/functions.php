@@ -31,22 +31,28 @@ function list_news($display, $year, $name, $date){
         foreach ($newsletters as $newsletter) {
             $newsletter_long_name = get_long_name($newsletter['DATE'],$newsletter['NAME'],false);
             if ($display == 'grid') {
-                echo '<li class="item">
+                echo '
+                <li class="item">
                     <a href="?y=' . $newsletter['YEAR'] . '&d=' . $newsletter['DATE'] . '&q=' . $newsletter['NAME'] . '">';
-                $thumb = FOLDER_THUMBS . $newsletter_long_name . '.png';
-                if (file_exists($thumb)) {
+                $filepath = FOLDER_HTML.$newsletter['YEAR'].'/'.$newsletter_long_name.'.html';
+
+                if (file_exists($filepath)) {
                     echo '<figure class="with-thumb">
                             <figcaption class="newsletter-title">' . $newsletter_long_name . '</figcaption>
-                                <img src="' . $thumb . '" alt="' . $newsletter_long_name . '" class="thumb">
+                            <div class="thumb">
+                                <iframe class="thumb-page" width="400" height="480" class="" src="'.$filepath.'"></iframe>
+                            </div>
                           </figure>';
                 } else {
-                    echo '<figure class="without-thumb" data-path-thumb="' . $thumb . '">
-                                        <figcaption class="newsletter-title">' . $newsletter_long_name . '</figcaption>
-                                        <i class="far fa-file-image fa-10x thumb thumb-icon icon icon-box"></i>
-                                     </figure>';
+                    echo '
+                        <figure class="without-thumb">
+                            <figcaption class="newsletter-title">' . $newsletter_long_name . '</figcaption>
+                            <i class="far fa-file-image fa-10x thumb thumb-icon icon icon-box"></i>
+                        </figure>
+                    ';
                 }
                 echo '</a>
-                 </li>';
+                </li>';
             } else {
                 $query_long_name = get_long_name($date , $name,false);
                 if ($query_long_name == $newsletter_long_name) {

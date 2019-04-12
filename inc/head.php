@@ -30,10 +30,4 @@
     <script src="<?php echo FOLDER_JS ?>script.js"></script>
     <!-- <?php echo $mode ?> script -->
     <script src="<?php echo FOLDER_JS.$mode ?>.js"></script>
-
-    <?php if((isset($_GET['added']))||(isset($_GET['ok']))){echo'
-    <!-- html2canvas for generate thumbnails of html newsletters in year view grid -->
-    <script src="'.FOLDER_JS.'lib/html2canvas.min.js"></script>
-    <!-- Newsletters thumbnails -->
-    <script src="'.FOLDER_JS.'newsthumbs.js"></script>';}?>
 </head>
