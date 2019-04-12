@@ -65,6 +65,7 @@ define('FOLDER_PLACEHOLDER', FOLDER_PICTURES.'placeholder/');
 define('PLACEHOLDER_NUM', '29');
 /* /////////////////////////////// */
 
+
 /* /////////////////////////////// */
 /* ///// DEFAULT USER CONFIG ///// */
 /* /////////////////////////////// */

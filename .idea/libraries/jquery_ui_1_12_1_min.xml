@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="jquery-ui-1.12.1.min" type="javaScript">
-    <CLASSES>
-      <root url="file://$PROJECT_DIR$/app/js/lib/jquery-ui-1.12.1.min.js" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
