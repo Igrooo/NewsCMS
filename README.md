@@ -28,7 +28,7 @@ Newsletters Management System - to build, edit and view newsletters formatted in
 | Settings                             | Form to change globals settings                                        |
 | Newsletters Previews                 | Previews iframes thumbs for grid list of newsletters                   |
 | **v3**                               | **Users management 2/2**                                               |
-| Users account                        | Multi-users login & logout, detect when user open for modification     |                                  
+| Users account                        | Multi-users login & logout, detect when user open for modification     |
 | Settings                             | Form to change user settings                                           |
 | **v4**                               | **Advanced features**                                                  |
 | Images                               | Load images into WYSIWYG form, keep local copy and send FTP with PHP ? |
