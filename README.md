@@ -10,6 +10,7 @@ Newsletters Management System - to build, edit and view newsletters formatted in
   * v1.1 03/04/19 - Viewer - Button & function for delete
   * v1.4 10/04/19 - Templating
   * v1.5 11/04/19 - Simple login/logout
+  * v2.0 12/04/19 - Iframes thumbs for grid list of newsletters
 
 | VERSIONS                             |                                                                        |
 |--------------------------------------|------------------------------------------------------------------------|
@@ -26,10 +27,10 @@ Newsletters Management System - to build, edit and view newsletters formatted in
 | **v2**                               | **Multiples newsletters management**                                   |
 | Newsletter Global Management 3/3     | Clone (duplicate a newsletter to create a new with different date/name)|
 | Settings                             | Form to change globals settings                                        |
-| Newsletters Previews                 | Previews iframes thumbs for grid list of newsletters                   |
-| **v3**                               | **Users management 2/2**                                               |
-| Users account                        | Multi-users login & logout, detect when user open for modification     |
-| Settings                             | Form to change user settings                                           |
-| **v4**                               | **Advanced features**                                                  |
+| ~~Newsletters Previews~~             | Previews iframes thumbs for grid list of newsletters                   |
+| **v3**                               | **Advanced features**                                                  |
 | Images                               | Load images into WYSIWYG form, keep local copy and send FTP with PHP ? |
 | E-mail HTML                          | Send e-mail of generated HTML for test                                 |
+| **v4**                               | **Users management 2/2**                                               |
+| Users account                        | Multi-users login & logout, detect when user open for modification     |
+| Settings                             | Form to change user settings                                           |
