@@ -1,6 +1,6 @@
 <head>
     <meta charset="<?php echo CHARSET ?>">
-    <meta name="robots" content="noindex">
+    <meta name="robots" content="noindex, no follow">
     <meta name="googlebot" content="noindex">
     <title><?php echo TITLE ?></title>
     <link rel="icon" type="image/png" href="<?php echo APP_FAVICON ?>">
