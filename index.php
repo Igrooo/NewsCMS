@@ -68,6 +68,6 @@ if(isset($_SESSION['logged']) || isset($_COOKIE['logged'])){
     include(FOLDER_INC.'content.php');
 }
 else{
-    include (FOLDER_INC.'form-login.php');
+    include (FOLDER_INC.'login.php');
 }
 

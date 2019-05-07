@@ -5,6 +5,9 @@
 $(() => {
     "use strict";
 
+    $('#page').removeClass('page-loading');
+    $('#page-loader').addClass('hidden');
+
     /*
     $('.scroller').scroll(() => {
         let box_position = $('.box').offset();

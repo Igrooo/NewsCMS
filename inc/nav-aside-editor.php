@@ -23,3 +23,9 @@
         </form>
     </div>
 </div>
+<div class="float-box float-box-sticky float-box-right reset cms-ui">
+    <div id="toggle-code-editor" class="nav-aside editor-nav-aside">
+        <a id="toggle-code" class="btn btn-secondary btn-block code-edit" title="Passer à la vue d'édition du code"><i class="icon icon-box fas fa-2x fa-code"></i> Code</a>
+        <a id="toggle-editor" class="btn btn-secondary btn-block content-edit hidden" title="Valider les modifications du code et repasser à la vue graphique d'édition du contenu"><i class="icon icon-box fas fa-2x fa-edit"></i> Contenu</a>
+    </div>
+</div>

@@ -13,7 +13,7 @@
     <!-- <?php echo $mode ?> CSS -->
     <link type="text/css" rel="stylesheet" href="<?php echo FOLDER_CSS.$mode ?>.css">
     <!-- CSS Newsletter -->
-    <?php if(isset($query)){include (FOLDER_COMMON.'style.php');} ?>
+    <?php if($query){include (FOLDER_COMMON.'style.php');} ?>
     <!-- End CSS Newsletter -->
 
     <!-- jQuery Libraries -->
@@ -24,6 +24,8 @@
         <!-- TinyMCE Editor -->
         <script src="'.FOLDER_JS.'lib/tinymce/tinymce.min.js"></script>
         <script src="'.FOLDER_JS.'lib/tinymce/jquery.tinymce.min.js"></script>
+        <!-- CodeMirror Editor -->
+        <script src="'.FOLDER_JS.'lib/tinymce/tinymce.min.js"></script>
     ';}?>
     <!-- End libraries -->
     <!-- Global functions -->
@@ -32,4 +34,10 @@
     <script src="<?php echo FOLDER_JS ?>script.js"></script>
     <!-- <?php echo $mode ?> script -->
     <script src="<?php echo FOLDER_JS.$mode ?>.js"></script>
+    <?php
+    if($mode == 'viewer') {
+    echo '
+    <!-- builder script for speed creation bar in home page -->
+    <script src="' . FOLDER_JS . 'builder.js"></script>
+    ';}?>
 </head>

@@ -1,65 +1,53 @@
 <?php
-/* init vars for web content */
+/* INIT GLOBALS VARIABLES */
+
+$mode = 'viewer';
+$template_mode = false;
+$query = false;
+$query_id = false;
+$year  = DEFAULT_YEAR;
+$date  = DEFAULT_DATE;
+$conf  = false;
+
 if (isset($_GET['m'])){
     $mode = $_GET['m'];
-}
-else{
-    $mode = 'viewer';
 }
 if (isset($_GET['t'])){
     $template_mode = true;
 }
-else{
-    $template_mode = false;
-}
 if (isset($_GET['y'])){
     $year = $_GET['y'];
-}
-else{
-    $year = DEFAULT_YEAR;
 }
 if (isset($_GET['d'])){
     $date = $_GET['d'];
 }
-else{
-    $date = DEFAULT_DATE;
-}
 if (isset($_GET['q'])){
     $query = $_GET['q'];
 }
-else{
-    if($template_mode){
-        $query = 'template';
-    }
-    else{
-        $query = null;
-    }
+elseif($template_mode){
+    $query = 'template';
+}
+if(isset($_GET['id'])){
+    $query_id = $_GET['id'];
 }
 if (isset($_GET['conf'])){
     $conf = $_GET['conf'];
 }
-
-if(isset($_GET['id'])){
-    $query_id = $_GET['id'];
-}
-else{
-    $query_id = null;
-}
 /* * * * */
 $name = $query;
 
-$long_name        = get_long_name($date,$name,false);
+$long_name         = get_long_name($date,$name,false);
 $reverse_long_name = get_long_name($date,$name,true);
 
 $tracking_name = $reverse_long_name;
 
-$tracking_start   = TRACKING_HOST.$tracking_name.'&url=';
-$tracking_end     = TRACKING_SUB.$tracking_name;
+$tracking_start = TRACKING_HOST.$tracking_name.'&url=';
+$tracking_end   = TRACKING_SUB.$tracking_name;
 
-$yearfolder = $year.'/';
-$file       = $long_name.'.html';
-$dirpath    = FOLDER_HTML.$yearfolder;
-$filepath   = $dirpath.$file;
+$yearfolder   = $year.'/';
+$file         = $long_name.'.html';
+$dirpath      = FOLDER_HTML.$yearfolder;
+$filepath     = $dirpath.$file;
 $filepath_tmp = FOLDER_TEMP.$file;
 
 $img_folder = $long_name.'_images/';
@@ -90,7 +78,7 @@ if($query == 'new'){
     define('HEADER_TITLE', '<div class="page-title header-info">'.$new_html.' <span class="file-name"></span></div>');
     define('TITLE', CONTEXT.' - '.APP_NAME.' - '.COMPANY_NAME);
 }
-elseif(isset($query)){
+elseif($query){
     define('CONTEXT', $$mode.$file);
     define('HEADER_TITLE', '<div class="page-title header-info">'.$$mode.' <span class="file-name">'.$file.'</span></div>');
     define('TITLE', CONTEXT.' - '.APP_NAME.' - '.COMPANY_NAME);
@@ -99,9 +87,10 @@ else{
     define('HEADER_TITLE', '<div class="page-title header-info">'.$last_edited.'</div>');
     define('TITLE', APP_NAME.' - '.COMPANY_NAME);
 }
-/* * * * */
 
-if( (isset($year))&&(!isset($query)) ){
+/* * * * */
+$newsthumbs = false;
+if( $year && !$query ){
     $newsthumbs = true;
 }
 ?>

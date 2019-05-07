@@ -56,12 +56,12 @@ define('FOLDER_PICTURES', FOLDER_NEWS.'images/');
 define('FOLDER_COMMON', FOLDER_NEWS.'common/');
 /* Folder of generated HTML files */
 define('FOLDER_HTML', FOLDER_NEWS.'html/');
-/* Folder of generated thumbnails */
-define('FOLDER_THUMBS', FOLDER_PICTURES.'thumbs/');
+/* Folder of generated html thumbnails */
+define('FOLDER_THUMBS', FOLDER_HTML.'thumbs/');
 
 /* Folder of placeholder images */
 define('FOLDER_PLACEHOLDER', FOLDER_PICTURES.'placeholder/');
-/* Number of png files in placehoder folder*/
+/* Number of png files in placehoder folder */
 define('PLACEHOLDER_NUM', '29');
 /* /////////////////////////////// */
 

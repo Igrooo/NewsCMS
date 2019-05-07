@@ -9,6 +9,7 @@
         generate_file($name, $dirpath, $filepath, $date);
         show_info('h4','success', 'newsletter-viewer-title ', 'Enregistrement effectué.', null);
     }
+    echo substr(sprintf('%o', fileperms($filepath)), -4);
     ?>
     <div class="float-box-container with-box-sticky">
         <?php
@@ -23,12 +24,12 @@
                         $content = get_content('generated',$name,$date);
                         if($content == 'empty'){
                             echo'<tr>';
-                            show_info('td','warning', 'newsletter-viewer-title', 'La newsletter '.$name.' est introuvable.',null);
+                            show_info('td','warning', 'newsletter-viewer-title', "La newsletter $name est introuvable.",null);
                             echo'</tr>';
                         }
                         elseif($content == 'bad-query'){
                             echo'<tr>';
-                            show_info('td','warning', 'newsletter-viewer-title', 'La newsletter '.$name.' n\'existe pas avec cette date ('.$date.').',null);
+                            show_info('td','warning', 'newsletter-viewer-title', "La newsletter $name n'existe pas avec cette date ($date).",null);
                             echo'</tr>';
                         }
                         else{

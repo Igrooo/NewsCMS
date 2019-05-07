@@ -1,5 +1,5 @@
 <!-- Components in Database -->
-<table id ="newsletter-builder-components" class="components-list hidden">
+<table id="newsletter-builder-components" class="components-list hidden">
     <?php
     include ('text.php');
     $table = DB_TABLE_COMPONENTS;

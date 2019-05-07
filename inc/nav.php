@@ -1,7 +1,7 @@
 <nav role="navigation" class="nav-group">
     <?php
         if($query != null){
-            include('nav-'.$mode.'.php');
+            include("nav-$mode.php");
         }
         else{
             echo'

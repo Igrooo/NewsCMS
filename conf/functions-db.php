@@ -36,12 +36,12 @@ function db_set($sql){
 
 /* SQL strings */
 function sql_select($column,$from,$filter,$filtervalue,$andfilter,$andfiltervalue,$group,$order,$sortdir){
-    $select = 'SELECT '.$column.' FROM '.$from;
-    if(isset($filter)){$where=" WHERE ".$filter."='".$filtervalue."'";}else{$where='';}
-    if(isset($andfilter)){$and=" AND ".$andfilter."='".$andfiltervalue."'";}else{$and='';}
-    if(isset($group)){$groupby=' GROUP BY '.$group;}else{$groupby='';}
+    $select = "SELECT $column FROM $from";
+    if(isset($filter)){$where=" WHERE $filter='$filtervalue'";}else{$where='';}
+    if(isset($andfilter)){$and=" AND $andfilter='$andfiltervalue'";}else{$and='';}
+    if(isset($group)){$groupby=" GROUP BY $group";}else{$groupby='';}
     if(isset($order)){
-        if(isset($sortdir)){$orderby=' ORDER BY '.$order.' '.$sortdir;}else{$orderby=' ORDER BY '.$order;}
+        if(isset($sortdir)){$orderby=" ORDER BY $order $sortdir";}else{$orderby=" ORDER BY $order";}
     }else{$orderby='';}
     return $select.$where.$and.$groupby.$orderby;
 }

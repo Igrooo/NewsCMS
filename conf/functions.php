@@ -33,32 +33,42 @@ function list_news($display, $year, $name, $date){
             if ($display == 'grid') {
                 echo '
                 <li class="item">
-                    <a href="?y=' . $newsletter['YEAR'] . '&d=' . $newsletter['DATE'] . '&q=' . $newsletter['NAME'] . '">';
+                    <a class="grid-btn" href="?y='.$newsletter['YEAR'].'&d='.$newsletter['DATE'].'&q='.$newsletter['NAME'].'">';
                 $filepath = FOLDER_HTML.$newsletter['YEAR'].'/'.$newsletter_long_name.'.html';
 
                 if (file_exists($filepath)) {
                     echo '<figure class="with-thumb">
-                            <figcaption class="newsletter-title">' . $newsletter_long_name . '</figcaption>
+                            <figcaption class="newsletter-title">'.$newsletter_long_name.'</figcaption>
                             <div class="thumb">
-                                <iframe class="thumb-page" width="400" height="480" class="" src="'.$filepath.'"></iframe>
+                                <iframe class="thumb-page" width="400" height="480" src="'.$filepath.'"></iframe>
                             </div>
                           </figure>';
                 } else {
                     echo '
                         <figure class="without-thumb">
-                            <figcaption class="newsletter-title">' . $newsletter_long_name . '</figcaption>
+                            <figcaption class="newsletter-title">'.$newsletter_long_name.'</figcaption>
                             <i class="far fa-file-image fa-10x thumb thumb-icon icon icon-box"></i>
                         </figure>
                     ';
                 }
-                echo '</a>
+                echo '
+                    </a>
+                    <nav class="nav-group tiny-nav">
+                        <ul class="nav compact">
+                            <li class="item"><a class="btn" href="?m=editor&y='.$newsletter['YEAR'].'&d='.$newsletter['DATE'].'&q='.$newsletter['NAME'].'" title="Modifier le contenu de '.$newsletter_long_name.'"><i class="icon fas fa-pen"></i></a></li><!--
+                            --><li class="item"><a class="btn disabled" href="#" title="Créer une nouvelle newsletter à partir de '.$newsletter_long_name.'"><i class="icon far fa-copy"></i></a></li><!--?m=editor&y=$year&d=$date&q=new&c=$query";?>--><!--
+                            --><li class="item"><a class="btn" href="?download&y='.$newsletter['YEAR'].'&d='.$newsletter['DATE'].'&q='.$newsletter['NAME'].'" title="Télécharger le fichier '.$newsletter_long_name.'.html"><i class="icon fas fa-download"></i></a></li><!--
+                            --><li class="item"><a class="btn" href="'.$filepath.'" title="Ouvrir '.$newsletter_long_name.'.html dans un nouvel onglet" target="_blank"><i class="icon fas fa-external-link-alt"></i></a></li>
+                        </ul>
+                    </nav>
                 </li>';
-            } else {
+            }
+            else {
                 $query_long_name = get_long_name($date , $name,false);
                 if ($query_long_name == $newsletter_long_name) {
-                    echo '<li class="item"><span class="open"><i class="bull">&bull;</i><span class="newsletter-title">' . $newsletter_long_name . '</span></span></li>';
+                    echo '<li class="item"><span class="open"><i class="bull">&bull;</i><span class="newsletter-title">'.$newsletter_long_name.'</span></span></li>';
                 } else {
-                    echo '<li class="item"><a href="?y=' . $newsletter['YEAR'] . '&d=' . $newsletter['DATE'] . '&q=' . $newsletter['NAME'] . '"><i class="bull">&bull;</i><span class="newsletter-title">' . $newsletter_long_name . '</span></a></li>';
+                    echo '<li class="item"><a class="item-title" href="?y='.$newsletter['YEAR'].'&d='.$newsletter['DATE'].'&q='.$newsletter['NAME'].'"><i class="bull">&bull;</i><span class="newsletter-title">'.$newsletter_long_name.'</span></a></li>';
                 }
             }
         }
@@ -79,16 +89,21 @@ function list_templates($context, $query_id){
             echo '<ul class="list list-templates">';
             foreach ($templates as $template) {
                 if ($query_id == $template['ID']) {
-                    echo '<li class="item"><span class="open"><i class="bull">&bull;</i><span class="newsletter-title template-id">' . sprintf('%02d', $template['ID']) . '</span> <i class="bull">&bull;</i><span class="newsletter-title">' . $template['NAME'] . '</span></span></li>';
+                    echo '<li class="item"><span class="item-title open"><i class="bull">&bull;</i><span class="newsletter-title template-id">'.sprintf('%02d', $template['ID']).'</span> <i class="bull">&bull;</i><span class="newsletter-title">'.$template['NAME'].'</span></span></li>';
                 } else {
-                    echo '<li class="item"><a href="?m=builder&t&id=' . $template['ID'] . '"><i class="bull">&bull;</i><span class="newsletter-title template-id">' . sprintf('%02d', $template['ID']) . '</span> <i class="bull">&bull;</i><span class="newsletter-title">' . $template['NAME'] . '</span></a></li>';
+                    echo '<li class="item"><a class="item-title" href="?m=builder&t&id='.$template['ID'].'"><i class="bull">&bull;</i><span class="newsletter-title template-id">'.sprintf('%02d', $template['ID']).'</span> <i class="bull">&bull;</i><span class="newsletter-title">'.$template['NAME'].'</span></a></li>';
                 }
             }
             echo '</ul>';
         }
+        else if($context == 'form-compact'){
+            foreach ($templates as $template) {
+                echo '<option value="'.$template['ID'].'" data-value="' .$template['COMPONENTS'].'">'. sprintf('%02d', $template['ID']).'</option>';
+            }
+        }
         else{
             foreach ($templates as $template) {
-                echo '<option value="' .$template['COMPONENTS'].'">'. sprintf('%02d', $template['ID']) . ' &bull; ' . $template['NAME'] . '</option>';
+                echo '<option value="'.$template['ID'].'" data-value="' .$template['COMPONENTS'].'"'. ( $query_id == $template['ID'] ? 'selected' : '' ) .' >'. sprintf('%02d', $template['ID']).' &bull; '.$template['NAME'].'</option>';
             }
         }
     }
@@ -111,14 +126,14 @@ function list_years($year, $name, $date){
         echo'<ul class="list list-years">';
         foreach ($years as $yeardir) {
             if (($year != null) && ($year == $yeardir['YEAR'])) {
-                echo '<li class="year open"><a class="open" href="?y=' . $yeardir['YEAR'] . '">' . $yeardir['YEAR'] . '</a>';
+                echo '<li class="item year open"><a class="item-title open" href="?y='.$yeardir['YEAR'].'">'.$yeardir['YEAR'].'</a>';
                 list_news('list', $year, $name, $date);
             } elseif (($year == null) && ($yeardir['YEAR'] == CURRENT_YEAR)) { // open current year by default
                 $year = CURRENT_YEAR;
-                echo '<li class="year open"><a class="open" href="?y=' . $yeardir['YEAR'] . '">' . $yeardir['YEAR'] . '</a>';
+                echo '<li class="item year open"><a class="item-title open" href="?y='.$yeardir['YEAR'].'">'.$yeardir['YEAR'].'</a>';
                 list_news('list', $year, $name, $date);
             } else {
-                echo '<li class="year"><a href="?y=' . $yeardir['YEAR'] . '">' . $yeardir['YEAR'] . '</a>';
+                echo '<li class="item year"><a class="item-title" href="?y='.$yeardir['YEAR'].'">'.$yeardir['YEAR'].'</a>';
             }
             echo '</li>';
         }
@@ -126,7 +141,7 @@ function list_years($year, $name, $date){
     }
 }
 
-function get_id($name,$date){
+function get_id($name,$date,$template){
     $one = db_one(DB_TABLE, $name);
     $id = 0;
     if(!empty($one)){
@@ -134,7 +149,12 @@ function get_id($name,$date){
             $newsletter_long_name = get_long_name($newsletter['DATE'],$newsletter['NAME'],false);
             $query_long_name = get_long_name($date,$newsletter['NAME'],false);
             if ($query_long_name == $newsletter_long_name) {
-                $id= $newsletter['ID'];
+                if ($template == true){
+                    $id = $newsletter['TEMPLATE'];
+                }
+                else{
+                    $id = $newsletter['ID'];
+                }
                 break;
             }
             else{
@@ -236,8 +256,9 @@ function generate_file($name, $dirpath, $filepath, $date){
     $html = $head.$content.$foot;
     // Create file
     file_put_contents($filepath, $html);
+
+    //Create html file for thumb
+    //
 }
 
-function generate_thumb(){
 
-}

@@ -1,5 +1,5 @@
 <?php
-    $ID = get_id($name,$date);
+    $ID = get_id($name,$date, false);
     $generated = get_content('generated',$name,$date);
 ?>
 <form id="form-editor" method="post">

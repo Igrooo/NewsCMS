@@ -4,31 +4,39 @@
 include('head.php');
 ?>
 <body class="mode-<?php echo $mode; echo $template_mode ? ' template':'';?>">
-    <header id="header" class="section-container reset cms-ui">
-        <?php
-            include('header.php');
-            include('nav.php');
-        ?>
-    </header>
-    <main role="main">
-        <section id="explorer" class="section-container reset cms-ui">
-            <?php include('explorer.php');?>
-        </section><!--
-        --><section class="app section-container scroller">
-            <div class="app-container-with-scroller">
+    <div id="page-loader" class="loader"><?php echo APP_ICON_BIG ?></div>
+    <div id="page" class="page-loading">
+        <header id="header" class="section-container reset cms-ui">
             <?php
-                if(($query != null)||($template_mode)){
-                    include("$mode.php");
-                }
-                elseif(isset($conf)){
-                    include ("conf-$conf.php");
-                }
-                else{
-                    include('explorer-grid.php');
-                }
+                include('header.php');
+                include('nav.php');
             ?>
-            </div>
-        </section>
-    </main>
+        </header>
+        <main role="main">
+            <section id="explorer" class="section-container reset cms-ui">
+                <?php include('explorer.php');?>
+            </section><!--
+            --><section class="app section-container scroller">
+                <div class="app-container-with-scroller">
+                <?php
+                    if( $query || $template_mode ){
+                        include("$mode.php");
+                    }
+                    elseif($conf){
+                        include ("conf-$conf.php");
+                    }
+                    elseif (!$newsthumbs) {
+                        $year = CURRENT_YEAR;
+                        include('empty.php');
+                        include('explorer-grid.php');
+                    }
+                    else{
+                        include('explorer-grid.php');
+                    }
+                ?>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>

@@ -18,14 +18,14 @@
                 $section_name = 'Pied';
                 break;
             case 'separator':
-                $section_name = 'Séparateur';
+                $section_name = 'Séparateurs';
                 break;
         }
         echo '
         <nav id="builder-nav-add-cpt-'.$section['SECTION'].'" role="navigation" class="nav-aside builder-nav-aside nav-components">
             <h5 class="cpt-section nav-title nav-title-list-rotate components-title"><span class="title-text">'.$section_name.'</span></h5>';
-            if (($section['SECTION'] == 'header')||($section['SECTION'] == 'separator')) {
-                // no group by type because one component by type in header and only one type in separator
+            if ($section['SECTION'] == 'header') {
+                // no group by type because one component by type in header
                 echo '<ul class="nav vertical tools compact with-nav-title-rotate components-list components-list-'.$section['SECTION'].' with-btn-flex">';
                 $types = db_all_cpt_types($table, $section['SECTION']);
                 foreach ($types as $type) {
@@ -56,6 +56,14 @@
                         case 'lin':
                             $type_name = 'Liens';
                             $type_icon = 'link';
+                            break;
+                        case 'sep':
+                            $type_name = 'Traits';
+                            $type_icon = 'minus';
+                            break;
+                        case 'spa':
+                            $type_name = 'Espaces';
+                            $type_icon = 'square';
                             break;
                     }
                     echo '<li class="item with-sub-nav">

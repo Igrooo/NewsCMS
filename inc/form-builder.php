@@ -1,7 +1,7 @@
 <form id="form-builder" method="post">
     <?php
     if ($query != 'new') {
-        $ID = get_id($name, $date);
+        $ID = get_id($name, $date, false);
         echo '<input class="ipt-hidden" id="newsletter-id"   type="text" name="id"   value="'.$ID.'" title="id" hidden readonly>';
         $name_without_prefix = str_replace(PREFIX,'',$name);
     }
@@ -10,7 +10,10 @@
         <label class="ipt-label" for="input-template">Modèle</label>
         <select class="ipt ipt-select" id="input-template" name="template" title="Modèle">
             <option value="0">Pas de modèle</option>
-            <?php list_templates('form', $query_id); ?>
+            <?php
+            $template_id = get_id($name, $date, true);
+            list_templates('form', $template_id);
+            ?>
         </select>
     </div>
     <div class="ipt-group ipt-group-date">

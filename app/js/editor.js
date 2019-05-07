@@ -546,4 +546,24 @@ $(() => {
     if(editor_all_cpt.length !== 0) {
         init_edit(edit_text);
     }
+
+    // Code editor toggle
+
+    const code_edit = () => {
+        editor_rows.each( function (id) {
+            $(this).wrapInner('<textarea id="code-editor-'+id+'"></textarea>');
+        });
+    };
+
+    $('#toggle-code').click( function (){
+        $(this).addClass('hidden');
+        $('#toggle-editor').removeClass('hidden');
+        editor_box.addClass('code-view');
+        code_edit();
+    });
+    $('#toggle-editor').click( function (){
+        $(this).addClass('hidden');
+        $('#toggle-code').removeClass('hidden');
+        editor_box.removeClass('code-view');
+    });
 });

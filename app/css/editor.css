@@ -7,13 +7,6 @@
 #newsletter-editor.loading{
     height: calc(100vh - 210px)
 }
-#newsletter-editor.loading .loader{
-    position: absolute;
-    display: block;
-    text-align: center;
-    top: calc(50% - 37px);
-    left: calc(50% - 37px);
-}
 #newsletter-editor.loading #fakebody{
     opacity: 0;
     transition: opacity 100ms;

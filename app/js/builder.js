@@ -202,6 +202,14 @@ $(() => {
         });
     };
 
+    const update_cpts = () => {
+        let list_cpts = ipt_template.find('option:selected').attr('data-value');
+        console.log(list_cpts);
+        // Empty builder
+        builder_table.html('');
+        get_cpts(list_cpts);
+    };
+
     /////////////////////////////
 
     ///// Form Builder Events /////
@@ -217,11 +225,7 @@ $(() => {
 
     if (builder_type !== 'template') {
         ipt_template.change(() => {
-            let list_cpts = ipt_template.find('option:selected').val();
-            console.log(list_cpts);
-            // Empty builder
-            builder_table.html('');
-            get_cpts(list_cpts);
+            update_cpts();
         });
     }
 
@@ -285,6 +289,11 @@ $(() => {
     if (builder_type === 'template') {
         let list_cpts = builder_ipt.val();
         get_cpts(list_cpts);
+    }
+    else if (builder_type === 'tiny') {
+        // update components on load for tiny builder in speed bar of home page
+        // not in builder page for not remove previously edited content
+        update_cpts();
     }
     else{
         // Init Builder
