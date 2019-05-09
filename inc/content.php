@@ -4,8 +4,17 @@
 include('head.php');
 ?>
 <body class="mode-<?php echo $mode; echo $template_mode ? ' template':'';?>">
-    <div id="page-loader" class="loader"><?php echo APP_ICON_BIG ?></div>
-    <div id="page" class="page-loading">
+        <?php
+            if (!$query || !$template_mode || !$conf) {
+                echo'<div id="page-loader" class="loader">'.APP_ICON_BIG.'</div>';
+                $loading = true;
+            }
+            else{
+                $loading = false;
+            }
+        ?>
+
+    <div id="page" class="<?php echo $loading ? 'page-loading':'';?>">
         <header id="header" class="section-container reset cms-ui">
             <?php
                 include('header.php');

@@ -3,6 +3,9 @@
         <i class="fas fa-exclamation-circle"></i> Cette newsletter n'a aucun élément éditable !<br><br>
         <a class="btn btn-primary" href="<?php echo"?m=builder&y=$year&d=$date&q=$query";?>" title="Ajouter des composants"><i class="icon fas fa-plus"></i> Ajouter des composants</a><br><br>
     </h4>
+    <h4 id="editor-code-info" class="cms-ui newsletter-editor-title info info-box hidden">
+        <i class="fas fa-info-circle"></i> Repasser sur la vue d'édition graphique pour valider les modifications du code.
+    </h4>
     <?php
     if (isset($_GET['error'])){
         show_info('h4','error', 'newsletter-editor-title ', 'Une erreur est survenue.', $_GET['error_info']);
@@ -53,6 +56,7 @@
                     </table>
                 </div>
             </div>
+            <div id="editor-code"></div>
         </div>
         <!-- END NEWSLETTER CONTENT EDITOR -->
     </div>

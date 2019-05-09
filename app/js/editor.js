@@ -7,11 +7,13 @@ $(() => {
     const body = $('body');
 
     const editor_info  = $('.newsletter-editor-title');
+    const editor_info_code  = $('#editor-code-info');
     const editor_alert = $('#not-editable-alert');
 
     // Editor elements
     const editor_box   = $('#newsletter-editor');
     const editor_body  = editor_box.find('#fakebody');
+    const editor_code  = editor_box.find('#editor-code');
     const editor_table = editor_body.find('table > tbody');
     const editor_row   = '.newsletter-editor-row';
     const editor_rows  = editor_table.find(editor_row);
@@ -551,17 +553,29 @@ $(() => {
 
     const code_edit = () => {
         editor_rows.each( function (id) {
-            $(this).wrapInner('<textarea id="code-editor-'+id+'"></textarea>');
+            let html_content = $(this).html();
+            $(editor_code).append('<div id="editor-code-'+id+'" class="editor-code"></div>');
+            let editor_code_cpt  = document.querySelector('#editor-code-'+id);
+            let myCodeMirror = CodeMirror(editor_code_cpt, {
+                value: html_content,
+                mode:  "xml",
+                htmlMode : true
+            });
         });
     };
 
     $('#toggle-code').click( function (){
-        $(this).addClass('hidden');
+        btn_reset.add(btn_submit).attr('disabled');
+        editor_info.addClass('hidden');
+        editor_info_code.removeClass('hidden');
+        $(this).add(editor_body).addClass('hidden');
         $('#toggle-editor').removeClass('hidden');
         editor_box.addClass('code-view');
         code_edit();
     });
     $('#toggle-editor').click( function (){
+        btn_reset.add(btn_submit).removeAttr('disabled');
+        editor_info.addClass('hidden');
         $(this).addClass('hidden');
         $('#toggle-code').removeClass('hidden');
         editor_box.removeClass('code-view');

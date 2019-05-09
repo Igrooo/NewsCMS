@@ -25,7 +25,9 @@
         <script src="'.FOLDER_JS.'lib/tinymce/tinymce.min.js"></script>
         <script src="'.FOLDER_JS.'lib/tinymce/jquery.tinymce.min.js"></script>
         <!-- CodeMirror Editor -->
-        <script src="'.FOLDER_JS.'lib/tinymce/tinymce.min.js"></script>
+        <script src="'.FOLDER_JS.'lib/codemirror/lib/codemirror.js"></script>
+        <link type="text/css" rel="stylesheet" href="'.FOLDER_JS.'lib/codemirror/lib/codemirror.css">
+        <script src="'.FOLDER_JS.'lib/codemirror/mode/xml/xml.js"></script>
     ';}?>
     <!-- End libraries -->
     <!-- Global functions -->

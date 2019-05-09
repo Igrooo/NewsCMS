@@ -103,7 +103,7 @@ function list_templates($context, $query_id){
         }
         else{
             foreach ($templates as $template) {
-                echo '<option value="'.$template['ID'].'" data-value="' .$template['COMPONENTS'].'"'. ( $query_id == $template['ID'] ? 'selected' : '' ) .' >'. sprintf('%02d', $template['ID']).' &bull; '.$template['NAME'].'</option>';
+                echo '<option value="'.$template['ID'].'" data-value="' .$template['COMPONENTS'].'" '. ( $query_id == $template['ID'] ? 'selected' : '' ) .' >'. sprintf('%02d', $template['ID']).' &bull; '.$template['NAME'].'</option>';
             }
         }
     }
@@ -254,11 +254,15 @@ function generate_file($name, $dirpath, $filepath, $date){
         $content = "<tr><td>La newsletter $name n'existe pas avec cette date ($date).</td></tr>";
     }
     $html = $head.$content.$foot;
+
+    //  set permissions
+    if(!file_exists($filepath)){
+        touch($filepath);
+        chmod($filepath, 0777);
+    }
+
     // Create file
     file_put_contents($filepath, $html);
-
-    //Create html file for thumb
-    //
 }
 
 

@@ -7,6 +7,9 @@
 #newsletter-editor.loading{
     height: calc(100vh - 210px)
 }
+#newsletter-editor.loading .loader{
+    display: block;
+}
 #newsletter-editor.loading #fakebody{
     opacity: 0;
     transition: opacity 100ms;
