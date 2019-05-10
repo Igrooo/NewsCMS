@@ -15,6 +15,8 @@ define('DEFAULT_DATE', null);
 
 /* folder of php includes */
 define('FOLDER_INC', FOLDER_APP.'inc/');
+/* folder of php tools */
+define('FOLDER_LIB', FOLDER_CONF.'lib/');
 
 /* folder of web resources */
 define('FOLDER_WEB', FOLDER_APP.'app/');

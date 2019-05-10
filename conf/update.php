@@ -1,27 +1,20 @@
 <?php
 /* Update newsletter date, name or components in database with Builder */
 $table = DB_TABLE;
-
 $id = $_POST['id'];
 $name = PREFIX.$_POST['name'];
-
 $date = $_POST['date'];
 $year = date('Y', strtotime($date));
 $date_edit = CURRENT_TIME;
-
 $template_id = $_POST['template'];
 //$title  = $_POST['user-name'];
 
 /* Add tracking in not editable links */
+$editable  = $_POST['content-editable'];
 $generated = add_tracking($_POST['content-generated'],$date,$name);
 
-/* Convert &amp; in urls */
-$editable  = convert_amp($_POST['content-editable']);
-$generated = convert_amp($generated);
-
-// prevent bad character ' for sql query
-$editable  = addslashes($editable);
-$generated = addslashes($generated);
+$editable  = clean_html($editable);
+$generated = clean_html($generated);
 
 $data  = [
     'year'      => $year,

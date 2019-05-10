@@ -1,9 +1,7 @@
 <?php
 /* Remove newsletter of database */
 $table = DB_TABLE;
-
 $id = $_GET['id'];
-
 $delete = db_delete($table, $id);
 
 if($delete == false){
@@ -12,4 +10,3 @@ if($delete == false){
     //Redirection
     header("Location: $location");
 }
-

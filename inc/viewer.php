@@ -9,7 +9,6 @@
         generate_file($name, $dirpath, $filepath, $date);
         show_info('h4','success', 'newsletter-viewer-title ', 'Enregistrement effectué.', null);
     }
-    echo substr(sprintf('%o', fileperms($filepath)), -4);
     ?>
     <div class="float-box-container with-box-sticky">
         <?php

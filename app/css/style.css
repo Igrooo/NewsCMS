@@ -813,8 +813,8 @@ border-top-right-radius: 8px;
     flex-wrap: wrap;
     /*gap: 20px;*/
     margin: auto;
-    padding: 20px;
-    justify-content: flex-start;
+    padding: 10px;
+    justify-content: center;
     max-width: calc(170px * 8 + 20px * 7);
 }
 .grid .list-news > .item{
@@ -850,7 +850,6 @@ border-top-right-radius: 8px;
     width: 15px;
     height: 15px;
 }
-
 .bull{
     margin-right: 5px;
 }

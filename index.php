@@ -27,6 +27,11 @@ ini_set('html_errors', false); // HTML errors
 ////
 /* conf */
 require(FOLDER_CONF.'conf.php');
+////
+//// LIB
+/* html purifier */
+require(FOLDER_LIB.'htmlpurifier-lite/library/HTMLPurifier.auto.php');
+
 /* functions */
 require(FOLDER_CONF.'functions.php');
 

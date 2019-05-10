@@ -1,11 +1,8 @@
 <?php
 /* Insert new newsletter in database */
 $table = DB_TABLE;
-
 $name  = PREFIX.$_POST['name'];
-
 $date  = $_POST['date'];
-
 $new_date_name = get_long_name($date,$name,false);
 
 // check if newsletter with same name and date exist already
@@ -36,22 +33,18 @@ if($exist == true){
 }
 // else
 else{
-    $year  = date('Y', strtotime($date));
+    $year = date('Y', strtotime($date));
     $date_edit = CURRENT_TIME;
 
-    $template_id  = $_POST['template'];
+    $template_id = $_POST['template'];
     //$title     = $_POST['user-name'];
 
     /* Add tracking in not editable links */
+    $editable  = $_POST['content-editable'];
     $generated = add_tracking($_POST['content-generated'],$date,$name);
 
-    /* Convert &amp; in urls */
-    $editable  = convert_amp($_POST['content-editable']);
-    $generated = convert_amp($generated);
-
-    // prevent bad character ' for sql query
-    $editable  = addslashes($editable);
-    $generated = addslashes($generated);
+    $editable  = clean_html($editable);
+    $generated = clean_html($generated);
 
     $data  = [
         'year'      => $year,

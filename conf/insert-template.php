@@ -1,7 +1,6 @@
 <?php
 /* Insert new template in database */
 $table = DB_TABLE_TEMPLATES;
-
 $id    = $_POST['id'];
 $name  = $_POST['name'];
 $cpts  = $_POST['components'];

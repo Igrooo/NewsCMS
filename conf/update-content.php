@@ -1,22 +1,18 @@
 <?php
 /* Update newsletter content in database with Editor */
 $table = DB_TABLE;
-
 $id = $_POST['id'];
 $name = $_POST['name'];
-
 $date = $_POST['date'];
 $year = date('Y', strtotime($date));
 $date_edit = CURRENT_TIME;
 
+/* Add tracking in not editable links */
+$editable  = $_POST['content-editable'];
 $generated = add_tracking($_POST['content-generated'],$date,$name);
 
-/* Convert &amp; in urls */
-$editable  = convert_amp($_POST['content-editable']);
-$generated = convert_amp($generated);
-
-$editable  = addslashes($editable);
-$generated = addslashes($generated);
+$editable  = clean_html($editable);
+$generated = clean_html($generated);
 
 // Update newsletter in database //
 $update = db_update($table, $id, $editable, $generated, $date_edit);
