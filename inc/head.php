@@ -37,9 +37,9 @@
     <!-- <?php echo $mode ?> script -->
     <script src="<?php echo FOLDER_JS.$mode ?>.js"></script>
     <?php
-    if($mode == 'viewer') {
+    if($homepage) {
     echo '
-    <!-- builder script for speed creation bar in home page -->
+    <!-- builder script for speed creation bar in home page (load in empty.php) -->
     <script src="' . FOLDER_JS . 'builder.js"></script>
     ';}?>
 </head>

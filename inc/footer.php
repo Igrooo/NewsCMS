@@ -1,5 +1,6 @@
 <footer class="footer reset cms-ui">
     <p class="">
+        v.2.3 -
         <a target="_blank" href="" >git</a>
     </p>
     <ul class="inline-list">

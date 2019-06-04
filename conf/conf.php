@@ -91,4 +91,3 @@ define('USER_PASSWORD','Awz3!eF2Im4qk%Hb2a');
 /* User profil preferences */
 define('USER_COLOR','');
 /* /////////////////////////////// */
-?>

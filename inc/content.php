@@ -34,7 +34,7 @@ include('head.php');
                     elseif($conf){
                         include ("conf-$conf.php");
                     }
-                    elseif (!$newsthumbs) {
+                    elseif ($homepage) {
                         $year = CURRENT_YEAR;
                         include('empty.php');
                         include('explorer-grid.php');

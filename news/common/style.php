@@ -108,14 +108,14 @@ echo'<style>
             }
         }
         
-        #newsletter-builder img[src^="'.CURRENT_DIR.FOLDER_PLACEHOLDER.'"],
-        #newsletter-editor img[src^="'.CURRENT_DIR.FOLDER_PLACEHOLDER.'"]{
+        #newsletter-builder img.empty,
+        #newsletter-editor img.empty{
             filter: saturate(0%);
             transition: filter 250ms;
         }
-        #newsletter-builder img[src^="'.CURRENT_DIR.FOLDER_PLACEHOLDER.'"]:hover,
-        #newsletter-editor .focused img[src^="'.CURRENT_DIR.FOLDER_PLACEHOLDER.'"],
-        #newsletter-editor img[src^="'.CURRENT_DIR.FOLDER_PLACEHOLDER.'"]:hover{
+        #newsletter-builder img.empty:hover,
+        #newsletter-editor .focused img.empty,
+        #newsletter-editor img.empty:hover{
             filter: saturate(80%);
         }
     </style>

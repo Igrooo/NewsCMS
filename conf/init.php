@@ -53,12 +53,11 @@ $filepath_tmp = FOLDER_TEMP.$file;
 $img_folder = $long_name.'_images/';
 $img_url    = IMG_HOST.$yearfolder.$img_folder;
 
+$last_edited = '';
 $history = get_last();
 if(!empty($history)){
     $last_edited = '<a href="?y='.$history['year'].'&d='.$history['date'].'&q='.$history['name'].'" title="Dernière modification"><i class="fas fa-history"></i> '.$history['long_name'].'</a> <span class="last">le <span class="last-date">'.$history['edit_date'].'</span> à <span class="last-time">'.$history['edit_time'].'</span> par <span class="last-user">'.$history['user'].'</span></span>';
 }
-else{$last_edited = '';}
-
 /* init head & header */
 $viewer   = 'Aperçu de ';
 $editor   = 'Édition de ';
@@ -89,8 +88,7 @@ else{
 }
 
 /* * * * */
-$newsthumbs = false;
-if( $year && !$query ){
-    $newsthumbs = true;
+$homepage = true;
+if(( $year && !$query ) || ($query)) {
+    $homepage = false;
 }
-?>
