@@ -240,10 +240,10 @@ function convert_amp($content){
 /* Clean HTML */
 function clean_html($content){
     /* HTML Purifier */
-    $purifier = new HTMLPurifier();
-    $clean_content = $purifier->purify($content);
+    //$purifier = new HTMLPurifier();
+    //$clean_content = $purifier->purify($content);
     /* Convert &amp; in urls */
-    $clean_content = convert_amp($clean_content);
+    $clean_content = convert_amp($content);
     // prevent bad character ' for sql query
     $clean_content = addslashes($clean_content);
     return $clean_content;
