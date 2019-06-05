@@ -11,7 +11,6 @@ Newsletters Management System - to build, edit and view newsletters formatted in
   * v1.4 10/04/19 - Templating
   * v1.1 03/04/19 - Viewer - Button & function for delete
   * v1.0 02/04/19 - Builder - Change date, name and components
-  * v0.3 01/04/19 - Fix
   * v0.2 19/03/19 - Content Editor
   * v0.1 02/03/19 - Initial commit - Content Editor nonfunctional
 
