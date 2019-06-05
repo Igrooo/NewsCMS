@@ -6,10 +6,13 @@
         else{
             echo'
                 <ul id="nav-home" class="nav">
-                    <li class="item"><a class="btn" href="?m=builder&q=new" title="Créer une nouvelle newsletter"><i class="icon fas fa-plus"></i><span class="item-text">Créer</span></a></li><!--
-                 --><li class="item"><a class="btn" href="?y='.$history['year'].'&d='.$history['date'].'&q='.$history['name'].'" title="Voir la dernière newsletter"><i class="icon fas fa-eye"></i><span class="item-text">'.$history['long_name'].'</span></a></li><!--
+                    <li class="item"><a class="btn" href="?m=builder&q=new" title="Créer une nouvelle newsletter"><i class="icon fas fa-plus"></i><span class="item-text">Créer</span></a></li>';
+            if(!empty($history)){
+                echo'<li class="item"><a class="btn" href="?y='.$history['year'].'&d='.$history['date'].'&q='.$history['name'].'" title="Voir la dernière newsletter"><i class="icon fas fa-eye"></i><span class="item-text">'.$history['long_name'].'</span></a></li><!--
                  --><li class="item"><a class="btn" href="?m=editor&y='.$history['year'].'&d='.$history['date'].'&q='.$history['name'].'" title="Editer la dernière newsletter"><i class="icon fas fa-pen"></i><span class="item-text">'.$history['long_name'].'</span></a></li>
-                </ul><!--';
+                ';
+            }
+            echo'</ul><!--';
         }
     ?>
     --><ul id="nav-global" class="nav global">
