@@ -3,7 +3,9 @@ NewsCMS
 Newsletters Management System - to build, edit and view newsletters formatted in HTML tables.
 
 ### Versions history
-  * v
+  * v2.3 10/05/19 - HTML Purifier
+  * v2.2 09/05/19 - Code Editor
+  * v2.1 07/05/19 - Speed builder bar in home page, short nav buttons in grid list view
   * v2.0 12/04/19 - Iframes thumbs for grid list of newsletters
   * v1.5 11/04/19 - Simple login/logout
   * v1.4 10/04/19 - Templating
@@ -13,6 +15,7 @@ Newsletters Management System - to build, edit and view newsletters formatted in
   * v0.2 19/03/19 - Content Editor
   * v0.1 02/03/19 - Initial commit - Content Editor nonfunctional
 
+### Features list
 | VERSIONS                             |                                                                        |
 |--------------------------------------|------------------------------------------------------------------------|
 | **v0**                               | **Basics features**                                                    |
